@@ -10,7 +10,7 @@
   "author": "Evan Liomain <evan.liomain@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/evanliomain/taninsam"
   },
   "license": "MIT",
   "engines": {
@@ -34,7 +34,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": ["prettier --write --single-quote", "git add"]
+    "{src,tools}/**/*.ts": ["prettier --write", "git add"]
   },
   "config": {
     "commitizen": {
