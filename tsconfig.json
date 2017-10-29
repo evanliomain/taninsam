@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "preserveConstEnums": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
     "target": "es5",
