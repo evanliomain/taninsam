@@ -15,7 +15,7 @@ describe('filter function', () => {
   test('call the iteree callback with correct inputs', () => {
     const cb = jest.fn((x: number) => true);
     const link = { fake: 'fake' };
-    filter<number>(cb, link)(input);
+    filter<number>(cb)(input, link);
     input.forEach((i, index) => {
       expect(cb.mock.calls[index][0]).toBe(i);
       expect(cb.mock.calls[index][1]).toBe(index);

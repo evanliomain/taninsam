@@ -1,7 +1,7 @@
 /**
  * @module array=>array
  */
-import { Identity, Links } from '../@types';
+import { Identity, Iteratee, Links } from '../@types';
 
 /**
  * This method filter the elements of the chained array.
@@ -20,15 +20,9 @@ import { Identity, Links } from '../@types';
  * ```
  */
 export function filter<T>(
-  iteratee: ((
-    value: T,
-    index: number,
-    array: ReadonlyArray<T>,
-    links?: Links
-  ) => boolean),
-  links?: Links
+  iteratee: Iteratee<T, boolean>
 ): Identity<ReadonlyArray<T>> {
-  return (array: ReadonlyArray<T>) =>
+  return (array: ReadonlyArray<T>, links?: Links) =>
     array.filter((value: T, index: number, array: ReadonlyArray<T>) =>
       iteratee(value, index, array, links)
     );
