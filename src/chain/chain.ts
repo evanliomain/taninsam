@@ -2,8 +2,7 @@
  * @module chain
  */
 
-import { Chain } from '../@types/chain';
-import { Links } from '../@types/links';
+import { Chain, Links } from '../@types';
 
 /**
  * Enchain any value.
