@@ -1,0 +1,21 @@
+/**
+ * @module TBD_A=>TBD_B
+ */
+/**
+ * This method do something
+ * @param iteratee The iteratee invoked per element.
+ * @return the function to apply on the TBD to do something
+ * @example
+ * ```
+ * {{camelCase name}}<TBD_A>()) // TBD_B
+ * ```
+ * @example Using the chain
+ * ```
+ * chain()
+ *   .chain({{camelCase name}}<TBD_A>())
+ *   .value() // TBD_B
+ * ```
+ */
+export function {{camelCase name}}<T>(): (element: T) => T {
+  return (element: T) => element;
+}

@@ -1,0 +1,14 @@
+import { {{camelCase name}} } from './{{camelCase name}}';
+
+describe('{{camelCase name}} function', () => {
+  const input = [1, 2, 3, 4, 5];
+
+  test('is a pure function', () => {
+    {{camelCase name}}()(input);
+    expect(input).toMatchSnapshot();
+  });
+
+  test('1 |> {{camelCase name}} === 1', () => {
+    expect({{camelCase name}}()(1)).toBe(1);
+  });
+});
