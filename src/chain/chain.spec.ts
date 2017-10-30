@@ -45,7 +45,7 @@ describe('chain function', () => {
 
   describe('log chain', () => {
     test('with array', () => {
-      const chainResult = chain([1, 2, 3, 4])
+      chain([1, 2, 3, 4])
         .log('test')
         .value();
       expect(console.group).toBeCalled();
@@ -54,7 +54,7 @@ describe('chain function', () => {
     });
 
     test('with object', () => {
-      const chainResult = chain('test')
+      chain('test')
         .log('test')
         .value();
       expect(console.group).toBeCalled();
