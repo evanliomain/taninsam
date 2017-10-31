@@ -1,2 +1,2 @@
-import { Links } from './links';
-export type Identity<T> = (x: T, links?: Links) => T;
+import { Function } from './function';
+export type Identity<T> = Function<T, T>;
