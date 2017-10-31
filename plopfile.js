@@ -41,6 +41,7 @@ module.exports = plop => {
             }))
             .filter(({ pathfile }) => fs.lstatSync(pathfile).isDirectory())
             .filter(({ file }) => '@types' !== file)
+            .filter(({ file }) => '.internal' !== file)
             .map(({ file }) => file)
             .sort()
             .map(file => `export * from './${file}';`)
