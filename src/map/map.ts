@@ -4,6 +4,7 @@
 import { Function, Iteratee, Links } from '../@types';
 /**
  * This method creates a new array with the results of calling a provided function on every element in the calling array.
+ * See the [native map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) for more informations.
  * @param iteratee The iteratee invoked per element.
  * @return the function to apply on the array to transform
  * @example
