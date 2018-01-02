@@ -6,4 +6,5 @@ export * from './filter';
 export * from './keys';
 export * from './map';
 export * from './reduce';
+export * from './some';
 export * from './sumBy';
