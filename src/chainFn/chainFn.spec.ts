@@ -78,8 +78,6 @@ describe('chainFn function', () => {
       expect(console.group).toBeCalled();
       expect(console.table).toBeCalled();
       expect(console.groupEnd).toBeCalled();
-      expect(console.table.mock.calls[0][0]).toMatchSnapshot();
-      expect(console.table.mock.calls[1][0]).toMatchSnapshot();
       expect(chainResult).toMatchSnapshot();
     });
 
