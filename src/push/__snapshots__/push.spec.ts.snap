@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`push function [] |> push(4, 5) === [4, 5] 1`] = `
+Array [
+  4,
+  5,
+]
+`;
+
+exports[`push function [1, 2, 3] |> push(4, 5) === [1, 2, 3, 4, 5] 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;
+
+exports[`push function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;

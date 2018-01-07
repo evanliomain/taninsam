@@ -16,7 +16,7 @@
 - [x] map
 - [ ] pick
 - [x] pop
-- [ ] push
+- [x] push
 - [x] reduce
 - [ ] replacer
 - [ ] reverse

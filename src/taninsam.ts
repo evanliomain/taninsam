@@ -8,6 +8,7 @@ export * from './join';
 export * from './keys';
 export * from './map';
 export * from './pop';
+export * from './push';
 export * from './reduce';
 export * from './some';
 export * from './sumBy';
