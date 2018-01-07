@@ -2,8 +2,8 @@
  * @module chain
  */
 
-import { Chain } from '../@types/chain';
-import { Links } from '../@types/links';
+import { Chain, Links } from '../@types';
+import { log } from '../.internal';
 
 /**
  * Enchain any value.
@@ -25,19 +25,7 @@ export function chain<T>(value: T): Chain<T> {
 
   function _log<T>(v: T, links: Links): (flag: string) => Chain<T> {
     return (flag: string) => {
-      // tslint:disable-next-line:no-console
-      console.group(flag);
-      if (Array.isArray(v)) {
-        // tslint:disable-next-line:no-console
-        console.table(v);
-      } else {
-        // tslint:disable-next-line:no-console
-        console.log(v);
-      }
-      // tslint:disable-next-line:no-console
-      console.log('links', links);
-      // tslint:disable-next-line:no-console
-      console.groupEnd();
+      log(flag, v, links);
       return _chainByValue<T>(v, links);
     };
   }

@@ -26,17 +26,21 @@ Taninsam is:
 ### Contributing
 #### Installation
 
-`npm install`
+`yarn`
 
 #### Coding
+  Main commands to develop
  - Use vscode for coding (or any other good editor that suite you)
- - `npm t`: Run test suite
- - `npm start`: Runs `npm run build` in watch mode
- - `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
- - `npm run test:prod`: Run linting and generate coverage
- - `npm run build`: Generate bundles and typings, create docs
- - `npm run lint`: Lints code
- - `npm run commit`: Commit using conventional commit style
+ - `yarn gen`: Create a new function
+ - `yarn test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
+ - `yarn commit`: Commit using conventional commit style
+
+  Additionals commands
+ - `yarn test`: Run test suite once
+ - `yarn start`: Runs `npm run build` in watch mode
+ - `yarn test:prod`: Run linting and generate coverage
+ - `yarn build`: Generate bundles and typings, create docs
+ - `yarn lint`: Lints code
 
 Code source is automatically formatted and linted at each commit.
 
