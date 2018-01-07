@@ -8,7 +8,7 @@
 - [x] entries
 - [x] every
 - [x] filter
-- [ ] find
+- [x] find
 - [ ] flat
 - [ ] group
 - [x] join
