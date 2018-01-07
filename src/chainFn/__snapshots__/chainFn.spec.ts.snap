@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chainFn function by function with links 1`] = `"2/4"`;
+
+exports[`chainFn function log chainFn with array 1`] = `"2/4"`;

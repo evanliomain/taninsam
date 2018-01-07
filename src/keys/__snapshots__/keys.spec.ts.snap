@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`keys function { a: 1, b: 2, c: 3 } |> keys === ["a", "b", "c"] 1`] = `
+Array [
+  "a",
+  "b",
+  "c",
+]
+`;
+
+exports[`keys function is a pure function 1`] = `
+Object {
+  "a": 1,
+  "b": 2,
+  "c": 3,
+}
+`;
