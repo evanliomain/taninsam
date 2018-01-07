@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sumBy function [{ a:1 }, { a:2 }, { a:3 }, { a:4 }] |> sumBy === 10 1`] = `10`;
+
+exports[`sumBy function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;

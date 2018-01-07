@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filter function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;
+
+exports[`filter function keep even [1, 2, 3, 4, 5] |> filter === [2, 4] 1`] = `
+Array [
+  2,
+  4,
+]
+`;
