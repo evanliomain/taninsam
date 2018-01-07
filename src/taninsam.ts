@@ -3,6 +3,7 @@ export * from './chainFn';
 export * from './entries';
 export * from './every';
 export * from './filter';
+export * from './join';
 export * from './keys';
 export * from './map';
 export * from './reduce';

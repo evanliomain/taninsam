@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`join function [] |> join === "" 1`] = `""`;
+
+exports[`join function [1, 2, 3, 4, 5] |> join === 1,2,3,4,5 1`] = `"1,2,3,4,5"`;
+
+exports[`join function [1, 2, 3, 4, 5] |> join("/") === 1/2/3/4/5 1`] = `"1/2/3/4/5"`;
+
+exports[`join function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;

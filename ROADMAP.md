@@ -11,7 +11,7 @@
 - [ ] find
 - [ ] flat
 - [ ] group
-- [ ] join
+- [x] join
 - [x] keys
 - [x] map
 - [ ] pick
