@@ -13,4 +13,5 @@ export * from './reduce';
 export * from './shift';
 export * from './some';
 export * from './sumBy';
+export * from './unshift';
 export * from './values';
