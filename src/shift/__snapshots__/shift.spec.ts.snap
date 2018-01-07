@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shift function [] |> shift === [] 1`] = `Array []`;
+
+exports[`shift function [1, 2, 3, 4, 5] |> shift === [2, 3, 4, 5] 1`] = `
+Array [
+  2,
+  3,
+  4,
+  5,
+]
+`;
+
+exports[`shift function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;

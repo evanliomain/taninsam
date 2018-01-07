@@ -10,6 +10,7 @@ export * from './map';
 export * from './pop';
 export * from './push';
 export * from './reduce';
+export * from './shift';
 export * from './some';
 export * from './sumBy';
 export * from './values';

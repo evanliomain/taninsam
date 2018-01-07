@@ -20,7 +20,7 @@
 - [x] reduce
 - [ ] replacer
 - [ ] reverse
-- [ ] shift
+- [x] shift
 - [x] some
 - [ ] sortBy
 - [ ] sort
