@@ -1,0 +1,36 @@
+### Roadmap
+
+- [x] chain
+- [x] chainFn
+- [ ] array-from-value
+- [ ] countCharacter
+- [ ] distinct
+- [x] entries
+- [x] every
+- [x] filter
+- [ ] find
+- [ ] flat
+- [ ] group
+- [ ] join
+- [x] keys
+- [x] map
+- [ ] pick
+- [ ] pop
+- [ ] push
+- [x] reduce
+- [ ] replacer
+- [ ] reverse
+- [ ] shift
+- [x] some
+- [ ] sortBy
+- [ ] sort
+- [x] sumBy
+- [ ] to-object
+- [ ] top-flop
+- [ ] tree-flat
+- [ ] tree-map
+- [ ] tree
+- [ ] tree-walk-bottom-to-top
+- [ ] uniq
+- [ ] unshift
+- [ ] values
