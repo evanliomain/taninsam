@@ -8,3 +8,4 @@ export * from './map';
 export * from './reduce';
 export * from './some';
 export * from './sumBy';
+export * from './values';

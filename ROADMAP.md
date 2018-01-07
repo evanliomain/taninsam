@@ -33,4 +33,4 @@
 - [ ] tree-walk-bottom-to-top
 - [ ] uniq
 - [ ] unshift
-- [ ] values
+- [x] values
