@@ -9,7 +9,7 @@
 - [x] every
 - [x] filter
 - [x] find
-- [ ] flat
+- [x] flat
 - [ ] group
 - [ ] is-equal-object-on
 - [x] join
