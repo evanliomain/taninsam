@@ -2,7 +2,7 @@
 
 - [x] chain
 - [x] chainFn
-- [ ] array-from-value
+- [x] array-from-value
 - [ ] countCharacter
 - [ ] distinct
 - [x] entries

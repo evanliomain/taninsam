@@ -1,3 +1,4 @@
+export * from './arrayFromValue';
 export * from './chain';
 export * from './chainFn';
 export * from './entries';
