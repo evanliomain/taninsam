@@ -11,6 +11,7 @@
 - [x] find
 - [ ] flat
 - [ ] group
+- [ ] is-equal-object-on
 - [x] join
 - [x] keys
 - [x] map
@@ -25,6 +26,7 @@
 - [ ] sortBy
 - [ ] sort
 - [x] sumBy
+- [ ] take
 - [ ] to-object
 - [ ] top-flop
 - [ ] tree-flat
@@ -32,5 +34,6 @@
 - [ ] tree
 - [ ] tree-walk-bottom-to-top
 - [ ] uniq
+- [ ] unless
 - [x] unshift
 - [x] values
