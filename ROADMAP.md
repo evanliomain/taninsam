@@ -24,7 +24,7 @@
 - [x] shift
 - [x] some
 - [ ] sortBy
-- [ ] sort
+- [x] sort
 - [x] sumBy
 - [ ] take
 - [ ] to-object
