@@ -7,6 +7,7 @@ export * from './every';
 export * from './filter';
 export * from './find';
 export * from './flat';
+export * from './isEqualObjectOn';
 export * from './join';
 export * from './keys';
 export * from './map';
