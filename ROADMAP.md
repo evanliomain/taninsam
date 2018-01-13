@@ -3,7 +3,7 @@
 - [x] chain
 - [x] chainFn
 - [x] array-from-value
-- [ ] countCharacter
+- [x] countCharacter
 - [ ] distinct
 - [x] entries
 - [x] every

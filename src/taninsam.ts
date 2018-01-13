@@ -1,6 +1,7 @@
 export * from './arrayFromValue';
 export * from './chain';
 export * from './chainFn';
+export * from './countCharacter';
 export * from './entries';
 export * from './every';
 export * from './filter';
