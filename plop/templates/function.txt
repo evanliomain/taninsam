@@ -7,7 +7,7 @@
  * @return the function to apply on the TBD to do something
  * @example
  * ```
- * {{camelCase name}}<TBD_A>()) // TBD_B
+ * {{camelCase name}}<TBD_A>()() // TBD_B
  * ```
  * @example Using the chain
  * ```
