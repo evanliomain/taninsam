@@ -11,6 +11,7 @@
 - [x] find
 - [x] flat
 - [ ] group
+- [x] ifElse
 - [x] is-equal-object-on
 - [x] join
 - [x] keys
