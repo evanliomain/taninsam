@@ -8,6 +8,7 @@ export * from './filter';
 export * from './find';
 export * from './flat';
 export * from './isArray';
+export * from './isBoolean';
 export * from './isEqualObjectOn';
 export * from './isNumber';
 export * from './isObject';
