@@ -15,7 +15,15 @@
  *   .value() // [1, 2, 3, 4, 5]
  * ```
  */
-export function flat<T>(): (array: T[][]) => T[] {
-  return (array: T[][]) =>
-    array.reduce((result: T[], element: T[]) => [...result, ...element], []);
+export function flat<T>(): (
+  array: ReadonlyArray<ReadonlyArray<T>>
+) => ReadonlyArray<T> {
+  return (array: ReadonlyArray<ReadonlyArray<T>>) =>
+    array.reduce(
+      (result: ReadonlyArray<T>, element: ReadonlyArray<T>) => [
+        ...result,
+        ...element
+      ],
+      []
+    );
 }

@@ -17,6 +17,8 @@
  *   .value() // ['a', 'a', 'a', 'a', 'a']
  * ```
  */
-export function arrayFromValue<T>(length: number): (value: T) => T[] {
+export function arrayFromValue<T>(
+  length: number
+): (value: T) => ReadonlyArray<T> {
   return (value: T) => Array.from({ length }, () => value);
 }

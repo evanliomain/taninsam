@@ -26,6 +26,6 @@ import { ComparaisonResultChoice } from '../@types';
  */
 export function sort<T>(
   comparator?: (d1: T, d2: T) => ComparaisonResultChoice
-): (element: T[]) => T[] {
-  return (array: T[]) => array.slice().sort(comparator);
+): (element: ReadonlyArray<T>) => ReadonlyArray<T> {
+  return (array: ReadonlyArray<T>) => array.slice().sort(comparator);
 }
