@@ -44,6 +44,7 @@ describe('sort function', () => {
           return ComparaisonResultChoice.Greater;
         }
       }
+      return ComparaisonResultChoice.Equal;
     };
     const arraySample: Sample[] = [
       { a: 2, b: 2 },

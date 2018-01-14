@@ -4,7 +4,7 @@ describe('arrayFromValue function', () => {
   const input = 'a';
 
   test('is a pure function', () => {
-    arrayFromValue()(input);
+    arrayFromValue(2)(input);
     expect(input).toMatchSnapshot();
   });
 
