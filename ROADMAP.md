@@ -23,7 +23,7 @@
 - [ ] reverse
 - [x] shift
 - [x] some
-- [ ] sortBy
+- [x] sortBy
 - [x] sort
 - [x] sumBy
 - [ ] take
