@@ -19,6 +19,7 @@ export * from './map';
 export * from './pop';
 export * from './push';
 export * from './reduce';
+export * from './reverse';
 export * from './shift';
 export * from './some';
 export * from './sort';
