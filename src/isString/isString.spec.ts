@@ -20,7 +20,7 @@ describe('isString function', () => {
     expect(isString('abba')).toBeTruthy();
   });
 
-  test('1 |> isString === true', () => {
+  test('1 |> isString === false', () => {
     expect(isString(1)).toBeFalsy();
   });
 
