@@ -9,6 +9,7 @@ export * from './find';
 export * from './flat';
 export * from './isArray';
 export * from './isEqualObjectOn';
+export * from './isObject';
 export * from './isString';
 export * from './join';
 export * from './keys';

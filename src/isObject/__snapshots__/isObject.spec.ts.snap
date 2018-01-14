@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isObject function is a pure function 1`] = `
+Object {
+  "a": 1,
+}
+`;
