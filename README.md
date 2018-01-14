@@ -23,12 +23,59 @@ Taninsam is:
 * Easy to extend: just `chain` a function
 
 
-### Contributing
-#### Installation
+# Getting started
+
+Install taninsam:
+
+`npm install --save taninsam`
+
+or
+
+`yarn add taninsam`
+
+Import the librairie and start the chain:
+
+```typescript
+import { chain, filter, map, sum } from 'taninsam';
+
+// Sum square of even number in this collection
+chain([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+  .chain(filter(x => 0 === x % 2)) // [2, 4, 6, 8, 10]
+  .chain(map(x => x**2)) // [4, 16, 36, 64, 100]
+  .chain(sum()) // 220
+  .value()
+```
+
+To understand the chain function, it's as easy as this:
+
+```typescript
+function chain(x) {
+  return {
+    chain: f => chain(f(x)),
+    value: () => x
+  };
+}
+```
+
+So you can `chain` as much as function you want, and called `value()` at the end to get the actual value.
+
+To extend the chain, it's as easy as to write a function:
+
+```typescript
+import { chain } from 'taninsam';
+
+chain(2)
+  .chain(x => x**2)
+  .chain(x => `square of 2 is {x}`)
+  .value() // 'square of 2 is 4'
+```
+
+# Contributing
+## Installation
 
 `yarn`
 
-#### Coding
+## Coding
   Main commands to develop
  - Use vscode for coding (or any other good editor that suite you)
  - `yarn gen`: Create a new function
