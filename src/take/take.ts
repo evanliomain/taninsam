@@ -1,5 +1,5 @@
 /**
- * @module array=>array
+ * @module string|array=>string|array
  */
 import { isArray } from '../isArray';
 
