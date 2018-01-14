@@ -26,7 +26,7 @@
 - [x] sortBy
 - [x] sort
 - [x] sumBy
-- [ ] take
+- [x] take
 - [ ] to-object
 - [ ] top-flop
 - [ ] tree-flat
