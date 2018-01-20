@@ -30,6 +30,7 @@ export * from './sort';
 export * from './sortBy';
 export * from './sumBy';
 export * from './take';
+export * from './uniq';
 export * from './unless';
 export * from './unshift';
 export * from './values';
