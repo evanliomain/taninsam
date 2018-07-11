@@ -19,6 +19,7 @@ export * from './isString';
 export * from './isUndefined';
 export * from './join';
 export * from './keys';
+export * from './last';
 export * from './map';
 export * from './pop';
 export * from './push';
