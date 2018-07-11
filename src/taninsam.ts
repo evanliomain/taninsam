@@ -8,6 +8,7 @@ export * from './filter';
 export * from './find';
 export * from './flat';
 export * from './hash';
+export * from './head';
 export * from './ifElse';
 export * from './isArray';
 export * from './isBoolean';
