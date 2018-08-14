@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sort function ["a", "z", "e", "r", "t", "y"] |> sort === ["a", "e", "r", "t", "y", "z"] 1`] = `
+Array [
+  "a",
+  "e",
+  "r",
+  "t",
+  "y",
+  "z",
+]
+`;
+
+exports[`sort function [] |> sort === [] 1`] = `Array []`;
+
+exports[`sort function [5, 2, 8, 9, 4, 1] |> sort === [1, 2, 4, 5, 8, 9] 1`] = `
+Array [
+  1,
+  2,
+  4,
+  5,
+  8,
+  9,
+]
+`;
+
+exports[`sort function collection |> sort(comparator) 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+  },
+  Object {
+    "a": 1,
+    "b": 2,
+  },
+  Object {
+    "a": 1,
+    "b": 3,
+  },
+  Object {
+    "a": 2,
+    "b": 1,
+  },
+  Object {
+    "a": 2,
+    "b": 2,
+  },
+  Object {
+    "a": 2,
+    "b": 3,
+  },
+  Object {
+    "a": 3,
+    "b": 1,
+  },
+  Object {
+    "a": 3,
+    "b": 2,
+  },
+  Object {
+    "a": 3,
+    "b": 3,
+  },
+]
+`;
+
+exports[`sort function is a pure function 1`] = `
+Array [
+  5,
+  2,
+  8,
+  9,
+  4,
+  1,
+]
+`;

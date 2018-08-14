@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reverse function "" |> reverse === "" 1`] = `""`;
+
+exports[`reverse function "azertyuiop" |> reverse === "poiuytreza" 1`] = `"poiuytreza"`;
+
+exports[`reverse function [] |> reverse === [] 1`] = `Array []`;
+
+exports[`reverse function [1, 2, 3, 4, 5] |> reverse === [5, 4, 3, 2, 1] 1`] = `
+Array [
+  5,
+  4,
+  3,
+  2,
+  1,
+]
+`;
+
+exports[`reverse function is a pure function with array 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;
+
+exports[`reverse function is a pure function with string 1`] = `"azertyuiop"`;

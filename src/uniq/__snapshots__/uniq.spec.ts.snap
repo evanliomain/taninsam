@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uniq function [1, 2, 3, 2, 3, 5, 1] |> uniq === [1, 2, 3, 5] 1`] = `
+Array [
+  1,
+  2,
+  3,
+  5,
+]
+`;
+
+exports[`uniq function deepObject |> uniq 1`] = `
+Array [
+  Object {
+    "a": Object {
+      "b": 1,
+    },
+    "b": Object {
+      "a": 1,
+    },
+  },
+  Object {
+    "a": Object {
+      "b": 1,
+    },
+    "b": Object {
+      "a": 2,
+    },
+  },
+  Object {
+    "a": Object {
+      "b": 2,
+    },
+    "b": Object {
+      "a": 1,
+    },
+  },
+]
+`;
+
+exports[`uniq function input |> uniq ({ a, b, c }) => ({ a, b }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 2, c: "a" }] 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "a",
+  },
+  Object {
+    "a": 1,
+    "b": 2,
+    "c": "a",
+  },
+]
+`;
+
+exports[`uniq function input |> uniq ({ a, b, c }) => ({ a, c }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 1, c: "b" }] 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "a",
+  },
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "b",
+  },
+]
+`;
+
+exports[`uniq function input |> uniq ({ a, b, c }) => a === [{ a: 1, b: 1, c: "a" }] 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "a",
+  },
+]
+`;
+
+exports[`uniq function is a pure function 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "a",
+  },
+  Object {
+    "a": 1,
+    "b": 2,
+    "c": "a",
+  },
+  Object {
+    "a": 1,
+    "b": 1,
+    "c": "b",
+  },
+]
+`;

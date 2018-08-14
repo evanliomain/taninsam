@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isEqualObjectOn function is a pure function 1`] = `
+Object {
+  "a": 1,
+  "b": 2,
+  "c": 3,
+}
+`;
+
+exports[`isEqualObjectOn function is a pure function 2`] = `
+Object {
+  "a": 1,
+  "b": 2,
+  "c": 4,
+}
+`;

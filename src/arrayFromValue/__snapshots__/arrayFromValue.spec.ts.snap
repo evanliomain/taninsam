@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) === ["a", "a", "a", "a", "a"] 1`] = `
+Array [
+  "a",
+  "a",
+  "a",
+  "a",
+  "a",
+]
+`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have a lenght of 5 1`] = `5`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 1`] = `"a"`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 2`] = `"a"`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 3`] = `"a"`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 4`] = `"a"`;
+
+exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 5`] = `"a"`;
+
+exports[`arrayFromValue function is a pure function 1`] = `"a"`;

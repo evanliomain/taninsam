@@ -35,19 +35,19 @@ export function reduce<T, U>(
     previousValue: U,
     currentValue: T,
     currentIndex: number,
-    array: T[]
+    array: ReadonlyArray<T>
   ) => U,
   initialValue: U
-): (array: T[]) => U;
+): (array: ReadonlyArray<T>) => U;
 
 export function reduce<T>(
   iteratee: (
     previousValue: T,
     currentValue: T,
     currentIndex: number,
-    array: T[]
+    array: ReadonlyArray<T>
   ) => T
-): (array: T[]) => T;
+): (array: ReadonlyArray<T>) => T;
 
 export function reduce(iteratee, initialValue?) {
   if (undefined !== initialValue) {

@@ -2,15 +2,17 @@
 
 - [x] chain
 - [x] chainFn
-- [ ] array-from-value
-- [ ] countCharacter
-- [ ] distinct
+- [x] array-from-value
+- [x] countCharacter
 - [x] entries
 - [x] every
 - [x] filter
 - [x] find
-- [ ] flat
+- [x] flat
 - [ ] group
+- [x] hash
+- [x] ifElse
+- [x] is-equal-object-on
 - [x] join
 - [x] keys
 - [x] map
@@ -19,18 +21,20 @@
 - [x] push
 - [x] reduce
 - [ ] replacer
-- [ ] reverse
+- [x] reverse
 - [x] shift
 - [x] some
-- [ ] sortBy
-- [ ] sort
+- [x] sortBy
+- [x] sort
 - [x] sumBy
+- [x] take
 - [ ] to-object
 - [ ] top-flop
 - [ ] tree-flat
 - [ ] tree-map
 - [ ] tree
 - [ ] tree-walk-bottom-to-top
-- [ ] uniq
+- [x] uniq
+- [x] unless
 - [x] unshift
 - [x] values

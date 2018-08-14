@@ -24,7 +24,7 @@ import { ChainFunction, Iteratee, Links } from '../@types';
 export function sumBy<T>(
   iteratee: Iteratee<T, number>
 ): ChainFunction<ReadonlyArray<T>, number> {
-  return (array: T[], links?: Links) =>
+  return (array: ReadonlyArray<T>, links?: Links) =>
     array.reduce(
       (sum, data, index: number, array: ReadonlyArray<T>) =>
         sum + iteratee(data, index, array, links),
