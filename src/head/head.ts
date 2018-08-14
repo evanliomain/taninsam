@@ -2,7 +2,7 @@
  * @module array=>any
  */
 /**
- * Extract the first element of an array and return undefined
+ * Return the first element of an array and return undefined if the array is empty
  * @return the function to apply on the array to extract the first element
  * @example
  * ```
