@@ -2,8 +2,8 @@
  * @module array=>any
  */
 /**
- * Extract the last element of an array. An empty array has an undefined last element
- * @return the function to apply on the TBD to do something
+ * Return the last element of an array. An empty array has an undefined last element
+ * @return the function to apply on the array to return its last element
  * @example
  * ```
  * last<number>()([1, 2, 3, 4, 5]) // 5
