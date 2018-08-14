@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hash function hash({ f: () => 1 }) throw exception 1`] = `"Try to hash an unsupported value type: function"`;
+
+exports[`hash function is a pure function 1`] = `"something"`;

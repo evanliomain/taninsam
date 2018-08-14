@@ -4,13 +4,13 @@
 - [x] chainFn
 - [x] array-from-value
 - [x] countCharacter
-- [ ] distinct
 - [x] entries
 - [x] every
 - [x] filter
 - [x] find
 - [x] flat
 - [ ] group
+- [x] hash
 - [x] ifElse
 - [x] is-equal-object-on
 - [x] join
@@ -34,7 +34,7 @@
 - [ ] tree-map
 - [ ] tree
 - [ ] tree-walk-bottom-to-top
-- [ ] uniq
+- [x] uniq
 - [x] unless
 - [x] unshift
 - [x] values
