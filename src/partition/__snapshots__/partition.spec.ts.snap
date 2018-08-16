@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`partition function is a pure function 1`] = `
+Array [
+  Object {
+    "a": 1,
+    "b": 1,
+  },
+  Object {
+    "a": 1,
+    "b": 2,
+  },
+  Object {
+    "a": 2,
+    "b": 1,
+  },
+  Object {
+    "a": 2,
+    "b": 2,
+  },
+]
+`;
