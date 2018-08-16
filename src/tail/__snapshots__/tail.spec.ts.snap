@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tail function [] |> tail === [] 1`] = `Array []`;
+
+exports[`tail function [1, 2, 3, 4, 5] |> tail === [2, 3, 4, 5] 1`] = `
+Array [
+  2,
+  3,
+  4,
+  5,
+]
+`;
+
+exports[`tail function is a pure function with array 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;

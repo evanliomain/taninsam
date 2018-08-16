@@ -20,7 +20,6 @@
 - [x] pop
 - [x] push
 - [x] reduce
-- [ ] replacer
 - [x] reverse
 - [x] shift
 - [x] some
@@ -38,3 +37,12 @@
 - [x] unless
 - [x] unshift
 - [x] values
+- [ ] split
+- [ ] fromEntries
+- [ ] filterUntil
+- [ ] pushOrReplace
+- [ ] castTo
+- [ ] partition
+- [ ] mergeOn
+- [ ] triangular
+- [ ] concatWithPrevious
