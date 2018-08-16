@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toObject function is a pure function 1`] = `
+Array [
+  Array [
+    "a",
+    1,
+  ],
+  Array [
+    "b",
+    "c",
+  ],
+]
+`;
