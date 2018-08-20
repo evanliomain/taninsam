@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`castTo function [{a: 1, b: 2, c:3}, {a: 4, b: 5, c:6}] |> castTo({ a: x => x + x, b: x => x }) === [{a: 2, b: 2, c: 3}, {a: 8, b: 5, c: 6}] 1`] = `
+Array [
+  Object {
+    "a": 2,
+    "b": 2,
+    "c": 3,
+  },
+  Object {
+    "a": 8,
+    "b": 5,
+    "c": 6,
+  },
+]
+`;
+
+exports[`castTo function { a: '1', b: 2.1, c: 'A' } |> castTo({a: x => parseInt(x.a, 10),b: x => Math.floor(x.B),c: x => parseInt(x.c, 16)}) === { a: 1, b: 2, c: 10 } 1`] = `
+Object {
+  "a": NaN,
+  "b": NaN,
+  "c": NaN,
+}
+`;
+
 exports[`castTo function is a pure function 1`] = `
 Object {
   "a": 1,
