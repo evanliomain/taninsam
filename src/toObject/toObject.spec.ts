@@ -9,9 +9,6 @@ describe('toObject function', () => {
   });
 
   test("[['a', 1], ['b', 'c']] |> toObject(key => key, value => value + value) === {a: 1, b: 'c'}", () => {
-    expect(toObject(item => item[0], item => item[1])(input)).toEqual({
-      a: 1,
-      b: 'c'
-    });
+    expect(toObject(item => item[0], item => item[1])(input)).toMatchSnapshot();
   });
 });
