@@ -20,8 +20,8 @@
 export function toObject<T, U>(
   keyGetter: (x: T) => string,
   valueGetter: (x: T) => U
-): (array: T[]) => { [key: string]: U } {
-  return (array: T[]) =>
+): (array: ReadonlyArray<T>) => { [key: string]: U } {
+  return (array: ReadonlyArray<T>) =>
     array.reduce(
       (mapObject: { [key: string]: U }, element: T): { [key: string]: U } => ({
         ...mapObject,
