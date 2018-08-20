@@ -9,12 +9,10 @@ describe('triangular function', () => {
   });
 
   test('[1, 2, 3, 4, 5] |> triangular === [[1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5]]', () => {
-    expect(triangular()(input)).toEqual([
-      [1],
-      [1, 2],
-      [1, 2, 3],
-      [1, 2, 3, 4],
-      [1, 2, 3, 4, 5]
-    ]);
+    expect(triangular()(input)).toMatchSnapshot();
+  });
+
+  test('[] |> triangular === []', () => {
+    expect(triangular()([])).toMatchSnapshot();
   });
 });
