@@ -2,7 +2,6 @@ export * from './chain-function';
 export * from './chain';
 export * from './chainFn';
 export * from './comparaison-result-choice.enum';
-export * from './getter';
 export * from './function';
 export * from './identity';
 export * from './iteratee';

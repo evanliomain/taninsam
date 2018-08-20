@@ -1,5 +1,3 @@
-import { Getter } from '../@types';
-
 /**
  * @module array=>object
  */
@@ -20,8 +18,8 @@ import { Getter } from '../@types';
  * ```
  */
 export function toObject<T, U>(
-  keyGetter: Getter<T, string>,
-  valueGetter: Getter<T, U>
+  keyGetter: (x: T) => string,
+  valueGetter: (x: T) => U
 ): (array: T[]) => { [key: string]: U } {
   return (array: T[]) =>
     array.reduce(
