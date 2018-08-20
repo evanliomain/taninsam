@@ -16,12 +16,12 @@ import { values } from '../values';
  * @return the function to apply on the array to partition it according to th toKey function
  * @example
  * ```
- * partition<any>(x => x.a)([{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }])
+ * partition<{ a: number; b: number; }, number>(x => x.a)([{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }])
  * // [
  *  [{ a: 1, b: 1}, { a: 1, b: 2 }],
  *  [{ a: 2, b: 1 }, { a: 2, b: 2 }]
  * ]
- * partition<number>(Math.floor)([1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12])
+ * partition<number, number>(Math.floor)([1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12])
  * // [
  *   [1.1, 1.5],
  *   [2.1, 2.3, 2.8],
@@ -32,7 +32,7 @@ import { values } from '../values';
  * @example Using the chain
  * ```
  * chain([{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }])
- *   .chain(partition<number>(x => x.a))
+ *   .chain(partition<{ a: number; b: number; }, number>(x => x.a))
  *   .value()
  *  // [
  *  [{ a: 1, b: 1}, { a: 1, b: 2 }],
@@ -40,8 +40,8 @@ import { values } from '../values';
  * ]
  * ```
  */
-export function partition<T>(
-  toKey: (element: T) => any
+export function partition<T, K>(
+  toKey: (element: T) => K
 ): (array: ReadonlyArray<T>) => ReadonlyArray<ReadonlyArray<T>> {
   return (array: ReadonlyArray<T>) =>
     chain(array)
@@ -50,7 +50,7 @@ export function partition<T>(
           (acc, element) =>
             chain(element)
               .chain(toKey)
-              .chain(hash())
+              .chain(hash<K>())
               .chain(
                 ifElse(
                   hashKey => undefined !== acc[hashKey],

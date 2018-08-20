@@ -10,7 +10,7 @@ describe('partition function', () => {
   const input2 = [1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12];
 
   test('is a pure function', () => {
-    partition<{ a: number }>(x => x.a)(input1);
+    partition<{ a: number; b: number }, number>(x => x.a)(input1);
     expect(input1).toMatchSnapshot();
   });
 
@@ -18,7 +18,9 @@ describe('partition function', () => {
     '[{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }]' +
       ' |> partition(x => x.a) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]]',
     () => {
-      expect(partition<any>(x => x.a)(input1)).toMatchSnapshot();
+      expect(
+        partition<{ a: number; b: number }, number>(x => x.a)(input1)
+      ).toMatchSnapshot();
     }
   );
 
@@ -26,7 +28,9 @@ describe('partition function', () => {
     '[{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }]' +
       ' |> partition(x => x.b) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]]',
     () => {
-      expect(partition<any>(x => x.b)(input1)).toMatchSnapshot();
+      expect(
+        partition<{ a: number; b: number }, number>(x => x.b)(input1)
+      ).toMatchSnapshot();
     }
   );
 
@@ -34,7 +38,7 @@ describe('partition function', () => {
     '[1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12]' +
       ' |> partition(Math.floor) === [[1.1, 1.5],[2.1, 2.3, 2.8],[3],[4.12]]',
     () => {
-      expect(partition<number>(Math.floor)(input2)).toMatchSnapshot();
+      expect(partition<number, number>(Math.floor)(input2)).toMatchSnapshot();
     }
   );
 });
