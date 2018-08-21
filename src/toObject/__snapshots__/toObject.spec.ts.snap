@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`toObject function [['a', 1], ['b', 'c']] |> toObject(key => key, value => value + value) === {a: 1, b: 'c'} 1`] = `
+exports[`toObject function [['a', 1], ['b', 'c']] |> toObject(item => item[0], item => item[1]) === {a: 1, b: 'c'} 1`] = `
 Object {
   "a": 1,
   "b": "c",

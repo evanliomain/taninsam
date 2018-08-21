@@ -12,7 +12,7 @@
  * ```
  * @example Using the chain
  * ```
- * chain([['a', 1], ['b', 2]])
+ * chain([['a', 1], ['b', 'c']])
  *   .chain(toObject<(string | number)[][]>(item => item[0], item => item[1]))
  *   .value() // {a: 1, b: 'c'}
  * ```
