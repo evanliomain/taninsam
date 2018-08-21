@@ -23,6 +23,7 @@ export * from './keys';
 export * from './last';
 export * from './map';
 export * from './partition';
+export * from './pluck';
 export * from './pop';
 export * from './push';
 export * from './reduce';

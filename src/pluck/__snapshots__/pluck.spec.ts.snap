@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pluck function { a: 1, b: 'B', c: true } |> pluck('a', 'c') === { a: 1, c: true } 1`] = `
+Object {
+  "a": 1,
+  "c": true,
+}
+`;
+
+exports[`pluck function is a pure function 1`] = `
+Object {
+  "a": 1,
+  "b": "B",
+  "c": true,
+}
+`;
