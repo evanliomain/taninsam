@@ -15,11 +15,11 @@ Array [
 ]
 `;
 
-exports[`castTo function { a: '1', b: 2.1, c: 'A' } |> castTo({a: x => parseInt(x.a, 10),b: x => Math.floor(x.B),c: x => parseInt(x.c, 16)}) === { a: 1, b: 2, c: 10 } 1`] = `
+exports[`castTo function { a: '1', b: 2.1, c: 'A' } |> castTo({a: x => parseInt(x, 10),b: x => Math.floor(x),c: x => parseInt(x, 16)}) === { a: 1, b: 2, c: 10 } 1`] = `
 Object {
-  "a": NaN,
-  "b": NaN,
-  "c": NaN,
+  "a": 1,
+  "b": 2,
+  "c": 10,
 }
 `;
 
@@ -27,6 +27,6 @@ exports[`castTo function is a pure function 1`] = `
 Object {
   "a": 1,
   "b": 2,
-  "c": 3,
+  "c": "A",
 }
 `;
