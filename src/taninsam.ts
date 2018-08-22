@@ -1,4 +1,5 @@
 export * from './arrayFromValue';
+export * from './castTo';
 export * from './chain';
 export * from './chainFn';
 export * from './countCharacter';
