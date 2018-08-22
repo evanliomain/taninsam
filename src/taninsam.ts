@@ -7,6 +7,7 @@ export * from './every';
 export * from './filter';
 export * from './find';
 export * from './flat';
+export * from './fromEntries';
 export * from './hash';
 export * from './head';
 export * from './ifElse';
