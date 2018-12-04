@@ -24,6 +24,7 @@ export * from './join';
 export * from './keys';
 export * from './last';
 export * from './map';
+export * from './max';
 export * from './min';
 export * from './partition';
 export * from './pop';
