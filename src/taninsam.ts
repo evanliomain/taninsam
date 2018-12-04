@@ -27,6 +27,7 @@ export * from './map';
 export * from './max';
 export * from './maxBy';
 export * from './min';
+export * from './minBy';
 export * from './partition';
 export * from './pop';
 export * from './push';
