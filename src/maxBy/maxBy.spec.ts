@@ -11,7 +11,7 @@ describe('maxBy function', () => {
   ];
 
   test('is a pure function', () => {
-    maxBy(e => e.x)(input);
+    maxBy<Test>(e => e.x)(input);
     expect(input).toMatchSnapshot();
   });
 

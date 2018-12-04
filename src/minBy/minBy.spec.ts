@@ -13,7 +13,7 @@ describe('minBy function', () => {
   ];
 
   test('is a pure function', () => {
-    minBy(e => e.x)(input);
+    minBy<Test>(e => e.x)(input);
     expect(input).toMatchSnapshot();
   });
 
