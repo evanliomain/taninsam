@@ -46,3 +46,7 @@
 - [ ] mergeOn
 - [ ] triangular
 - [ ] concatWithPrevious
+- [ ] max
+- [ ] maxBy
+- [ ] min
+- [ ] minBy
