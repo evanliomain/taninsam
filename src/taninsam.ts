@@ -37,6 +37,7 @@ export * from './shift';
 export * from './some';
 export * from './sort';
 export * from './sortBy';
+export * from './sum';
 export * from './sumBy';
 export * from './tail';
 export * from './take';
