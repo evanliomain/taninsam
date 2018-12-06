@@ -23,6 +23,7 @@ export * from './isUndefined';
 export * from './join';
 export * from './keys';
 export * from './last';
+export * from './length';
 export * from './map';
 export * from './max';
 export * from './maxBy';
