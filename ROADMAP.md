@@ -37,7 +37,7 @@
 - [x] unless
 - [x] unshift
 - [x] values
-- [ ] split
+- [x] split
 - [ ] fromEntries
 - [ ] filterUntil
 - [ ] pushOrReplace
