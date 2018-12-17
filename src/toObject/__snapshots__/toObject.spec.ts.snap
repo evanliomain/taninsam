@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toObject function [['a', 1], ['b', 'c']] |> toObject(item => item[0], item => item[1]) === {a: 1, b: 'c'} 1`] = `
+Object {
+  "a": 1,
+  "b": "c",
+}
+`;
+
+exports[`toObject function is a pure function 1`] = `
+Array [
+  Array [
+    "a",
+    1,
+  ],
+  Array [
+    "b",
+    "c",
+  ],
+]
+`;
