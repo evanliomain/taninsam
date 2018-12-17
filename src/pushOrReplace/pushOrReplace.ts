@@ -1,4 +1,4 @@
-import { push } from '../push/push';
+import { push } from '../push';
 
 /**
  * @module array=>array
