@@ -37,12 +37,16 @@
 - [x] unless
 - [x] unshift
 - [x] values
-- [ ] split
+- [x] split
 - [ ] fromEntries
 - [ ] filterUntil
 - [ ] pushOrReplace
-- [ ] castTo
+- [x] castTo
 - [ ] partition
 - [ ] mergeOn
 - [ ] triangular
-- [ ] concatWithPrevious
+- [ ] lag (map pairing 2 adjacent elements)
+- [x] max
+- [x] maxBy
+- [x] min
+- [x] minBy
