@@ -15,6 +15,14 @@ Array [
 ]
 `;
 
+exports[`pushOrReplace function [4, 6, 8] |> pushOrReplace({ match: x => x % 2 === 0, replacement: 2 }) === [2, 2, 2] 1`] = `
+Array [
+  2,
+  2,
+  2,
+]
+`;
+
 exports[`pushOrReplace function is a pure function 1`] = `
 Array [
   1,

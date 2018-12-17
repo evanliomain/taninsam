@@ -12,6 +12,13 @@ import { push } from '../push';
  * pushOrReplace<number>({
  *       match: x => x%2 === 0,
  *       replacement: 2
+ *    })([4, 6, 8]) // [2, 2, 2]
+ * ```
+ * @example
+ * ```
+ * pushOrReplace<number>({
+ *       match: x => x%2 === 0,
+ *       replacement: 2
  *    },{
  *       match: x => x%3 === 0,
  *       replacement: 3
