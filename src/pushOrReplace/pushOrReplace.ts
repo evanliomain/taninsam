@@ -36,8 +36,8 @@ export function pushOrReplace<T>(
     replacement: T;
   }[]
 ): (array: ReadonlyArray<T>) => ReadonlyArray<T> {
-  return (array: ReadonlyArray<T>) => {
-    return replace.reduce(
+  return (array: ReadonlyArray<T>) =>
+    replace.reduce(
       (accuList, r) =>
         accuList.every(element => !r.match(element))
           ? push(r.replacement)(accuList)
@@ -46,5 +46,4 @@ export function pushOrReplace<T>(
             ),
       array
     );
-  };
 }
