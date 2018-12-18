@@ -32,6 +32,7 @@ export * from './minBy';
 export * from './partition';
 export * from './pop';
 export * from './push';
+export * from './pushOrReplace';
 export * from './reduce';
 export * from './reverse';
 export * from './shift';
