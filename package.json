@@ -6,7 +6,9 @@
   "main": "dist/taninsam.umd.js",
   "module": "dist/taninsam.es5.js",
   "typings": "dist/types/taninsam.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "Evan Liomain <evan.liomain@gmail.com>",
   "repository": {
     "type": "git",
@@ -19,8 +21,7 @@
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build":
-      "tsc && cpx \"./src/@types/**/*.d.ts\" \"./dist/types/@types\" && rollup -c rollup.config.ts && rimraf compiled && typedoc --out dist/docs --exclude \"**/*+(index|.spec).ts\" --target es6  --theme node_modules/ui-router-typedoc-themes/bin/default src",
+    "build": "tsc && cpx \"./src/@types/**/*.d.ts\" \"./dist/types/@types\" && rollup -c rollup.config.ts && rimraf compiled && typedoc --out dist/docs --exclude \"**/*+(index|.spec).ts\" --target es6  --theme node_modules/ui-router-typedoc-themes/bin/default src",
     "start": "tsc -w & rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -34,7 +35,10 @@
     "gen": "plop function"
   },
   "lint-staged": {
-    "{src,tools}/**/*.ts": ["prettier --write", "git add"]
+    "{src,tools}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
@@ -42,8 +46,7 @@
     },
     "validate-commit-msg": {
       "types": "conventional-commit-types",
-      "helpMessage":
-        "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
     }
   },
   "devDependencies": {
@@ -74,7 +77,7 @@
     "tslint-config-prettier": "^1.1.0",
     "tslint-config-standard": "^8.0.0",
     "typedoc": "^0.10.0",
-    "typescript": "^2.3.4",
+    "typescript": "^3",
     "ui-router-typedoc-themes": "^1.0.2",
     "validate-commit-msg": "^2.12.2"
   }
