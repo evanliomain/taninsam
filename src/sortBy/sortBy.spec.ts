@@ -15,7 +15,7 @@ describe('sortBy function', () => {
   ];
 
   test('is a pure function', () => {
-    sortBy(({ a }) => a, ({ b }) => b)(input);
+    sortBy<{ a: number; b: number }>(({ a }) => a, ({ b }) => b)(input);
     expect(input).toMatchSnapshot();
   });
 

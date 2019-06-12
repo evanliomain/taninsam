@@ -14,5 +14,10 @@ module.exports = {
       statements: 95
     }
   },
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  },
   collectCoverage: true
 };
