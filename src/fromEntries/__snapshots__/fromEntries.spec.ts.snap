@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fromEntries function [['a', 1], ['b', 'c']] |> fromEntries === {a: 1, b: 'c'} 1`] = `
+Object {
+  "a": 1,
+  "b": "c",
+}
+`;
+
+exports[`fromEntries function [] |> fromEntries === {} 1`] = `Object {}`;
+
+exports[`fromEntries function is a pure function 1`] = `
+Array [
+  Array [
+    "a",
+    1,
+  ],
+  Array [
+    "b",
+    "c",
+  ],
+]
+`;
