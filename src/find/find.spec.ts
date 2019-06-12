@@ -9,15 +9,15 @@ describe('find function', () => {
   ];
 
   test('is a pure function', () => {
-    find(({ a }) => 3 === a)(input);
+    find<{ a: number }>(({ a }) => 3 === a)(input);
     expect(input).toMatchSnapshot();
   });
 
   test('[{ a, b }] |> find(e => e.a === 3) === { a: 3, b: "c" }', () => {
-    expect(find(({ a }) => 3 === a)(input)).toMatchSnapshot();
+    expect(find<{ a: number }>(({ a }) => 3 === a)(input)).toMatchSnapshot();
   });
 
   test('[{ a, b }] |> find(e => e.a === 5) === undefined', () => {
-    expect(find(({ a }) => 5 === a)(input)).toBeUndefined();
+    expect(find<{ a: number }>(({ a }) => 5 === a)(input)).toBeUndefined();
   });
 });

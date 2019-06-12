@@ -2,7 +2,7 @@ import { map } from './map';
 
 describe('map function', () => {
   const input = [1, 2, 3, 4, 5];
-  const incr = x => 1 + x;
+  const incr: (x: number) => number = x => 1 + x;
 
   test('is a pure function', () => {
     map(incr)(input);
@@ -13,7 +13,7 @@ describe('map function', () => {
     expect(map(incr)(input)).toMatchSnapshot();
   });
 
-  test('[ |> map(incr) === []', () => {
+  test('[] |> map(incr) === []', () => {
     expect(map(incr)([])).toMatchSnapshot();
   });
 
