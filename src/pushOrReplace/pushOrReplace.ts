@@ -48,8 +48,8 @@ export function pushOrReplace<T>(
       (accuList, r) =>
         accuList.every(element => !r.match(element))
           ? push(r.replacement)(accuList)
-          : accuList.map(
-              (element: T) => (r.match(element) ? r.replacement : element)
+          : accuList.map((element: T) =>
+              r.match(element) ? r.replacement : element
             ),
       array
     );
