@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pushOrReplace function [] |> pushOrReplace({ match: x => x % 2 === 0, replacement: 2 }) === [2] 1`] = `
+Array [
+  2,
+]
+`;
+
+exports[`pushOrReplace function [1, 2, 4] |> pushOrReplace({ match: x => x % 2 === 0, replacement: 2 }, { match: x => x % 3 === 0, replacement: 3 }) === [1, 2, 2, 3] 1`] = `
+Array [
+  1,
+  2,
+  2,
+  3,
+]
+`;
+
+exports[`pushOrReplace function [4, 6, 8] |> pushOrReplace({ match: x => x % 2 === 0, replacement: 2 }) === [2, 2, 2] 1`] = `
+Array [
+  2,
+  2,
+  2,
+]
+`;
+
+exports[`pushOrReplace function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  4,
+]
+`;
