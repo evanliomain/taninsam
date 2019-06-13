@@ -20,7 +20,6 @@
 - [x] pop
 - [x] push
 - [x] reduce
-- [ ] replacer
 - [x] reverse
 - [x] shift
 - [x] some
@@ -38,3 +37,16 @@
 - [x] unless
 - [x] unshift
 - [x] values
+- [x] split
+- [ ] fromEntries
+- [ ] filterUntil
+- [ ] pushOrReplace
+- [x] castTo
+- [ ] partition
+- [ ] mergeOn
+- [ ] triangular
+- [ ] lag (map pairing 2 adjacent elements)
+- [x] max
+- [x] maxBy
+- [x] min
+- [x] minBy

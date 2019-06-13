@@ -24,26 +24,8 @@ import { isUndefined } from '../isUndefined';
  * hash()(true) !== hash()("true")
  * ```
  */
-export function hash(): (
-  value:
-    | boolean
-    | string
-    | number
-    | object
-    | ReadonlyArray<any>
-    | undefined
-    | null
-) => string {
-  return (
-    value:
-      | boolean
-      | string
-      | number
-      | object
-      | ReadonlyArray<any>
-      | undefined
-      | null
-  ) => {
+export function hash<T>(): (value: T) => string {
+  return (value: T) => {
     if (isNull(value)) {
       return 'null';
     }
