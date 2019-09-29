@@ -1,8 +1,8 @@
 import { isUndefined } from '../isUndefined';
 import { isNull } from '../isNull';
 import { isArray } from '../isArray';
-import { isString } from 'util';
 import { isObject } from '../isObject';
+import { isString } from '../isString';
 
 /**
  * @module any=>boolean
