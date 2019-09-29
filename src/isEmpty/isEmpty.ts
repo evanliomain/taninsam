@@ -11,7 +11,6 @@ import { isString } from '../isString';
 type Empty = undefined | null | '' | [] | {};
 /**
  * Determines whether the passed value is undefined or null or is an empty structure
- * @param iteratee The iteratee invoked per element.
  * @param value The value to test.
  * @return true if the value is empty, false otherwise
  * @example
