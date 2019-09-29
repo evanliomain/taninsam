@@ -1,4 +1,7 @@
 # Taninsam
+
+Documentation available in : https://evanliomain.github.io/taninsam
+
 A functionnal library based on a powerfull chain mecanism.
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
