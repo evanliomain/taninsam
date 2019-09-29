@@ -11,12 +11,12 @@ import { map } from '../map';
  * @return the function to apply on the object to extract its values
  * @example
  * ```
- * keys()({ a: 1, b: 2, c: 3 }) // [1, 2, 3]
+ * values()({ a: 1, b: 2, c: 3 }) // [1, 2, 3]
  * ```
  * @example Using the chain
  * ```
  * chain({ a: 1, b: 2, c: 3 })
- *   .chain(keys())
+ *   .chain(values())
  *   .value() // [1, 2, 3]
  * ```
  */
