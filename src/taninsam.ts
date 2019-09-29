@@ -21,6 +21,7 @@ export * from './isNumber';
 export * from './isObject';
 export * from './isString';
 export * from './isUndefined';
+export * from './isValid';
 export * from './join';
 export * from './keys';
 export * from './last';
