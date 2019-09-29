@@ -15,5 +15,5 @@
  * ```
  */
 export function isUndefined(value): value is undefined {
-  return 'undefined' === typeof value && undefined === value;
+  return 'undefined' === typeof value;
 }

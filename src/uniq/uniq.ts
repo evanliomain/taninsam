@@ -4,6 +4,7 @@
 import { chain } from '../chain';
 import { reduce } from '../reduce';
 import { hash } from '../hash';
+import { isUndefined } from '../isUndefined';
 /**
  * Returns a new list containing only one copy of each element in the original list,
  * based upon the value returned by applying the supplied function to each list element.
@@ -44,7 +45,7 @@ export function uniq<T>(
           ) => {
             const value = comparison(element);
             const hashKey = hash()(value);
-            if (undefined !== acc.distinct[hashKey]) {
+            if (!isUndefined(acc.distinct[hashKey])) {
               return acc;
             }
             return {
