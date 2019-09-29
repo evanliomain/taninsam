@@ -19,12 +19,11 @@ But sometime, the code don't feel linear, so you are tempted to use a library. S
 
 Taninsam is:
 
-* Write in Typescript to enforced the feature correctness
-* Write in full TDD because is so easy to do it that way
-* Offer a simple way for chain function
-* Offer a constante way to code data transformation: no more function alias or 2 way to compose functions
-* Easy to extend: just `chain` a function
-
+- Write in Typescript to enforced the feature correctness
+- Write in full TDD because is so easy to do it that way
+- Offer a simple way for chain function
+- Offer a constante way to code data transformation: no more function alias or 2 way to compose functions
+- Easy to extend: just `chain` a function
 
 # Getting started
 
@@ -44,9 +43,9 @@ import { chain, filter, map, sum } from 'taninsam';
 // Sum square of even number in this collection
 chain([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
   .chain(filter(x => 0 === x % 2)) // [2, 4, 6, 8, 10]
-  .chain(map(x => x**2)) // [4, 16, 36, 64, 100]
+  .chain(map(x => x ** 2)) // [4, 16, 36, 64, 100]
   .chain(sum()) // 220
-  .value()
+  .value();
 ```
 
 To understand the chain function, it's as easy as this:
@@ -68,29 +67,33 @@ To extend the chain, it's as easy as to write a function:
 import { chain } from 'taninsam';
 
 chain(2)
-  .chain(x => x**2)
+  .chain(x => x ** 2)
   .chain(x => `square of 2 is {x}`)
-  .value() // 'square of 2 is 4'
+  .value(); // 'square of 2 is 4'
 ```
 
 # Contributing
+
 ## Installation
 
 `yarn`
 
 ## Coding
-  Main commands to develop
- - Use vscode for coding (or any other good editor that suite you)
- - `yarn gen`: Create a new function
- - `yarn test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
- - `yarn commit`: Commit using conventional commit style
 
-  Additionals commands
- - `yarn test`: Run test suite once
- - `yarn start`: Runs `npm run build` in watch mode
- - `yarn test:prod`: Run linting and generate coverage
- - `yarn build`: Generate bundles and typings, create docs
- - `yarn lint`: Lints code
+Main commands to develop
+
+- Use vscode for coding (or any other good editor that suite you)
+- `yarn gen`: Create a new function
+- `yarn test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
+- `yarn commit`: Commit using conventional commit style
+
+Additionals commands
+
+- `yarn test`: Run test suite once
+- `yarn start`: Runs `npm run build` in watch mode
+- `yarn test:prod`: Run linting and generate coverage
+- `yarn build`: Generate bundles and typings, create docs
+- `yarn lint`: Lints code
 
 Code source is automatically formatted and linted at each commit.
 
