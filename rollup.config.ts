@@ -27,5 +27,11 @@ export default {
 
     // Resolve source maps to the original source
     sourceMaps()
-  ]
+  ],
+  onwarn(warning, warn) {
+    if ('THIS_IS_UNDEFINED' === warning.code) {
+      return;
+    }
+    warn(warning); // this requires Rollup 0.46
+  }
 };
