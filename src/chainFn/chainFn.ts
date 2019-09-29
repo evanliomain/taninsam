@@ -11,11 +11,11 @@ import { log } from '../.internal';
  * To transform the value with a function f, apply .chain(f)
  * @param f the first function to apply in the chain
  */
-export function chainFn<T>(f: ((e) => T)): ChainFn<T> {
-  return _chainByFunction<T>((e, {}) => ({ result: f(e), links: {} }), {});
+export function chainFn<T>(f: (e) => T): ChainFn<T> {
+  return _chainByFunction<T>(e => ({ result: f(e), links: {} }), {});
 
   function _chainByFunction<T>(
-    _f: ((e, l?: Links) => Result<T>),
+    _f: (e, l?: Links) => Result<T>,
     links: Links,
     linkName?: string
   ): ChainFn<T> {
