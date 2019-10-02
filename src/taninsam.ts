@@ -46,6 +46,7 @@ export * from './tail';
 export * from './take';
 export * from './toObject';
 export * from './triangular';
+export * from './typeOf';
 export * from './uniq';
 export * from './unless';
 export * from './unshift';
