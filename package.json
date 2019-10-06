@@ -74,9 +74,11 @@
     "ts-jest": "^24.0.0",
     "ts-node": "^8",
     "tslint": "^5.4.3",
+    "tslint-sonarts": "^1.9.0",
     "typedoc": "^0.15.0",
     "typescript": "^3",
     "ui-router-typedoc-themes": "^1.0.2",
     "validate-commit-msg": "^2.12.2"
-  }
+  },
+  "dependencies": {}
 }

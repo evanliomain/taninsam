@@ -22,8 +22,7 @@ export function tail<T>(): (array: ReadonlyArray<T>) => ReadonlyArray<T> {
     if (0 === array.length) {
       return [];
     }
-    const [_, ...end] = array;
 
-    return end;
+    return array.slice(1);
   };
 }
