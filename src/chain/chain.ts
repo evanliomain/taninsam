@@ -26,6 +26,7 @@ export function chain<T>(value: T): Chain<T> {
   function _log<V>(v: V, links: Links): (flag: string) => Chain<V> {
     return (flag: string) => {
       log(flag, v, links);
+
       return _chainByValue<V>(v, links);
     };
   }

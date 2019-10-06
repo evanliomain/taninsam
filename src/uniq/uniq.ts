@@ -52,6 +52,7 @@ export function uniq<T>(
             if (!isUndefined(acc.distinct[hashKey])) {
               return acc;
             }
+
             return {
               result: [...acc.result, element],
               distinct: { ...acc.distinct, [hashKey]: true }

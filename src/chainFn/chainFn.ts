@@ -27,6 +27,7 @@ export function chainFn<T>(f: (e) => T): ChainFn<T> {
       log: (flag: string): ChainFn<V> =>
         _chain((x, closureLink) => {
           log(flag, x, closureLink);
+
           return x;
         })
     };
@@ -45,6 +46,7 @@ export function chainFn<T>(f: (e) => T): ChainFn<T> {
           ...inneriteClosureLinks,
           [linkName]: result
         };
+
         return { result: g(result, newClosureLink), links: newClosureLink };
       }, links);
     }

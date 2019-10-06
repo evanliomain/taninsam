@@ -77,6 +77,7 @@ function _compare<T>(
     if (fdata2 < fdata1) {
       return ComparaisonResultChoice.Greater;
     }
+
     return ComparaisonResultChoice.Equal;
   };
 }

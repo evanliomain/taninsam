@@ -26,6 +26,7 @@ export function take<T>(
     if (isArray(list)) {
       return list.filter((_, index) => index < n);
     }
+
     return list.substring(0, n);
   };
 }

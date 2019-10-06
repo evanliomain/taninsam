@@ -21,6 +21,7 @@ export function last<T>(): (element: ReadonlyArray<T>) => T | undefined {
     if (0 === array.length) {
       return undefined;
     }
+
     return array[array.length - 1];
   };
 }

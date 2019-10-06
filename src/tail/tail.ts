@@ -23,6 +23,7 @@ export function tail<T>(): (array: ReadonlyArray<T>) => ReadonlyArray<T> {
       return [];
     }
     const [_, ...end] = array;
+
     return end;
   };
 }

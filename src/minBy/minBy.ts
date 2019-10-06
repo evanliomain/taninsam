@@ -38,6 +38,7 @@ export function minBy<T>(
       return elements[0];
     }
     const [head, ...tail] = elements;
+
     return tail.reduce(
       (acc: T, element: T) =>
         iteratee(acc) <= iteratee(element) ? acc : element,

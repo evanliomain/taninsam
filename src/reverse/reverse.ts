@@ -29,6 +29,7 @@ export function reverse<T>(): (
     for (let i = nbChar - 1; 0 <= i; i--) {
       result += list[i];
     }
+
     return result;
   };
 }

@@ -38,6 +38,7 @@ export function maxBy<T>(
       return elements[0];
     }
     const [head, ...tail] = elements;
+
     return tail.reduce(
       (acc: T, element: T) =>
         iteratee(element) <= iteratee(acc) ? acc : element,

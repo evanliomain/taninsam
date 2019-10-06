@@ -57,5 +57,6 @@ export function reduce(iteratee, initialValue?) {
   if (undefined !== initialValue) {
     return array => array.reduce(iteratee, initialValue);
   }
+
   return array => array.reduce(iteratee);
 }

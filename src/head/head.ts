@@ -21,6 +21,7 @@ export function head<T>(): (array: ReadonlyArray<T>) => T | undefined {
     if (0 === array.length) {
       return undefined;
     }
+
     return array[0];
   };
 }

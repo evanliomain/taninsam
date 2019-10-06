@@ -54,6 +54,7 @@
         ]
       }
     ],
+    "newline-before-return": true,
     "new-parens": true,
     "no-angle-bracket-type-assertion": false,
     "no-any": false,

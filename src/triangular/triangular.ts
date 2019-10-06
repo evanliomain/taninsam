@@ -31,6 +31,7 @@ export function triangular<T>(): (
       if (0 === acc.length) {
         return [[current]];
       }
+
       return [...acc, [...acc[acc.length - 1], current]];
     }, []);
 }

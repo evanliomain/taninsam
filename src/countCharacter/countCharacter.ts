@@ -23,6 +23,7 @@ export function countCharacter(character: string): (s: string) => number {
       `Can't count a character with a lenght different of 1: ${character.length}`
     );
   }
+
   return (s: string) => {
     if (0 === s.length) {
       return 0;
@@ -33,6 +34,7 @@ export function countCharacter(character: string): (s: string) => number {
         counter++;
       }
     }
+
     return counter;
   };
 }
