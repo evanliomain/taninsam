@@ -4,7 +4,8 @@
 import { ComparaisonResultChoice } from '../@types/comparaison-result-choice.enum';
 /**
  * Sort an array of object on a given set of field
- * @param f one or more function to get string or number from the T element of the array
+ * @param f one or more function to get string or number
+ * from the T element of the array
  * @return the function to sort the array
  * @example
  * ```

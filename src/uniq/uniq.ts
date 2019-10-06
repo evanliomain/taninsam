@@ -6,9 +6,11 @@ import { reduce } from '../reduce';
 import { hash } from '../hash';
 import { isUndefined } from '../isUndefined';
 /**
- * Returns a new list containing only one copy of each element in the original list,
- * based upon the value returned by applying the supplied function to each list element.
- * Prefers the first item if the supplied function produces the same value on two items.
+ * Returns a new list containing only one copy of each element
+ * in the original list, based upon the value returned by applying the supplied
+ * function to each list element.
+ * Prefers the first item if the supplied function produces
+ * the same value on two items.
  * === is used for comparison.
  * @param comparison The comparison method, default set to identity.
  * @return the function to apply on the array to uniq its elements
@@ -28,8 +30,10 @@ import { isUndefined } from '../isUndefined';
  *   { a: 1, b: 2, c: 'a' },
  *   { a: 1, b: 1, c: 'b' }
  * ])
- *   .chain(uniq<{ a: number; b: number; c: string; }>(({ a, b, c }) => ({ a, b })))
- *   .value() // [{ a: 1, b: 1, c: 'a' }, { a: 1, b: 2, c: 'a' }]
+ * .chain(uniq<{ a: number; b: number; c: string; }>(
+ *  ({ a, b, c }) => ({ a, b }))
+ * )
+ * .value() // [{ a: 1, b: 1, c: 'a' }, { a: 1, b: 2, c: 'a' }]
  * ```
  */
 export function uniq<T>(

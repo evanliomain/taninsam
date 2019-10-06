@@ -2,11 +2,12 @@
  * @module array=>any
  */
 /**
- * Returns the value of the first element in the array where predicate is true, and undefined
- * otherwise.
- * @param predicate find calls predicate once for each element of the array, in ascending
- * order, until it finds one where predicate returns true. If such an element is found, find
- * immediately returns that element value. Otherwise, find returns undefined.
+ * Returns the value of the first element in the array where predicate is true,
+ * and undefined otherwise.
+ * @param predicate find calls predicate once for each element of the array,
+ * in ascending order, until it finds one where predicate returns true.
+ * If such an element is found, find immediately returns that element value.
+ * Otherwise, find returns undefined.
  * @return A find function ready to applied on an array
  * @example
  * ```
@@ -16,7 +17,8 @@
  *   { a: 3, b: 'c' },
  *   { a: 4, b: 'd' }
  * ];
- * find<{ a: number; b: string }[]>(({ a }) => 3 === a)(input) // { a: 3, b: 'c' }
+ * find<{ a: number; b: string }[]>(({ a }) => 3 === a)(input)
+ * // { a: 3, b: 'c' }
  * ```
  * @example Using the chain
  * ```

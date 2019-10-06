@@ -5,8 +5,10 @@ import { push } from '../push';
  */
 /**
  * Push an element into an array, or replace an existing one if it matchs one.
- * @param replace Object with a match function and an element to replace in matching case.
- * @return the function to apply on the array to do perform the check, replace by the element if matching or push the element if not
+ * @param replace Object with a match function and an element
+ * to replace in matching case.
+ * @return the function to apply on the array to do perform the check,
+ * replace by the element if matching or push the element if not
  * @example
  * ```
  * pushOrReplace<number>({

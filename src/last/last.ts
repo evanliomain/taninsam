@@ -2,7 +2,8 @@
  * @module array=>any
  */
 /**
- * Return the last element of an array. An empty array has an undefined last element
+ * Return the last element of an array.
+ * An empty array has an undefined last element
  * @return the function to apply on the array to return its last element
  * @example
  * ```

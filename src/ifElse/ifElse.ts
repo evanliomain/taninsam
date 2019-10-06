@@ -3,7 +3,8 @@
  */
 /**
  * Apply `ifTransform` if `predicat` is verify, otherwise, apply `elseTransform`
- * @param predicat a function that receive input and return a boolean, if return true, the `ifTransform` is apply, otherwise, apply `elseTransform`
+ * @param predicat a function that receive input and return a boolean,
+ * if return true, the `ifTransform` is apply, otherwise, apply `elseTransform`
  * @param ifTransform a transform function.
  * @param elseTransform a transform function.
  * @return the function to apply on whatever to transform

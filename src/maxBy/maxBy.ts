@@ -7,8 +7,18 @@
  * @return the function to apply on the array to return its maximum
  * @example
  * ```
- * maxBy<{ x:number; y:number; }>(e => e.x)([{ x:1, y:5 }, { x:2, y:4 }, { x:3, y:3 }, { x:4, y:2 }]) // { x:4, y:2 }
- * maxBy<{ x:number; y:number; }>(e => e.y)([{ x:1, y:5 }, { x:2, y:4 }, { x:3, y:3 }, { x:4, y:2 }]) // { x:1, y:5 }
+ * maxBy<{ x:number; y:number; }>(e => e.x)([
+ *   { x:1, y:5 },
+ *   { x:2, y:4 },
+ *   { x:3, y:3 },
+ *   { x:4, y:2 }
+ * ]) // { x:4, y:2 }
+ * maxBy<{ x:number; y:number; }>(e => e.y)([
+ *   { x:1, y:5 },
+ *   { x:2, y:4 },
+ *   { x:3, y:3 },
+ *   { x:4, y:2 }
+ * ]) // { x:1, y:5 }
  * ```
  * @example Using the chain
  * ```

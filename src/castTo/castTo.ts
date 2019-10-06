@@ -10,7 +10,8 @@ import { reduce } from '../reduce';
 /**
  * Cast properties of an object or an array of object, given provided mapping
  * @param mapping Mapping between key and caster.
- * @return The function to apply on the object or the array to do cast its properties into another object or array
+ * @return The function to apply on the object or the array to
+ * do cast its properties into another object or array
  * @example
  * ```
  * castTo(

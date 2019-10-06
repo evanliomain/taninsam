@@ -15,7 +15,8 @@ import { isNull } from '../isNull';
 import { isUndefined } from '../isUndefined';
 /**
  * Convert the passed value into a string.
- * 2 values that have the same "value" but are referenced with 2 variables will have the same hash.
+ * 2 values that have the same "value" but are referenced
+ * with 2 variables will have the same hash.
  * @return the function to apply on the TBD to do something
  * @example
  * ```

@@ -14,17 +14,17 @@ import { log } from '../.internal';
 export function chainFn<T>(f: (e) => T): ChainFn<T> {
   return _chainByFunction<T>(e => ({ result: f(e), links: {} }), {});
 
-  function _chainByFunction<T>(
-    _f: (e, l?: Links) => Result<T>,
+  function _chainByFunction<V>(
+    _f: (e, l?: Links) => Result<V>,
     links: Links,
     linkName?: string
-  ): ChainFn<T> {
+  ): ChainFn<V> {
     return {
       chain: _chain,
-      link: (newLinkName: string): ChainFn<T> =>
+      link: (newLinkName: string): ChainFn<V> =>
         _chainByFunction(_f, links, newLinkName),
       value: () => e => _f(e).result,
-      log: (flag: string): ChainFn<T> =>
+      log: (flag: string): ChainFn<V> =>
         _chain((x, closureLink) => {
           log(flag, x, closureLink);
           return x;
