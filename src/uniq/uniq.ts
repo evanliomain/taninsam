@@ -2,9 +2,9 @@
  * @module array=>array
  */
 import { chain } from '../chain';
-import { reduce } from '../reduce';
 import { hash } from '../hash';
 import { isUndefined } from '../isUndefined';
+import { reduce } from '../reduce';
 /**
  * Returns a new list containing only one copy of each element
  * in the original list, based upon the value returned by applying the supplied

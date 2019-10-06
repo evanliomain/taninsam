@@ -1,6 +1,7 @@
 import { chain } from '../chain';
 import { hash } from '../hash';
 import { ifElse } from '../ifElse';
+import { isUndefined } from '../isUndefined';
 import { reduce } from '../reduce';
 import { values } from '../values';
 
@@ -52,14 +53,14 @@ export function partition<T, K>(
   return (array: ReadonlyArray<T>) =>
     chain(array)
       .chain(
-        reduce(
+        reduce<T, Record<string, ReadonlyArray<T>>>(
           (acc, element) =>
             chain(element)
               .chain(toKey)
               .chain(hash<K>())
               .chain(
                 ifElse(
-                  hashKey => undefined !== acc[hashKey],
+                  hashKey => !isUndefined(acc[hashKey]),
                   hashKey => ({
                     ...acc,
                     [hashKey]: [...acc[hashKey], element]
@@ -70,7 +71,7 @@ export function partition<T, K>(
                   })
                 )
               )
-              .value(),
+              .value() as Record<string, ReadonlyArray<T>>,
           {}
         )
       )

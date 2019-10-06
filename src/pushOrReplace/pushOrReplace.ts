@@ -41,8 +41,8 @@ import { push } from '../push';
  */
 export function pushOrReplace<T>(
   ...replace: {
-    match: (element: T) => boolean;
     replacement: T;
+    match(element: T): boolean;
   }[]
 ): (array: ReadonlyArray<T>) => ReadonlyArray<T> {
   return (array: ReadonlyArray<T>) =>

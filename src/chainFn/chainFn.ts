@@ -2,8 +2,8 @@
  * @module chain
  */
 
-import { ChainFn, Links, Result } from '../@types';
 import { log } from '../.internal';
+import { ChainFn, Links, Result } from '../@types';
 
 /**
  * Enchain any function.
