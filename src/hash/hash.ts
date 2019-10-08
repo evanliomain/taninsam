@@ -3,16 +3,16 @@
  */
 import { chain } from '../chain';
 import { entries } from '../entries';
-import { isArray } from '../isArray';
-import { isBoolean } from '../isBoolean';
-import { isNull } from '../isNull';
-import { isNumber } from '../isNumber';
-import { isObject } from '../isObject';
-import { isString } from '../isString';
-import { isUndefined } from '../isUndefined';
+import { isArray } from '../is-array';
+import { isBoolean } from '../is-boolean';
+import { isNull } from '../is-null';
+import { isNumber } from '../is-number';
+import { isObject } from '../is-object';
+import { isString } from '../is-string';
+import { isUndefined } from '../is-undefined';
 import { join } from '../join';
 import { map } from '../map';
-import { sortBy } from '../sortBy';
+import { sortBy } from '../sort-by';
 /**
  * Convert the passed value into a string.
  * 2 values that have the same "value" but are referenced

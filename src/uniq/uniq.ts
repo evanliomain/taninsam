@@ -3,7 +3,7 @@
  */
 import { chain } from '../chain';
 import { hash } from '../hash';
-import { isUndefined } from '../isUndefined';
+import { isUndefined } from '../is-undefined';
 import { reduce } from '../reduce';
 /**
  * Returns a new list containing only one copy of each element

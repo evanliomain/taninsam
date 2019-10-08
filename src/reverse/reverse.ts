@@ -1,7 +1,7 @@
 /**
  * @module string|array=>string|array
  */
-import { isArray } from '../isArray';
+import { isArray } from '../is-array';
 /**
  * Reverse a string or an array
  * @return the function to apply on the string or array to reverse it

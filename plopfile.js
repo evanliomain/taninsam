@@ -19,17 +19,17 @@ module.exports = plop => {
       return [
         {
           type: 'add',
-          path: `${srcDir}/{{camelCase name}}/index.ts`,
+          path: `${srcDir}/{{kebabCase name}}/index.ts`,
           templateFile: templateDir + '/index.txt'
         },
         {
           type: 'add',
-          path: `${srcDir}/{{camelCase name}}/{{camelCase name}}.ts`,
+          path: `${srcDir}/{{kebabCase name}}/{{kebabCase name}}.ts`,
           templateFile: templateDir + '/function.txt'
         },
         {
           type: 'add',
-          path: `${srcDir}/{{camelCase name}}/{{camelCase name}}.spec.ts`,
+          path: `${srcDir}/{{kebabCase name}}/{{kebabCase name}}.spec.ts`,
           templateFile: templateDir + '/function.spec.txt'
         },
         function customAction() {

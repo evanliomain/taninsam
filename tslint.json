@@ -25,6 +25,7 @@
     "deprecation": { "severity": "warn" },
     "eofline": true,
     "encoding": true,
+    "file-name-casing": [true, "kebab-case"],
     "forin": false,
     "function-constructor": true,
     "import-blacklist": [true, "rxjs/Rx"],

@@ -1,7 +1,7 @@
 import { chain } from '../chain';
 import { hash } from '../hash';
-import { ifElse } from '../ifElse';
-import { isUndefined } from '../isUndefined';
+import { ifElse } from '../if-else';
+import { isUndefined } from '../is-undefined';
 import { reduce } from '../reduce';
 import { values } from '../values';
 
