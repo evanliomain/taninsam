@@ -1,7 +1,7 @@
 /**
  * @module string|array=>string|array
  */
-import { isArray } from '../isArray';
+import { isArray } from '../is-array';
 
 /**
  * Extract n first elements of an array
@@ -26,6 +26,7 @@ export function take<T>(
     if (isArray(list)) {
       return list.filter((_, index) => index < n);
     }
+
     return list.substring(0, n);
   };
 }
