@@ -3,7 +3,8 @@
  */
 /**
  * Apply `transform` unless the `predicat` is verify.
- * @param predicat a function that receive input and return a boolean, if return true, the `transform` is NOT apply, otherwise, apply `transform`
+ * @param predicat a function that receive input and return a boolean,
+ * if return true, the `transform` is NOT apply, otherwise, apply `transform`
  * @param transform a transform function.
  * @return the function to apply on whatever to transform or not to transform
  * @example

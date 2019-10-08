@@ -2,8 +2,10 @@
  * @module array=>string
  */
 /**
- * Adds all the elements of an array separated by the specified separator string.
- * @param separator A string used to separate one element of an array from the next in the resulting String.
+ * Adds all the elements of an array separated by
+ * the specified separator string.
+ * @param separator A string used to separate one element of an array
+ * from the next in the resulting String.
  * @return the function to apply on the TBD to do something
  * @example
  * ```
