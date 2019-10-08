@@ -1,4 +1,4 @@
-import { typeOf } from './typeOf';
+import { typeOf } from './type-of';
 
 describe('typeOf function', () => {
   const input = [1, 2, 3, 4, 5];

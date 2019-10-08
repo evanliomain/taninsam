@@ -3,7 +3,8 @@
  */
 /**
  * Get an enhanced type of the input.
- * Use toString to compute a more specific "type" than the native typof operator.
+ * Use toString to compute a more specific "type"
+ * than the native typof operator.
  * @param input The input to test type.
  * @return the enhanced type of the input. Could be:
  * - undefined
