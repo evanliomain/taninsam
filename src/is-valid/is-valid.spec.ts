@@ -1,4 +1,4 @@
-import { isValid } from './isValid';
+import { isValid } from './is-valid';
 
 describe('isValid function', () => {
   const input = [1, 2, 3, 4, 5];

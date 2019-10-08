@@ -1,5 +1,5 @@
-import { isUndefined } from '../isUndefined';
-import { isNull } from '../isNull';
+import { isNull } from '../is-null';
+import { isUndefined } from '../is-undefined';
 
 /**
  * @module any=>boolean
@@ -25,5 +25,6 @@ export function isValid<T>(value: T): boolean {
   if (isNull(value)) {
     return false;
   }
+
   return true;
 }

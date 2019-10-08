@@ -1,4 +1,4 @@
-import { isEmpty } from './isEmpty';
+import { isEmpty } from './is-empty';
 
 describe('isEmpty function', () => {
   const input = [1, 2, 3, 4, 5];
@@ -12,6 +12,7 @@ describe('isEmpty function', () => {
     expect(isEmpty(undefined)).toBe(true);
   });
   test('null |> isEmpty === true', () => {
+    // tslint:disable-next-line:no-null-keyword
     expect(isEmpty(null)).toBe(true);
   });
   test('[] |> isEmpty === true', () => {
