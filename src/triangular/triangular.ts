@@ -10,7 +10,8 @@
  *  [A, B, C],
  *  [A, B, C, D]
  * ]
- * @return the function to apply on the array to do transform it to a triangular array
+ * @return the function to apply on the array to do transform it
+ * to a triangular array
  * @example
  * ```
  * triangular<number>()([1, 2, 3]) // [[1], [1, 2], [1, 2, 3]]
@@ -30,6 +31,7 @@ export function triangular<T>(): (
       if (0 === acc.length) {
         return [[current]];
       }
+
       return [...acc, [...acc[acc.length - 1], current]];
     }, []);
 }

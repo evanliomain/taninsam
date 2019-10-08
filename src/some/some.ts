@@ -2,9 +2,11 @@
  * @module array=>boolean
  */
 /**
- * Determines whether some of the members of an array satisfy the specified test.
+ * Determines whether some of the members of an array
+ * satisfy the specified test.
  * @param iteratee A function that accepts up to three arguments.
- * @return the function to apply on the array to determine if its satisfy the specified test
+ * @return the function to apply on the array to determine
+ * if its satisfy the specified test
  * @example
  * ```
  * some<number>(x => x < 3)([1, 2, 3, 4, 5]) // true
