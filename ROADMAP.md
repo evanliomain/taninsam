@@ -9,14 +9,13 @@
 - [x] filter
 - [x] find
 - [x] flat
-- [ ] group
 - [x] hash
 - [x] ifElse
 - [x] is-equal-object-on
 - [x] join
 - [x] keys
 - [x] map
-- [ ] pick
+- [ ] --pick--
 - [x] pop
 - [x] push
 - [x] reduce
@@ -27,26 +26,48 @@
 - [x] sort
 - [x] sumBy
 - [x] take
-- [ ] to-object
-- [ ] top-flop
-- [ ] tree-flat
-- [ ] tree-map
-- [ ] tree
-- [ ] tree-walk-bottom-to-top
+- [x] to-object
 - [x] uniq
 - [x] unless
 - [x] unshift
 - [x] values
 - [x] split
-- [ ] fromEntries
-- [ ] filterUntil
-- [ ] pushOrReplace
+- [x] fromEntries
+- [x] pushOrReplace
 - [x] castTo
-- [ ] partition
-- [ ] mergeOn
-- [ ] triangular
-- [ ] lag (map pairing 2 adjacent elements)
+- [x] partition
+- [x] triangular
 - [x] max
 - [x] maxBy
 - [x] min
 - [x] minBy
+- [ ] top-flop
+
+- [ ] isNil
+- [ ] forDefined
+- [ ] forArray
+- [ ] forString
+- [ ] forObject
+- [ ] lag (map pairing 2 adjacent elements)
+- [ ] filterUntil
+- [ ] loop-for
+- [ ] loop-until
+- [ ] loop-while
+- [ ] loop-do-while
+- [ ] map-matrix
+- [ ] pattern-matching
+- [ ] pattern-matching-by
+- [ ] pattern-matching-with
+- [ ] chunk
+
+- [ ] intersection
+- [ ] union
+
+Defined a clean output structure for the following function:
+
+- [ ] group
+- [ ] mergeOn
+- [ ] tree-flat
+- [ ] tree-map
+- [ ] tree
+- [ ] tree-walk-bottom-to-top
