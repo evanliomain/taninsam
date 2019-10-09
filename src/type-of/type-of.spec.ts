@@ -36,7 +36,7 @@ describe('typeOf function', () => {
     class Foo {}
     expect(typeOf(new Foo())).toBe('object');
   });
-  test('function () {} |> typeOf === "function"', () => {
+  test('function () {} |> typeOf === "object"', () => {
     const Foo = function() {
       /** Nothing to do */
     };
@@ -191,10 +191,4 @@ describe('typeOf function', () => {
     }
     expect(a).toBe('promise');
   });
-
-  /*
-  test('X |> typeOf === "xxx"', () => {
-    expect(typeOf(X)).toBe('xxx');
-  });
-*/
 });
