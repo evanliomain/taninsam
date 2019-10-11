@@ -1,4 +1,4 @@
-import { preventNil } from './preventNil';
+import { preventNil } from './prevent-nil';
 
 describe('preventNil function', () => {
   const input = [1, 2, 3, 4, 5];

@@ -1,5 +1,5 @@
-import { isUndefined } from '../isUndefined';
-import { isNull } from '../isNull';
+import { isNull } from '../is-null';
+import { isUndefined } from '../is-undefined';
 
 /**
  * @module TBD_A=>TBD_B
@@ -7,7 +7,8 @@ import { isNull } from '../isNull';
 /**
  * preventNil makes resilient a function to value undefined and null:
  * it prevents to call f with an input undefined or null.
- * If undefined or null are passed, then f is NOT called and undefined is returned.
+ * If undefined or null are passed,
+ * then f is NOT called and undefined is returned.
  * @param f The function to protect.
  * @return the function to apply on the input to prevent f to have been called
  * @example
@@ -15,8 +16,6 @@ import { isNull } from '../isNull';
  * preventNil<number, number>(x => 1 + x)(undefined) // undefined
  * preventNil<number, number>(x => 1 + x)(null) // null
  * preventNil<number, number>(x => 1 + x)(2) // 3
- * ```
- * preventNil<TBD_A>()() // TBD_B
  * ```
  * @example Using the chain
  * ```
@@ -50,6 +49,6 @@ import { isNull } from '../isNull';
  */
 export function preventNil<S, T>(
   f: (x: S) => T
-): (element: S) => T | null | undefined {
+): (element: S) => T | undefined {
   return (x: S) => (isUndefined(x) || isNull(x) ? undefined : f(x));
 }
