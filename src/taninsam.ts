@@ -45,7 +45,6 @@ export * from './sum';
 export * from './sum-by';
 export * from './tail';
 export * from './take';
-export * from './test-fn';
 export * from './to-object';
 export * from './triangular';
 export * from './type-of';
