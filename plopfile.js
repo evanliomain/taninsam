@@ -3,7 +3,7 @@ const fs = require('fs');
 
 module.exports = plop => {
   const templateDir = 'plop/templates';
-  const srcDir = 'src';
+  const src1 = 'src';
 
   // DEFINE PLOP GENERATORS
   plop.setGenerator('function', {
@@ -19,17 +19,17 @@ module.exports = plop => {
       return [
         {
           type: 'add',
-          path: `${srcDir}/{{kebabCase name}}/index.ts`,
+          path: `${src1}/{{kebabCase name}}/index.ts`,
           templateFile: templateDir + '/index.txt'
         },
         {
           type: 'add',
-          path: `${srcDir}/{{kebabCase name}}/{{kebabCase name}}.ts`,
+          path: `${src1}/{{kebabCase name}}/{{kebabCase name}}.ts`,
           templateFile: templateDir + '/function.txt'
         },
         {
           type: 'add',
-          path: `${srcDir}/{{kebabCase name}}/{{kebabCase name}}.spec.ts`,
+          path: `${src1}/{{kebabCase name}}/{{kebabCase name}}.spec.ts`,
           templateFile: templateDir + '/function.spec.txt'
         },
         function customAction() {
@@ -47,8 +47,8 @@ module.exports = plop => {
             .map(file => `export * from './${file}';`)
             .join('\n');
 
-          fs.writeFileSync(`${srcDir}/taninsam.ts`, imports + '\n');
-          return `update ${srcDir}/index.ts`;
+          fs.writeFileSync(`${src1}/taninsam.ts`, imports + '\n');
+          return `update ${src1}/index.ts`;
         }
       ];
     }
