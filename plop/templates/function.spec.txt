@@ -1,4 +1,4 @@
-import { {{camelCase name}} } from './{{camelCase name}}';
+import { {{camelCase name}} } from './{{kebabCase name}}';
 
 describe('{{camelCase name}} function', () => {
   const input = [1, 2, 3, 4, 5];

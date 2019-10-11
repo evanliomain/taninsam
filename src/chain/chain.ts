@@ -2,8 +2,8 @@
  * @module chain
  */
 
-import { Chain, Links } from '../@types';
 import { log } from '../.internal';
+import { Chain, Links } from '../@types';
 
 /**
  * Enchain any value.
@@ -14,19 +14,20 @@ import { log } from '../.internal';
 export function chain<T>(value: T): Chain<T> {
   return _chainByValue<T>(value, {});
 
-  function _chainByValue<T>(v: T, links: Links): Chain<T> {
+  function _chainByValue<V>(v: V, links: Links): Chain<V> {
     return {
       chain: f => _chainByValue(f(v, links), links),
       link: linkName => _chainByValue(v, { ...links, [linkName]: v }),
       value: () => v,
-      log: _log<T>(v, links)
+      log: _log<V>(v, links)
     };
   }
 
-  function _log<T>(v: T, links: Links): (flag: string) => Chain<T> {
+  function _log<V>(v: V, links: Links): (flag: string) => Chain<V> {
     return (flag: string) => {
       log(flag, v, links);
-      return _chainByValue<T>(v, links);
+
+      return _chainByValue<V>(v, links);
     };
   }
 }

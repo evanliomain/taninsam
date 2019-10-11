@@ -1,6 +1,6 @@
 export * from './chain-function';
 export * from './chain';
-export * from './chainFn';
+export * from './chain-fn';
 export * from './comparaison-result-choice.enum';
 export * from './function';
 export * from './identity';

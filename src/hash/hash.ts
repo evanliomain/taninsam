@@ -1,21 +1,22 @@
 /**
  * @module any=>string
  */
-import { isBoolean } from '../isBoolean';
-import { isString } from '../isString';
-import { isNumber } from '../isNumber';
-import { isArray } from '../isArray';
-import { isObject } from '../isObject';
-import { entries } from '../entries';
 import { chain } from '../chain';
-import { map } from '../map';
-import { sortBy } from '../sortBy';
+import { entries } from '../entries';
+import { isArray } from '../is-array';
+import { isBoolean } from '../is-boolean';
+import { isNull } from '../is-null';
+import { isNumber } from '../is-number';
+import { isObject } from '../is-object';
+import { isString } from '../is-string';
+import { isUndefined } from '../is-undefined';
 import { join } from '../join';
-import { isNull } from '../isNull';
-import { isUndefined } from '../isUndefined';
+import { map } from '../map';
+import { sortBy } from '../sort-by';
 /**
  * Convert the passed value into a string.
- * 2 values that have the same "value" but are referenced with 2 variables will have the same hash.
+ * 2 values that have the same "value" but are referenced
+ * with 2 variables will have the same hash.
  * @return the function to apply on the TBD to do something
  * @example
  * ```
@@ -36,7 +37,7 @@ export function hash<T>(): (value: T) => string {
       return `b(${value.toString()})`;
     }
     if (isString(value)) {
-      return `s(${value})`;
+      return `s(${String(value)})`;
     }
     if (isNumber(value)) {
       return `n(${value.toString()})`;
