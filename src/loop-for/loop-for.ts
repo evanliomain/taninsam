@@ -29,7 +29,7 @@ interface IterationParameters {
  * ```
  * @example with iteration object
  * ```
- * loopFor<number>({ start: 2, stop: 10, step: 2 }, (x, i) => x + i^2)(0)
+ * loopFor<number>({ start: 2, stop: 10, step: 2 }, (x, i) => x + i ** 2)(0)
  * // 2² + 4² + 6² + 8² = 120
  * ```
  * @example Using the chain
