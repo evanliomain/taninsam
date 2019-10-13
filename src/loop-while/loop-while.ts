@@ -12,12 +12,12 @@
  * @return the function to apply on the input
  * @example
  * ```
- * loopWhile<number>(x => x < 10, x => x^2)(2) // 16
+ * loopWhile<number>(x => x < 10, x => x ** 2)(2) // 16
  * ```
  * @example Using the chain
  * ```
  * chain(2)
- *   .chain(loopWhile<number>(x => x < 10, x => x^2))
+ *   .chain(loopWhile<number>(x => x < 10, x => x ** 2))
  *   .value() // 16
  * ```
  */
