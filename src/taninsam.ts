@@ -25,6 +25,7 @@ export * from './keys';
 export * from './last';
 export * from './length';
 export * from './map';
+export * from './map-matrix';
 export * from './max';
 export * from './max-by';
 export * from './min';
