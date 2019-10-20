@@ -14,8 +14,13 @@ node_js:
 script:
   - npm run lint
   - npm run test:ci
-  - npm run build
   - npm run stryker:ci
+  - npm run build:pre
+  - npm run build:compiled
+  - npm run build:copyType
+  - npm run build:bundle
+  - npm run build:cleanup
+  - npm run build:doc
 after_success:
   - npm run report-coverage
   - npm run deploy-docs
