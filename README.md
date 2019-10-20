@@ -10,7 +10,7 @@ A functionnal library based on a powerfull chain mecanism.
 [![Dependencies](https://david-dm.org/evanliomain/taninsam/status.svg)](https://david-dm.org/evanliomain/taninsam)
 [![Dev Dependencies](https://david-dm.org/evanliomain/taninsam/dev-status.svg)](https://david-dm.org/evanliomain/taninsam?type=dev)
 [![Coveralls](https://img.shields.io/coveralls/evanliomain/taninsam.svg)](https://coveralls.io/github/evanliomain/taninsam)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fapi%2Fgithub.com%2Fevanliomain%2Ftaninsam%2Fmaster)](https://stryker-mutator.github.io)
+[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/evanliomain/taninsam/master)](https://stryker-mutator.github.io)
 
 # Why should I use Taninsam ?
 
