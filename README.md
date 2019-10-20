@@ -103,11 +103,11 @@ Main commands to develop
 
 Additionals commands
 
-- `yarn test`: Run test suite once
-- `yarn start`: Runs `npm run build` in watch mode
-- `yarn test:prod`: Run linting and generate coverage
-- `yarn build`: Generate bundles and typings, create docs
 - `yarn lint`: Lints code
+- `yarn test`: Run test suite once
+- `yarn stryker`: Run mutation testing suite once
+- `yarn build`: Generate bundles and typings, create docs
+- `yarn start`: Runs `npm run build` in watch mode
 
 Code source is automatically formatted and linted at each commit.
 
