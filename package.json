@@ -26,6 +26,7 @@
     "build:bundle": "rollup -c rollup.config.ts",
     "postbuild:bundle": "rimraf compiled",
     "prebuild:doc": "rimraf dist/docs",
+    "build:doc": "typedoc --out dist/docs --json dist/docs/out.json --exclude \"**/*+(index|.spec).ts\" --mode file --target es6  --theme node_modules/typedoc-default-themes-bugfixed/bin/default src",
     "start": "tsc -w & rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -88,8 +89,8 @@
     "tslint": "^5.4.3",
     "tslint-sonarts": "^1.9.0",
     "typedoc": "^0.15.0",
+    "typedoc-default-themes-bugfixed": "^1.0.0",
     "typescript": "^3",
-    "ui-router-typedoc-themes": "^1.0.2",
     "validate-commit-msg": "^2.12.2"
   },
   "dependencies": {}
