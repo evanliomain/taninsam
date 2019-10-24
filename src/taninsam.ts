@@ -30,6 +30,7 @@ export * from './max';
 export * from './max-by';
 export * from './min';
 export * from './min-by';
+export * from './not';
 export * from './partition';
 export * from './pop';
 export * from './prevent-nil';
