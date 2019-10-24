@@ -32,6 +32,7 @@ export * from './min';
 export * from './min-by';
 export * from './partition';
 export * from './pop';
+export * from './prevent-nil';
 export * from './push';
 export * from './push-or-replace';
 export * from './reduce';
