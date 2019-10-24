@@ -7,3 +7,6 @@ coverage
 dist
 compiled
 .awcache
+.stryker-tmp
+.stryker.log
+.stryker-reports

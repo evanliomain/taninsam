@@ -1,17 +1,18 @@
 module.exports = {
+  preset: 'ts-jest',
   testEnvironment: 'node',
   transform: {
-    '.(ts|tsx)': 'ts-jest'
+    '.ts': 'ts-jest'
   },
-  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
+  testRegex: '(/__tests__/.*|\\.spec)\\.(ts|js)$',
+  moduleFileExtensions: ['ts', 'js'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/test/', '/stryker-tmp'],
   coverageThreshold: {
     global: {
-      branches: 90,
-      functions: 95,
-      lines: 95,
-      statements: 95
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100
     }
   },
   globals: {

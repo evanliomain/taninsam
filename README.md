@@ -4,12 +4,26 @@ Documentation available in : https://evanliomain.github.io/taninsam
 
 A functionnal library based on a powerfull chain mecanism.
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Travis](https://img.shields.io/travis/evanliomain/taninsam)](https://travis-ci.org/evanliomain/taninsam)
+[![Coveralls](https://img.shields.io/coveralls/evanliomain/taninsam)](https://coveralls.io/github/evanliomain/taninsam)
+[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/evanliomain/taninsam/master)](https://stryker-mutator.github.io)
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/evanliomain/taninsam.svg)](https://greenkeeper.io/)
-[![Travis](https://img.shields.io/travis/evanliomain/taninsam.svg)](https://travis-ci.org/evanliomain/taninsam)
-[![Coveralls](https://img.shields.io/coveralls/evanliomain/taninsam.svg)](https://coveralls.io/github/evanliomain/taninsam)
-[![Dependencies](https://david-dm.org/evanliomain/taninsam/status.svg)](https://david-dm.org/evanliomain/taninsam)
-[![Dev Dependencies](https://david-dm.org/evanliomain/taninsam/dev-status.svg)](https://david-dm.org/evanliomain/taninsam?type=dev)
+![Dependencies](https://img.shields.io/david/evanliomain/taninsam)
+![Dev Dependencies](https://img.shields.io/david/dev/evanliomain/taninsam)
+
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Made with](https://img.shields.io/badge/Made%20with-TypeScript-blue)](http://www.typescriptlang.org)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+![npm](https://img.shields.io/npm/v/taninsam)
+![npm bundle size](https://img.shields.io/bundlephobia/min/taninsam)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/taninsam)
+![npm](https://img.shields.io/npm/dt/taninsam)
+![npm](https://img.shields.io/npm/dm/taninsam)
+
+[![npm](https://img.shields.io/npm/l/taninsam.svg)](https://github.com/github.com/evanliomain/taninsam/master/LICENSE)
 
 # Why should I use Taninsam ?
 
@@ -89,11 +103,11 @@ Main commands to develop
 
 Additionals commands
 
-- `yarn test`: Run test suite once
-- `yarn start`: Runs `npm run build` in watch mode
-- `yarn test:prod`: Run linting and generate coverage
-- `yarn build`: Generate bundles and typings, create docs
 - `yarn lint`: Lints code
+- `yarn test`: Run test suite once
+- `yarn stryker`: Run mutation testing suite once
+- `yarn build`: Generate bundles and typings, create docs
+- `yarn start`: Runs `npm run build` in watch mode
 
 Code source is automatically formatted and linted at each commit.
 
