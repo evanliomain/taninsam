@@ -15,6 +15,7 @@ export * from './if-else';
 export * from './is-array';
 export * from './is-boolean';
 export * from './is-equal-object-on';
+export * from './is-nil';
 export * from './is-null';
 export * from './is-number';
 export * from './is-object';
