@@ -3,11 +3,19 @@ import { isNumber } from '../is-number';
 /**
  * @module any=>any
  */
+
+/**
+ * @ignore
+ */
 interface Iteration {
   start?: number;
   stop: number;
   step?: number;
 }
+
+/**
+ * @ignore
+ */
 interface IterationParameters {
   start: number;
   stop: number;
@@ -55,6 +63,9 @@ export function loopFor<T>(
   };
 }
 
+/**
+ * @ignore
+ */
 function forParameters(iteration: number | Iteration): IterationParameters {
   const defaultParameters = { start: 0, step: 1 };
   if (isNumber(iteration)) {
