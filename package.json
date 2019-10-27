@@ -40,7 +40,7 @@
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage --no-cache",
     "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "report-coverage": "cat ./dist/docs/coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
