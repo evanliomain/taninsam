@@ -7,6 +7,8 @@ module.exports = {
   testRegex: '(/__tests__/.*|\\.spec)\\.(ts|js)$',
   moduleFileExtensions: ['ts', 'js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/test/', '/stryker-tmp'],
+  coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'clover', 'html'],
+  coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
       branches: 100,

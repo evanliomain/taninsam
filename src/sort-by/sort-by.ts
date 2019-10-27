@@ -54,6 +54,9 @@ export function sortBy<T>(
       );
 }
 
+/**
+ * @ignore
+ */
 function _compare<T>(
   data1: T,
   data2: T

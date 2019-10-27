@@ -2,7 +2,16 @@
   "name": "taninsam",
   "version": "0.0.0-development",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "taninsam",
+    "functional",
+    "utils",
+    "utilities",
+    "fp",
+    "pure",
+    "immutable"
+  ],
+  "sideEffects": false,
   "main": "dist/taninsam.umd.js",
   "module": "dist/taninsam.es5.js",
   "typings": "dist/types/taninsam.d.ts",
@@ -20,13 +29,13 @@
   },
   "scripts": {
     "lint": "tslint --format codeFrame --project tsconfig.json 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild:compiled": "rimraf dist",
+    "build:cleanup": "rimraf dist",
     "build:compiled": "tsc",
     "postbuild:compiled": "cpx \"./src/@types/**/*.d.ts\" \"./dist/types/@types\"",
     "build:bundle": "rollup -c rollup.config.ts",
     "postbuild:bundle": "rimraf compiled",
-    "prebuild:doc": "rimraf dist/docs",
-    "build:doc": "typedoc --out dist/docs --json dist/docs/out.json --exclude \"**/*+(index|.spec).ts\" --mode file --target es6  --theme node_modules/typedoc-default-themes-bugfixed/bin/default src",
+    "build:doc": "typedoc src/taninsam.ts",
+    "build:end": "cpx coverage dist/docs/coverage && cpx .stryker-reports dist/docs/stryker-reports",
     "start": "tsc -w & rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -40,7 +49,7 @@
     "gen": "plop function",
     "stryker": "stryker run",
     "stryker:debug": "stryker run --fileLogLevel trace --logLevel debug ./stryker.conf.js",
-    "stryker:ci": "stryker run --reporters dashboard"
+    "stryker:ci": "stryker run ./stryker.conf.ci.js"
   },
   "lint-staged": {
     "{src,tools}/**/*.ts": [
