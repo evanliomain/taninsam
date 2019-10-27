@@ -48,7 +48,7 @@
     "gen": "plop function",
     "stryker": "stryker run",
     "stryker:debug": "stryker run --fileLogLevel trace --logLevel debug ./stryker.conf.js",
-    "stryker:ci": "stryker run --reporters dashboard"
+    "stryker:ci": "stryker run ./stryker.conf.ci.js"
   },
   "lint-staged": {
     "{src,tools}/**/*.ts": [
