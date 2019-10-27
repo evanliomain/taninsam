@@ -11,6 +11,7 @@
     "pure",
     "immutable"
   ],
+  "sideEffects": false,
   "main": "dist/taninsam.umd.js",
   "module": "dist/taninsam.es5.js",
   "typings": "dist/types/taninsam.d.ts",
