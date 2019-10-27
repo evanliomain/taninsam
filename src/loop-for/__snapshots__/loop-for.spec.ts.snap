@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loopFor function is a pure function 1`] = `
+Array [
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+`;
