@@ -4,7 +4,7 @@ module.exports = function(config) {
     packageManager: 'yarn',
     reporters: ['html', 'dashboard'],
     htmlReporter: {
-      baseDir: 'dist/docs/stryker-reports'
+      baseDir: '.stryker-reports'
     },
     testRunner: 'jest',
     coverageAnalysis: 'off',

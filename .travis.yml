@@ -13,11 +13,13 @@ node_js:
   - node
 script:
   - npm run lint
+  - npm run build:cleanup
   - npm run test:ci
   - npm run stryker:ci
   - npm run build:compiled
   - npm run build:bundle
   - npm run build:doc
+  - npm run build:end
 after_success:
   - npm run report-coverage
   - npm run deploy-docs

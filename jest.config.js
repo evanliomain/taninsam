@@ -8,7 +8,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/test/', '/stryker-tmp'],
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'clover', 'html'],
-  coverageDirectory: 'dist/docs/coverage',
+  coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
       branches: 100,
