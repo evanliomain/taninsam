@@ -2,7 +2,15 @@
   "name": "taninsam",
   "version": "0.0.0-development",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "taninsam",
+    "functional",
+    "utils",
+    "utilities",
+    "fp",
+    "pure",
+    "immutable"
+  ],
   "main": "dist/taninsam.umd.js",
   "module": "dist/taninsam.es5.js",
   "typings": "dist/types/taninsam.d.ts",
