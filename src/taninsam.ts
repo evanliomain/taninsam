@@ -26,6 +26,7 @@ export * from './keys';
 export * from './last';
 export * from './length';
 export * from './loop-for';
+export * from './loop-until';
 export * from './map';
 export * from './max';
 export * from './max-by';
