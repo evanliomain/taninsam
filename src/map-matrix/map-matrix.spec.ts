@@ -20,7 +20,7 @@ describe('mapMatrix function', () => {
     ).toEqual([['.', '-', '-'], ['.', '.', '-']]);
   });
 
-  test('[[0, 0, 0], [0, 0, 0]] |> mapMatrix((element, x, y) => x  + "-" + y) === [[".", "-", "-"], [".", ".", "-"]]', () => {
+  test('[[0, 0, 0], [0, 0, 0]] |> mapMatrix((element, x, y) => x  + "-" + y) === [["0-0", "1-0", "2-0",], ["0-1", "1-1", "2-1",]]', () => {
     expect(mapMatrix((_, x, y) => `${x}-${y}`)([[0, 0, 0], [0, 0, 0]]))
       .toMatchInlineSnapshot(`
       Array [
