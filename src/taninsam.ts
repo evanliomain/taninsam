@@ -14,6 +14,7 @@ export * from './head';
 export * from './if-else';
 export * from './is-array';
 export * from './is-boolean';
+export * from './is-empty';
 export * from './is-equal-object-on';
 export * from './is-nil';
 export * from './is-null';
