@@ -82,7 +82,7 @@ import { chain } from 'taninsam';
 
 chain(2)
   .chain(x => x ** 2)
-  .chain(x => `square of 2 is {x}`)
+  .chain(x => `square of 2 is ${x}`)
   .value(); // 'square of 2 is 4'
 ```
 
