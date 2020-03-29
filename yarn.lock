@@ -497,17 +497,10 @@
     typed-inject "~2.0.0"
     typed-rest-client "~1.5.0"
 
-"@stryker-mutator/html-reporter@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/html-reporter/-/html-reporter-2.1.0.tgz#3031724ced4d7bffe0616eadf9aa37007b512a38"
-  integrity sha512-yCHhBVlGbm3CwK+8hsWPI0RI78mGlas1TntnT3z4VIWUS+RAoZj3ZMf42tB7D9SMp1l2nq5Fe0QKuIf9FfFHDw==
-  dependencies:
-    "@stryker-mutator/api" "^2.1.0"
-    "@stryker-mutator/util" "^2.1.0"
-    file-url "~3.0.0"
-    mkdirp "~0.5.1"
-    mutation-testing-elements "^1.0.2"
-    rimraf "~3.0.0"
+"@stryker-mutator/html-reporter@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/html-reporter/-/html-reporter-3.1.0.tgz#b89692338037a0d168f9153457f5c71360c0c8c6"
+  integrity sha512-Lpn9YGt4NS9lLYhjBNZ1yZ9tCX9FWa66skR6Ieij3wMMtQvPlSswar6fmVqUiyPl/wmpTGSoptOcWDFEZ5qp8A==
 
 "@stryker-mutator/jest-runner@^2.1.0":
   version "2.1.0"
@@ -2585,11 +2578,6 @@ figures@^3.0.0:
   integrity sha512-HKri+WoWoUgr83pehn/SIgLOMZ9nAWC6dcGj26RY2R4F50u4+RTUz0RCrUlOV3nKRAICW1UGzyb+kcX2qK1S/g==
   dependencies:
     escape-string-regexp "^1.0.5"
-
-file-url@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/file-url/-/file-url-3.0.0.tgz#247a586a746ce9f7a8ed05560290968afc262a77"
-  integrity sha512-g872QGsHexznxkIAdK8UiZRe7SkE6kvylShU4Nsj8NvfvZag7S0QuQ4IgvPDkk75HxgjIVDwycFTDAgIiO4nDA==
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -5217,11 +5205,6 @@ ms@^2.0.0, ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-mutation-testing-elements@^1.0.2:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/mutation-testing-elements/-/mutation-testing-elements-1.1.1.tgz#55c62067207ae38b7742cf4c93f96c9816a407a5"
-  integrity sha512-fnBf8pz1gW0MbnxSYPshJcghjzNz/h7WLxiF+Ux4wkBhwSs+YYl+IVaAdmITYylHvLzLkJOR9fuNcPNv5VgCKw==
 
 mutation-testing-metrics@^1.1.1:
   version "1.1.1"
