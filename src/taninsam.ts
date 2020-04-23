@@ -26,6 +26,7 @@ export * from './join';
 export * from './keys';
 export * from './last';
 export * from './length';
+export * from './loop-do-while';
 export * from './loop-for';
 export * from './loop-while';
 export * from './map';
