@@ -1,0 +1,8444 @@
+{
+	"id": 0,
+	"name": "taninsam",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 208,
+			"name": "Empty",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"tags": [
+					{
+						"tag": "module",
+						"text": "any=>boolean\n"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "is-empty/is-empty.ts",
+					"line": 12,
+					"character": 10
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "intrinsic",
+						"name": "undefined"
+					},
+					{
+						"type": "intrinsic",
+						"name": "null"
+					},
+					{
+						"type": "stringLiteral",
+						"value": ""
+					},
+					{
+						"type": "tuple"
+					},
+					{
+						"type": "reference",
+						"id": 5,
+						"name": "__type"
+					}
+				]
+			}
+		},
+		{
+			"id": 1,
+			"name": "arrayFromValue",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 2,
+					"name": "arrayFromValue",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Generate a new array of size length with the provided value",
+						"returns": "the function to generate the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\narrayFromValue<string>(5)('a') // ['a', 'a', 'a', 'a', 'a']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain('a')\n  .chain(arrayFromValue<string>(5))\n  .value() // ['a', 'a', 'a', 'a', 'a']\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 3,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 4,
+							"name": "length",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "the length of the array to generate"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 5,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 6,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 7,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "the value to put in array"
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "array-from-value/array-from-value.ts",
+									"line": 22,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "array-from-value/array-from-value.ts",
+					"line": 20,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 68,
+			"name": "castTo",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 69,
+					"name": "castTo",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Cast properties of an object or an array of object, given provided mapping",
+						"returns": "The function to apply on the object or the array to\ndo cast its properties into another object or array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ncastTo(\n   ({ a }) => parseInt(a, 10),\n   ({ b }) => Math.floor(b),\n   ({ c }) => parseInt(c, 16)\n)({ a: '1', b: 2.1, c: 'A' }) // { a: 1, b: 2, c: 10 }'`\ncastTo([\n   {a: 1, b: 2, c:3},\n   {a: 4, b: 5, c:6}\n])({a: x => x + x, b: x => x}) // [{a: 2, b: 2, c:3}, {a: 8, b: 5, c:6}]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain({ a: '1', b: 2.1, c: 'A' })\n   .chain(castTo(\n     ({ a }) => parseInt(a, 10),\n     ({ b }) => Math.floor(b),\n     ({ c }) => parseInt(c, 16)\n   ))\n   .value() // { a: 1, b: 2, c: 10 }`\nchain([\n      {a: 1, b: 2, c:3},\n      {a: 4, b: 5, c:6}\n   ])\n  .chain(castTo({a: x => x + x, b: x => x}))\n  .value() // [{a: 2, b: 2, c:3}, {a: 8, b: 5, c:6}]\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 70,
+							"name": "mapping",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "Mapping between key and caster."
+							},
+							"type": {
+								"type": "reference",
+								"name": "CastMapping"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 71,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 72,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 73,
+											"name": "ob",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "cast-to/cast-to.ts",
+									"line": 44,
+									"character": 45
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "cast-to/cast-to.ts",
+					"line": 44,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 18,
+			"name": "chain",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 19,
+					"name": "chain",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Enchain any value.",
+						"text": "To get the value, apply .value()"
+					},
+					"typeParameter": [
+						{
+							"id": 20,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 21,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "the value to insert at the start of the chain\n"
+							},
+							"type": {
+								"type": "typeParameter",
+								"name": "T"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "T"
+							}
+						],
+						"name": "Chain"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "chain/chain.ts",
+					"line": 14,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 74,
+			"name": "chainFn",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 75,
+					"name": "chainFn",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Enchain any function.\nTo get the value, apply .value()\nTo transform the value with a function f, apply .chain(f)"
+					},
+					"typeParameter": [
+						{
+							"id": 76,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 77,
+							"name": "f",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "the first function to apply in the chain\n"
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 78,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 79,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 80,
+													"name": "e",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "chain-fn/chain-fn.ts",
+											"line": 14,
+											"character": 29
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "T"
+							}
+						],
+						"name": "ChainFn"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "chain-fn/chain-fn.ts",
+					"line": 14,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 81,
+			"name": "countCharacter",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 82,
+					"name": "countCharacter",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Count the number of character into the chained string",
+						"returns": "the number of character's occurence in s",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ncountCharacter('a')('abba') // 2\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain('abba')\n  .chain(countCharacter(2))\n  .value() // 2\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 83,
+							"name": "character",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "the character to count"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 84,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 85,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 86,
+											"name": "s",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "the string where counting character"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "count-character/count-character.ts",
+									"line": 20,
+									"character": 50
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "count-character/count-character.ts",
+					"line": 20,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 32,
+			"name": "entries",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 33,
+					"name": "entries",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "It extract keys/values in a new Array Iterator object\nthat contains the key/value pairs for each index in the array.",
+						"returns": "the function to apply on the object to extract key/values",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nentries()({ a: 1, b: 2, c: 3 }) // [['a', 1], ['b', 2], ['c', 3]]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain({ a: 1, b: 2, c: 3 })\n  .chain(entries())\n  .value() // [['a', 1], ['b', 2], ['c', 3]]\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 34,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 35,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 36,
+											"name": "ob",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "entries/entries.ts",
+									"line": 23,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "entries/entries.ts",
+					"line": 23,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 87,
+			"name": "every",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 88,
+					"name": "every",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether all the members of an array satisfy the specified test.",
+						"returns": "the function to apply on the array to determine\nif its satisfy the specified test",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nevery<number>(x => x < 6)([1, 2, 3, 4, 5]) // true\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(every<number>(x => x < 6))\n  .value() // true\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 89,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 90,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "A function that accepts up to three arguments."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 91,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 92,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 93,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 94,
+													"name": "index",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 95,
+													"name": "array",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "every/every.ts",
+											"line": 21,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 96,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 97,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 98,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "every/every.ts",
+									"line": 22,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "every/every.ts",
+					"line": 20,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 37,
+			"name": "filter",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 38,
+					"name": "filter",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method filter the elements of the chained array.\nSee the [native filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) for more informations.",
+						"returns": "the function to apply on the array to filter it",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "Keep even number from an array\n```\nfilter<number>((x: number) => 0 === x % 2)([1, 2, 3, 4, 5]) // [2, 4]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(filter(x => 0 === x % 2))\n  .value() // [2, 4]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 39,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 40,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element\nto decide to keep or not the element."
+							},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								],
+								"name": "Iteratee"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "ReadonlyArray"
+							}
+						],
+						"name": "Identity"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "filter/filter.ts",
+					"line": 23,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 99,
+			"name": "find",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 100,
+					"name": "find",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Returns the value of the first element in the array where predicate is true,\nand undefined otherwise.",
+						"returns": "A find function ready to applied on an array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nconst input = [\n  { a: 1, b: 'a' },\n  { a: 2, b: 'b' },\n  { a: 3, b: 'c' },\n  { a: 4, b: 'd' }\n];\nfind<{ a: number; b: string }[]>(({ a }) => 3 === a)(input)\n// { a: 3, b: 'c' }\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain(input)\n  .chain(find<{ a: number; b: string }[]>(({ a }) => 3 === a))\n  .value() // { a: 3, b: 'c' }\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 101,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 102,
+							"name": "predicate",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "find calls predicate once for each element of the array,\nin ascending order, until it finds one where predicate returns true.\nIf such an element is found, find immediately returns that element value.\nOtherwise, find returns undefined."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 103,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 104,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 105,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 106,
+													"name": "index",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 107,
+													"name": "array",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "find/find.ts",
+											"line": 31,
+											"character": 12
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 108,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 109,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 110,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "find/find.ts",
+									"line": 32,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "find/find.ts",
+					"line": 30,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 111,
+			"name": "flat",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 112,
+					"name": "flat",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Flatten an array of array into an array by concat all array items",
+						"returns": "A flat function ready to applied on an array of array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nflat<number>()([[1, 2], [3, 4, 5]]) // [1, 2, 3, 4, 5]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([[1, 2], [3, 4, 5]])\n  .chain(flat<number>())\n  .value() // [1, 2, 3, 4, 5]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 113,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 114,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 115,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 116,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "flat/flat.ts",
+									"line": 18,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "flat/flat.ts",
+					"line": 18,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 117,
+			"name": "fromEntries",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 118,
+					"name": "fromEntries",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Transform an array of key/value pairs into a keys/values object",
+						"returns": "the function to apply on the array to transform it into an object",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nfromEntries()([['a', 1],['b', 'c']]) // {a: 1, b: 'c'}\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([['a', 1],['b', 'c']])\n  .chain(fromEntries())\n  .value() // {a: 1, b: 'c'}\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 119,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 120,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 121,
+											"name": "en",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "tuple",
+														"elements": [
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "any"
+															}
+														]
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 122,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"indexSignature": [
+												{
+													"id": 123,
+													"name": "__index",
+													"kind": 8192,
+													"kindString": "Index signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 124,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "from-entries/from-entries.ts",
+													"line": 21,
+													"character": 4
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "from-entries/from-entries.ts",
+									"line": 19,
+									"character": 30
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "from-entries/from-entries.ts",
+					"line": 19,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 176,
+			"name": "hash",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 177,
+					"name": "hash",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Convert the passed value into a string.\n2 values that have the same \"value\" but are referenced\nwith 2 variables will have the same hash.",
+						"returns": "the function to apply on the TBD to do something",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nhash()(1) === hash()(1)\nhash()(1) !== hash()(\"1\")\nhash()(true) !== hash()(\"true\")\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 178,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 179,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 180,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 181,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "hash/hash.ts",
+									"line": 28,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "hash/hash.ts",
+					"line": 28,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 182,
+			"name": "head",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 183,
+					"name": "head",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the first element of an array and return undefined\nif the array is empty",
+						"returns": "the function to apply on the array to extract the first element",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nhead<number>()([1, 2, 3, 4, 5]) // 1\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(head<number>())\n  .value() // 1\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 184,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 185,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 186,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 187,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "head/head.ts",
+									"line": 19,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "head/head.ts",
+					"line": 19,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 188,
+			"name": "ifElse",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 189,
+					"name": "ifElse",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Apply `ifTransform` if `predicat` is verify, otherwise, apply `elseTransform`",
+						"returns": "the function to apply on whatever to transform",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nifElse<number, string, string>(\n  x => 0 === x % 2,\n  x => `${x} is even`,\n  x => `${x} is odd`\n)(1) // '1 is odd'\n\nifElse<number, string, string>(\n  x => 0 === x % 2,\n  x => `${x} is even`,\n  x => `${x} is odd`\n)(2) // '2 is even'\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain()\n  .chain(ifElse<number, string, string>(\n    x => 0 === x % 2,\n    x => `${x} is even`,\n    x => `${x} is odd`\n  )\n  .value() // '2 is even'\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 190,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 191,
+							"name": "U",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 192,
+							"name": "V",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 193,
+							"name": "predicat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a function that receive input and return a boolean,\nif return true, the `ifTransform` is apply, otherwise, apply `elseTransform`"
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 194,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 195,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 196,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "if-else/if-else.ts",
+											"line": 37,
+											"character": 11
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 197,
+							"name": "ifTransform",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a transform function."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 198,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 199,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 200,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "U"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "if-else/if-else.ts",
+											"line": 38,
+											"character": 14
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 201,
+							"name": "elseTransform",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a transform function."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 202,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 203,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 204,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "V"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "if-else/if-else.ts",
+											"line": 39,
+											"character": 16
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 205,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 206,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 207,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "U"
+											},
+											{
+												"type": "typeParameter",
+												"name": "V"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "if-else/if-else.ts",
+									"line": 40,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "if-else/if-else.ts",
+					"line": 36,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 125,
+			"name": "isArray",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 126,
+					"name": "isArray",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is an Array",
+						"returns": "true if the value is an array, flase otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisArray([1, 2, 3]) // true\nisArray(true) // false\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 127,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 128,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "reference",
+							"typeArguments": [
+								{
+									"type": "typeParameter",
+									"name": "T"
+								}
+							],
+							"name": "ReadonlyArray"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-array/is-array.ts",
+					"line": 14,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 129,
+			"name": "isBoolean",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 130,
+					"name": "isBoolean",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is a boolean",
+						"returns": "true if the value is a boolean, flase otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisBoolean(true) // true\nisBoolean(false) // true\nisBoolean('abba') // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 131,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-boolean/is-boolean.ts",
+					"line": 15,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 209,
+			"name": "isEmpty",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 210,
+					"name": "isEmpty",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is :\n- undefined or\n- null or\n- is an empty structure",
+						"returns": "true if the value is empty, false otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisEmpty(undefined) // true\nisEmpty(null) // true\nisEmpty([]) // true\nisEmpty({}) // true\nisEmpty('') // true\nisEmpty(0) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 211,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "reference",
+							"name": "Empty"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-empty/is-empty.ts",
+					"line": 30,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 212,
+			"name": "isEqualObjectOn",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 213,
+					"name": "isEqualObjectOn",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Compare 2 objects `o1` and `o2` on a set of property `mapping`\nto determine if they are equals",
+						"returns": "true if `o1[key] === o2[key]` for all key in mapping,\nfalse otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisEqualObjectOn(['a', 'b'])({ a: 1, b: 2, c: 3 })({ a: 1, b: 2, c: 4 })\n// true\nisEqualObjectOn(['a', 'b', 'c'])({ a: 1, b: 2, c: 3 })({ a: 1, b: 2, c: 4 })\n// false\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain({ a: 1, b: 2, c: 4 })\n  .chain(isEqualObjectOn(['a', 'b'])({ a: 1, b: 2, c: 3 }))\n  .value() // true\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 214,
+							"name": "mapping",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a list of key to compare `o1` and `o2`"
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 215,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 216,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 217,
+											"name": "o1",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "first object to compare"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 218,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 219,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 220,
+															"name": "o1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "object"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "is-equal-object-on/is-equal-object-on.ts",
+													"line": 29,
+													"character": 18
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "is-equal-object-on/is-equal-object-on.ts",
+									"line": 29,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-equal-object-on/is-equal-object-on.ts",
+					"line": 27,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 221,
+			"name": "isNil",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 222,
+					"name": "isNil",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is undefined or null.",
+						"returns": "true if the value is undefined or null, false otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisNil(undefined) // true\nisNil(null) // true\nisNil([]) // false\nisNil({}) // false\nisNil('') // false\nisNil(0) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 223,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "union",
+							"types": [
+								{
+									"type": "intrinsic",
+									"name": "undefined"
+								},
+								{
+									"type": "intrinsic",
+									"name": "null"
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-nil/is-nil.ts",
+					"line": 22,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 132,
+			"name": "isNull",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 133,
+					"name": "isNull",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is null",
+						"returns": "true if the value is null, false otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisNull(null) // true\nisNull(undefined) // false\nisNull([]) // false\nisNull('') // false\nisNull(0) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 134,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "intrinsic",
+							"name": "null"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-null/is-null.ts",
+					"line": 17,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 135,
+			"name": "isNumber",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 136,
+					"name": "isNumber",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is a number",
+						"returns": "true if the value is a number, flase otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisNumber(1) // true\nisNumber(true) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 137,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-number/is-number.ts",
+					"line": 14,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 138,
+			"name": "isObject",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 139,
+					"name": "isObject",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is an object",
+						"returns": "true if the value is an object, flase otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisObject({ a: 1 }) // true\nisObject({}) // true\nisObject([1, 2]) // false\nisObject(true) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 140,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "reference",
+							"typeArguments": [
+								{
+									"type": "intrinsic",
+									"name": "object"
+								}
+							],
+							"name": "Readonly"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-object/is-object.ts",
+					"line": 16,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 141,
+			"name": "isString",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 142,
+					"name": "isString",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is a string",
+						"returns": "true if the value is an string, flase otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisString('abba') // true\nisString(true) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 143,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-string/is-string.ts",
+					"line": 14,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 144,
+			"name": "isUndefined",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 145,
+					"name": "isUndefined",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether the passed value is undefined",
+						"returns": "true if the value is undefined, false otherwise",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nisUndefined(undefined) // true\nisUndefined(null) // false\nisUndefined([]) // false\nisUndefined('') // false\nisUndefined(0) // false\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 146,
+							"name": "value",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The value to test."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "predicate",
+						"name": "value",
+						"asserts": false,
+						"targetType": {
+							"type": "intrinsic",
+							"name": "undefined"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "is-undefined/is-undefined.ts",
+					"line": 17,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 147,
+			"name": "join",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 148,
+					"name": "join",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Adds all the elements of an array separated by\nthe specified separator string.",
+						"returns": "the function to apply on the TBD to do something",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\njoin()([1, 2, 3, 4, 5]) // 1,2,3,4,5\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(join('/'))\n  .value() // 1/2/3/4/5\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 149,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 150,
+							"name": "separator",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"text": "A string used to separate one element of an array\nfrom the next in the resulting String."
+							},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 151,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 152,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 153,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "join/join.ts",
+									"line": 23,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "join/join.ts",
+					"line": 21,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 22,
+			"name": "keys",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 23,
+					"name": "keys",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method extract own enumerable properties of an object into an array\nSee the [native Object.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) for more informations.",
+						"returns": "the function to apply on the object to extract its keys",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nkeys()({ a: 1, b: 2, c: 3 }) // ['a', 'b', 'c']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain({ a: 1, b: 2, c: 3 })\n  .chain(keys())\n  .value() // ['a', 'b', 'c']\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 24,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 25,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 26,
+											"name": "ob",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "object"
+													}
+												],
+												"name": "Readonly"
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "keys/keys.ts",
+									"line": 19,
+									"character": 23
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "keys/keys.ts",
+					"line": 19,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 224,
+			"name": "last",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 225,
+					"name": "last",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the last element of an array.\nAn empty array has an undefined last element",
+						"returns": "the function to apply on the array to return its last element",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nlast<number>()([1, 2, 3, 4, 5]) // 5\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(last<number>())\n  .value() // 5\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 226,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 227,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 228,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 229,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "last/last.ts",
+									"line": 19,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "last/last.ts",
+					"line": 19,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 230,
+			"name": "length",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 231,
+					"name": "length",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Get the length of the table",
+						"returns": "the function to apply to get the array length",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nlength<number>()([0, 1, 2, 3, 4]) // 5\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([0, 1, 2, 3, 4])\n  .chain(length<number>())\n  .value() // 5\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 232,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 233,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 234,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 235,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "length/length.ts",
+									"line": 18,
+									"character": 28
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "length/length.ts",
+					"line": 18,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 244,
+			"name": "loopFor",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 245,
+					"name": "loopFor",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method loop on an input:\n- at first, output = input\n- on each call, it output = iteratee(output)\n- the loop is parameterize by iteration as a number of loop to apply,\nor a start, stop, step object\n- finally, returns output",
+						"returns": "the function to apply on the input",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nloopFor<number>(5, x => 1 + x)(1) // 6\n```"
+							},
+							{
+								"tag": "example",
+								"text": "with iteration object\n```\nloopFor<number>({ start: 2, stop: 10, step: 2 }, (x, i) => x + i ** 2)(0)\n// 2² + 4² + 6² + 8² = 120\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain(1)\n  .chain(loopFor<number>(5, x => 1 + x))\n  .value() // 6\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 246,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 247,
+							"name": "iteration",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The number of iteration, or a start, stop, step object."
+							},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "reference",
+										"id": 236,
+										"name": "Iteration"
+									}
+								]
+							}
+						},
+						{
+							"id": 248,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 249,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 250,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 251,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 252,
+													"name": "index",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true,
+														"isOptional": true
+													},
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															}
+														]
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "loop-for/loop-for.ts",
+											"line": 52,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 253,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 254,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 255,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "typeParameter",
+										"name": "T"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "loop-for/loop-for.ts",
+									"line": 53,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loop-for/loop-for.ts",
+					"line": 50,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 259,
+			"name": "loopWhile",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 260,
+					"name": "loopWhile",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method loop on an input:\n- at first, output = input\n- while predicat(output) is true, output = iteratee(output)\n- finally, returns output",
+						"returns": "the function to apply on the input",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nloopWhile<number>(x => x < 10, x => x ** 2)(2) // 16\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain(2)\n  .chain(loopWhile<number>(x => x < 10, x => x ** 2))\n  .value() // 16\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 261,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 262,
+							"name": "predicate",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The function apply on each loop to decide to :\ncontinue (return true), or to stop (return false)"
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 263,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 264,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 265,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "loop-while/loop-while.ts",
+											"line": 25,
+											"character": 12
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 266,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked on each loop."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 267,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 268,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 269,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "loop-while/loop-while.ts",
+											"line": 26,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 270,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 271,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 272,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "typeParameter",
+										"name": "T"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "loop-while/loop-while.ts",
+									"line": 27,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loop-while/loop-while.ts",
+					"line": 24,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 27,
+			"name": "map",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 28,
+					"name": "map",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method creates a new array\nwith the results of calling a provided function\non every element in the calling array.\nSee the [native map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) for more informations.",
+						"returns": "the function to apply on the array to transform",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nmap<number, number>(x => 1 + x))([1, 2, 3, 4, 5]) // [2, 3, 4, 5, 6]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(map<number, number>(x => 1 + x)))\n  .value() // [2, 3, 4, 5, 6]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 29,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 30,
+							"name": "U",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 31,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element."
+							},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "typeParameter",
+										"name": "U"
+									}
+								],
+								"name": "Iteratee"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "ReadonlyArray"
+							},
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "U"
+									}
+								],
+								"name": "ReadonlyArray"
+							}
+						],
+						"name": "Function"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "map/map.ts",
+					"line": 23,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 273,
+			"name": "max",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 274,
+					"name": "max",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the maximum of the list",
+						"returns": "the function to apply on the array to return its maximum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nmax()([10, 12, 15, 9]) // 15\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([10, 12, 15, 9])\n  .chain(max())\n  .value() // 15\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 275,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 276,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 277,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "number"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "max/max.ts",
+									"line": 18,
+									"character": 22
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "max/max.ts",
+					"line": 18,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 278,
+			"name": "maxBy",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 279,
+					"name": "maxBy",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the maximum of the list according the iteratee",
+						"returns": "the function to apply on the array to return its maximum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nmaxBy<{ x:number; y:number; }>(e => e.x)([\n  { x:1, y:5 },\n  { x:2, y:4 },\n  { x:3, y:3 },\n  { x:4, y:2 }\n]) // { x:4, y:2 }\nmaxBy<{ x:number; y:number; }>(e => e.y)([\n  { x:1, y:5 },\n  { x:2, y:4 },\n  { x:3, y:3 },\n  { x:4, y:2 }\n]) // { x:1, y:5 }\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([{ x:1, y:5 }, { x:2, y:4 }, { x:3, y:3 }, { x:4, y:2 }])\n  .chain(maxBy<{ x:number; y:number; }>(e => e.x))\n  .value() // { x:4, y:2 }\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 280,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 281,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 282,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 283,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 284,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "max-by/max-by.ts",
+											"line": 31,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 285,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 286,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 287,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "max-by/max-by.ts",
+									"line": 32,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "max-by/max-by.ts",
+					"line": 30,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 288,
+			"name": "min",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 289,
+					"name": "min",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the minimum of the list",
+						"returns": "the function to apply on the array to return its minimum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nmin()([10, 12, 15, 9]) // 9\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([10, 12, 15, 9])\n  .chain(min())\n  .value() // 9\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 290,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 291,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 292,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "number"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "min/min.ts",
+									"line": 18,
+									"character": 22
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "min/min.ts",
+					"line": 18,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 293,
+			"name": "minBy",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 294,
+					"name": "minBy",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the minimum of the list according the iteratee",
+						"returns": "the function to apply on the array to return its minimum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nminBy<{ x:number; y:number; }>(e => e.x)([\n  { x:1, y:5 },\n  { x:2, y:4 },\n  { x:3, y:3 },\n  { x:4, y:2 }\n]) // { x:1, y:5 }\nminBy<{ x:number; y:number; }>(e => e.y)([\n  { x:1, y:5 },\n  { x:2, y:4 },\n  { x:3, y:3 },\n  { x:4, y:2 }\n]) // { x:4, y:2 }\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([{ x:1, y:5 }, { x:2, y:4 }, { x:3, y:3 }, { x:4, y:2 }])\n  .chain(minBy<{ x:number; y:number; }>(e => e.x))\n  .value() // { x:1, y:5 }\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 295,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 296,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 297,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 298,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 299,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "min-by/min-by.ts",
+											"line": 31,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 300,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 301,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 302,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "min-by/min-by.ts",
+									"line": 32,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "min-by/min-by.ts",
+					"line": 30,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 303,
+			"name": "not",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 304,
+					"name": "not",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method return the negation of the boolean result of the passed function,\nie: !predicat(x)",
+						"returns": "the function to apply on the input to return the negation",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nconst isEven = x => 0 === x % 2;\nconst isOdd = not<number>(isEven);\nisOdd(1) // true\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nconst isEven = x => 0 === x % 2;\nchain([1, 2, 3, 4])\n  .chain(filter(not(isEven))\n  .value() // [1, 3]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 305,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 306,
+							"name": "predicat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The function that return a boolean."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 307,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 308,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 309,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "not/not.ts",
+											"line": 24,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 310,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 311,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 312,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "not/not.ts",
+									"line": 25,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "not/not.ts",
+					"line": 23,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 318,
+			"name": "partition",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 319,
+					"name": "partition",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Partition an array according a sub version of its elements.\nEach values in the insides arrays are identical according\ntheir form reduce by the toKey function.\nComparison between 2 elements is perform\nwith an hash of the toKey(element) form.",
+						"returns": "the function to apply on the array to partition it\naccording to th toKey function",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\npartition<{ a: number; b: number; }, number>(x => x.a)([\n  { a: 1, b: 1 }, { a: 1, b: 2 },\n  { a: 2, b: 1 }, { a: 2, b: 2 }\n])\n// [\n [{ a: 1, b: 1 }, { a: 1, b: 2 }],\n [{ a: 2, b: 1 }, { a: 2, b: 2 }]\n]\npartition<number, number>(Math.floor)([1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12])\n// [\n  [1.1, 1.5],\n  [2.1, 2.3, 2.8],\n  [3],\n  [4.12]\n]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }])\n  .chain(partition<{ a: number; b: number; }, number>(x => x.a))\n  .value()\n // [\n [{ a: 1, b: 1}, { a: 1, b: 2 }],\n [{ a: 2, b: 1 }, { a: 2, b: 2 }]\n]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 320,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 321,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 322,
+							"name": "toKey",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "the function to transform array element\ninto something that will be use to partition the array."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 323,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 324,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 325,
+													"name": "element",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "K"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "partition/partition.ts",
+											"line": 51,
+											"character": 8
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 326,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 327,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 328,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "partition/partition.ts",
+									"line": 52,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "partition/partition.ts",
+					"line": 50,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 329,
+			"name": "pop",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 330,
+					"name": "pop",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Removes the last element from an array.",
+						"returns": "the function to apply on the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\npop<number>()([1, 2, 3, 4, 5]) // [1, 2, 3, 4]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(pop<number>())\n  .value() // [1, 2, 3, 4]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 331,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 332,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 333,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 334,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "pop/pop.ts",
+									"line": 18,
+									"character": 25
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "pop/pop.ts",
+					"line": 18,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 335,
+			"name": "preventNil",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 336,
+					"name": "preventNil",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "preventNil makes resilient a function to value undefined and null:\nit prevents to call f with an input undefined or null.\nIf undefined or null are passed,\nthen f is NOT called and undefined is returned.",
+						"returns": "the function to apply on the input to prevent f to have been called",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\npreventNil<number, number>(x => 1 + x)(undefined) // undefined\npreventNil<number, number>(x => 1 + x)(null) // null\npreventNil<number, number>(x => 1 + x)(2) // 3\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3])\n  .chain(preventNil(array => array[3]))\n  .chain(preventNil(x => 1 + x))\n  .value() // undefined\n```\n```\nchain([1, 2, 3])\n  .chain(preventNil(array => array[1]))\n  .chain(preventNil(x => 1 + x))\n  .value() // 3\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Prevent apply map on undefined or null\n```\nchain([1, 2, 3])\n  .chain(preventNil(map(x => x + 1)))\n  .value() // [2, 3, 4]\n```\n```\nchain(undefined)\n  .chain(preventNil(map(x => x + 1)))\n  .value() // undefined\n```\n```\nchain(null)\n  .chain(preventNil(map(x => x + 1)))\n  .value() // undefined\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 337,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 338,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 339,
+							"name": "f",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The function to protect."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 340,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 341,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 342,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "S"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "prevent-nil/prevent-nil.ts",
+											"line": 51,
+											"character": 4
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 343,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 344,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 345,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "S"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "prevent-nil/prevent-nil.ts",
+									"line": 52,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "prevent-nil/prevent-nil.ts",
+					"line": 50,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 346,
+			"name": "push",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 347,
+					"name": "push",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return a array with the new elements at the end.",
+						"returns": "the function to apply on the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\npush<number>(4, 5)([1, 2, 3]) // [1, 2, 3, 4, 5]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3])\n  .chain(push<number>(4, 5))\n  .value() // [1, 2, 3, 4, 5]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 348,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 349,
+							"name": "items",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isRest": true
+							},
+							"comment": {
+								"text": "New elements to add on the Array."
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "typeParameter",
+									"name": "T"
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 350,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 351,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 352,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "push/push.ts",
+									"line": 21,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "push/push.ts",
+					"line": 19,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 353,
+			"name": "pushOrReplace",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 354,
+					"name": "pushOrReplace",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Push an element into an array, or replace an existing one if it matchs one.",
+						"returns": "the function to apply on the array to do perform the check,\nreplace by the element if matching or push the element if not",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\npushOrReplace<number>({\n      match: x => x%2 === 0,\n      replacement: 2\n   })([4, 6, 8]) // [2, 2, 2]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "\n```\npushOrReplace<number>({\n      match: x => x%2 === 0,\n      replacement: 2\n   },{\n      match: x => x%3 === 0,\n      replacement: 3\n   })([1, 2, 4]) // [1, 2, 2, 3]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 4])\n  .chain(pushOrReplace<number>({\n      match: x => x%2 === 0,\n      replacement: 2\n   },{\n      match: x => x%3 === 0,\n      replacement: 3\n   }))\n  .value() // [1, 2, 2, 3]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 355,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 356,
+							"name": "replace",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isRest": true
+							},
+							"comment": {
+								"text": "Object with a match function and an element\nto replace in matching case."
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reflection",
+									"declaration": {
+										"id": 357,
+										"name": "__type",
+										"kind": 65536,
+										"kindString": "Type literal",
+										"flags": {
+											"isExported": true
+										},
+										"children": [
+											{
+												"id": 358,
+												"name": "replacement",
+												"kind": 32,
+												"kindString": "Variable",
+												"flags": {
+													"isExported": true,
+													"isExternal": true
+												},
+												"sources": [
+													{
+														"fileName": "push-or-replace/push-or-replace.ts",
+														"line": 44,
+														"character": 15
+													}
+												],
+												"type": {
+													"type": "typeParameter",
+													"name": "T"
+												}
+											},
+											{
+												"id": 359,
+												"name": "match",
+												"kind": 64,
+												"kindString": "Function",
+												"flags": {
+													"isExported": true,
+													"isExternal": true
+												},
+												"signatures": [
+													{
+														"id": 360,
+														"name": "match",
+														"kind": 4096,
+														"kindString": "Call signature",
+														"flags": {
+															"isExported": true
+														},
+														"parameters": [
+															{
+																"id": 361,
+																"name": "element",
+																"kind": 32768,
+																"kindString": "Parameter",
+																"flags": {
+																	"isExported": true
+																},
+																"type": {
+																	"type": "typeParameter",
+																	"name": "T"
+																}
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "boolean"
+														}
+													}
+												],
+												"sources": [
+													{
+														"fileName": "push-or-replace/push-or-replace.ts",
+														"line": 45,
+														"character": 9
+													}
+												]
+											}
+										],
+										"groups": [
+											{
+												"title": "Variables",
+												"kind": 32,
+												"children": [
+													358
+												]
+											},
+											{
+												"title": "Functions",
+												"kind": 64,
+												"children": [
+													359
+												]
+											}
+										],
+										"sources": [
+											{
+												"fileName": "push-or-replace/push-or-replace.ts",
+												"line": 43,
+												"character": 13
+											}
+										]
+									}
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 362,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 363,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 364,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "push-or-replace/push-or-replace.ts",
+									"line": 47,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "push-or-replace/push-or-replace.ts",
+					"line": 42,
+					"character": 29
+				}
+			]
+		},
+		{
+			"id": 41,
+			"name": "reduce",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 42,
+					"name": "reduce",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Calls the specified callback function for all the elements in an array.\nThe return value of the callback function is the accumulated result,\nand is provided as an argument in the next call to the callback function.\nSee the [native reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) for more informations.",
+						"returns": "A reduce function ready to applied on an array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nreduce((a, b) => a - b, 0)([1, 2, 3, 4])\n// => ((((0 - 1) - 2) - 3) - 4) = -10\n//          -               -10\n//         / \\              / \\\n//        -   4           -6   4\n//       / \\              / \\\n//      -   3   ==>     -3   3\n//     / \\              / \\\n//    -   2           -1   2\n//   / \\              / \\\n//  0   1            0   1\n```\n"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4])\n  .chain(reduce((a, b) => a - b, 0))\n  .value() // -10\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 43,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 44,
+							"name": "U",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 45,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "A function that accepts up to four arguments.\nThe reduce method calls the iteratee function one time\nfor each element in the array."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 46,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 47,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 48,
+													"name": "previousValue",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "U"
+													}
+												},
+												{
+													"id": 49,
+													"name": "currentValue",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 50,
+													"name": "currentIndex",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 51,
+													"name": "array",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "U"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "reduce/reduce.ts",
+											"line": 38,
+											"character": 11
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 52,
+							"name": "initialValue",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "If initialValue is specified,\nit is used as the initial value to start the accumulation."
+							},
+							"type": {
+								"type": "typeParameter",
+								"name": "U"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 53,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 54,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 55,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "typeParameter",
+										"name": "U"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "reduce/reduce.ts",
+									"line": 45,
+									"character": 2
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 56,
+					"name": "reduce",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"typeParameter": [
+						{
+							"id": 57,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 58,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 59,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 60,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 61,
+													"name": "previousValue",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 62,
+													"name": "currentValue",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 63,
+													"name": "currentIndex",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 64,
+													"name": "array",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "reduce/reduce.ts",
+											"line": 48,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 65,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 66,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 67,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "typeParameter",
+										"name": "T"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "reduce/reduce.ts",
+									"line": 54,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "reduce/reduce.ts",
+					"line": 37,
+					"character": 22
+				},
+				{
+					"fileName": "reduce/reduce.ts",
+					"line": 47,
+					"character": 22
+				},
+				{
+					"fileName": "reduce/reduce.ts",
+					"line": 56,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 365,
+			"name": "reverse",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 366,
+					"name": "reverse",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Reverse a string or an array",
+						"returns": "the function to apply on the string or array to reverse it",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nreverse<number>()([1, 2, 3, 4, 5]) // [5, 4, 3, 2, 1]\nreverse()('baba') // 'abab'\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(reverse<number>())\n  .value() // [5, 4, 3, 2, 1]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 367,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 368,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 369,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 370,
+											"name": "list",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "reverse/reverse.ts",
+									"line": 20,
+									"character": 29
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "reverse/reverse.ts",
+					"line": 20,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 371,
+			"name": "shift",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 372,
+					"name": "shift",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Removes the first element from an array.",
+						"returns": "the function to apply on the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nshift<number>()([1, 2, 3, 4, 5]) // [1, 2, 3, 4]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(shift<number>())\n  .value() // [1, 2, 3, 4]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 373,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 374,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 375,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 376,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "shift/shift.ts",
+									"line": 18,
+									"character": 27
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "shift/shift.ts",
+					"line": 18,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 377,
+			"name": "some",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 378,
+					"name": "some",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Determines whether some of the members of an array\nsatisfy the specified test.",
+						"returns": "the function to apply on the array to determine\nif its satisfy the specified test",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nsome<number>(x => x < 3)([1, 2, 3, 4, 5]) // true\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(some<number>(x => x < 3))\n  .value() // true\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 379,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 380,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "A function that accepts up to three arguments."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 381,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 382,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 383,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												},
+												{
+													"id": 384,
+													"name": "index",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 385,
+													"name": "array",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "some/some.ts",
+											"line": 22,
+											"character": 11
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 386,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 387,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 388,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "some/some.ts",
+									"line": 23,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "some/some.ts",
+					"line": 21,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 389,
+			"name": "sort",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 390,
+					"name": "sort",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Sort an array with the given comparator function.\nSee the [native sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) for more informations.",
+						"returns": "the function to apply on the array to sort it.",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "Without comparator\n```\nsort<number>()([5, 2, 8, 9, 4, 1]) // [1, 2, 4, 5, 8, 9]\nsort<string>()(\n ['a', 'z', 'e', 'r', 't', 'y']\n) // ['a', 'e', 'r', 't', 'y', 'z']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "With a comparator\n```\nsort<{ a: string, b: number }>()([5, 2, 8, 9, 4, 1]) // [1, 2, 4, 5, 8, 9]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([5, 2, 8, 9, 4, 1])\n  .chain(sort<number>())\n  .value() // [1, 2, 4, 5, 8, 9]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 391,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 392,
+							"name": "comparator",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"text": "The comparator function that defines the sort order.\nIf omitted, the array is sorted\naccording to each character's Unicode code point value,\naccording to the string conversion of each element."
+							},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 393,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 394,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 395,
+															"name": "d1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "typeParameter",
+																"name": "T"
+															}
+														},
+														{
+															"id": 396,
+															"name": "d2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "typeParameter",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "reference",
+														"id": 8,
+														"name": "ComparaisonResultChoice"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 397,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 398,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 399,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "sort/sort.ts",
+									"line": 34,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "sort/sort.ts",
+					"line": 32,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 154,
+			"name": "sortBy",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 155,
+					"name": "sortBy",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Sort an array of object on a given set of field",
+						"returns": "the function to sort the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nsortBy<{ a: number; b: number }>(\n ({ a }) => a, ({ b }) => b\n)([\n  { a: 2, b: 1 },\n  { a: 2, b: 2 },\n  { a: 1, b: 2 },\n  { a: 1, b: 1 }\n])\n// [\n  { a: 1, b: 1 },\n  { a: 1, b: 2 },\n  { a: 2, b: 1 },\n  { a: 2, b: 2 }\n]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([\n  { a: 2, b: 1 },\n  { a: 2, b: 2 },\n  { a: 1, b: 2 },\n  { a: 1, b: 1 }\n])\n  .chain(sortBy<{ a: number; b: number }>(({ a }) => a, ({ b }) => b))\n  .value()\n// [\n  { a: 1, b: 1 },\n  { a: 1, b: 2 },\n  { a: 2, b: 1 },\n  { a: 2, b: 2 }\n]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 156,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 157,
+							"name": "f",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isRest": true
+							},
+							"comment": {
+								"text": "one or more function to get string or number\nfrom the T element of the array"
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reflection",
+									"declaration": {
+										"id": 158,
+										"name": "__type",
+										"kind": 65536,
+										"kindString": "Type literal",
+										"flags": {
+											"isExported": true
+										},
+										"signatures": [
+											{
+												"id": 159,
+												"name": "__call",
+												"kind": 4096,
+												"kindString": "Call signature",
+												"flags": {
+													"isExported": true
+												},
+												"parameters": [
+													{
+														"id": 160,
+														"name": "d",
+														"kind": 32768,
+														"kindString": "Parameter",
+														"flags": {
+															"isExported": true
+														},
+														"type": {
+															"type": "typeParameter",
+															"name": "T"
+														}
+													}
+												],
+												"type": {
+													"type": "union",
+													"types": [
+														{
+															"type": "intrinsic",
+															"name": "number"
+														},
+														{
+															"type": "intrinsic",
+															"name": "string"
+														}
+													]
+												}
+											}
+										],
+										"sources": [
+											{
+												"fileName": "sort-by/sort-by.ts",
+												"line": 47,
+												"character": 7
+											}
+										]
+									}
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 161,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 162,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 163,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "sort-by/sort-by.ts",
+									"line": 48,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "sort-by/sort-by.ts",
+					"line": 46,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 400,
+			"name": "split",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 401,
+					"name": "split",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Split a string according a given separator",
+						"returns": "the function to apply on the string to split it",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nsplit('/')('a/b/cd') // ['a', 'b', 'cd']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "\n```\nsplit('/')('') // []\n```"
+							},
+							{
+								"tag": "example",
+								"text": "\n```\nsplit('')('abcd') // ['a', 'b', 'c', 'd']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "\n```\nsplit()('abcd') // ['a', 'b', 'c', 'd']\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain('a/b/cd')\n  .chain(split('/'))\n  .value() // ['a', 'b', 'cd']\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 402,
+							"name": "separator",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The character to use to split the string."
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"\""
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 403,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 404,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 405,
+											"name": "str",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "split/split.ts",
+									"line": 33,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "split/split.ts",
+					"line": 31,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 406,
+			"name": "sum",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 407,
+					"name": "sum",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method sum all element of the chained array.",
+						"returns": "the function to apply on the array\nto sum its elements and return the sum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nsum()([1, 2, 3, 4, 5]) // 15\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(sum())\n  .value() // 15\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 408,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 409,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 410,
+											"name": "elements",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "number"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "sum/sum.ts",
+									"line": 19,
+									"character": 22
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "sum/sum.ts",
+					"line": 19,
+					"character": 19
+				}
+			]
+		},
+		{
+			"id": 411,
+			"name": "sumBy",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 412,
+					"name": "sumBy",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method sum all element of the chained array,\ninvoking for each element in array,\nthe iteratee callback to get the value to be summed.",
+						"returns": "the function to apply on the array\nto sum its elements and return the sum",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "With an array of number\n```\nsumBy<number>(x => x)([1, 2, 3, 4]) // 10\n```"
+							},
+							{
+								"tag": "example",
+								"text": "With an array of object\n```\nsumBy<{ a: number }>(x => x.a)(\n [{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }]\n) // 10\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }])\n  .chain(sumBy<{ a: number }>(x => x.a))\n  .value() // 10\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 413,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 414,
+							"name": "iteratee",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The iteratee invoked per element to get the value\nto sum given an element of the array"
+							},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								],
+								"name": "Iteratee"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "ReadonlyArray"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						],
+						"name": "ChainFunction"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "sum-by/sum-by.ts",
+					"line": 30,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 415,
+			"name": "tail",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 416,
+					"name": "tail",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return the array without the first element. Return an empty array\nif the input is an empty array.",
+						"returns": "the function to apply on the array\nto do return it without the first element",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ntail<number>()([1, 2, 3, 4, 5]) // [2, 3, 4, 5]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(tail<number>())\n  .value() // [2, 3, 4, 5]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 417,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 418,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 419,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 420,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "tail/tail.ts",
+									"line": 20,
+									"character": 26
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "tail/tail.ts",
+					"line": 20,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 421,
+			"name": "take",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 422,
+					"name": "take",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Extract n first elements of an array",
+						"returns": "the function to apply on the array to extract its n first element",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ntake<number>(2)([1, 2, 3, 4, 5]) // [1, 2]\ntake(2)('abba') // 'ab'\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3, 4, 5])\n  .chain(take<number>(2))\n  .value() // [1, 2]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 423,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 424,
+							"name": "n",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The number of elements to extract first"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 425,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 426,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 427,
+											"name": "list",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "T"
+															}
+														],
+														"name": "ReadonlyArray"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "take/take.ts",
+									"line": 24,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "take/take.ts",
+					"line": 22,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 428,
+			"name": "toObject",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 429,
+					"name": "toObject",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Convert an array to an associative map store in a javascript object.",
+						"returns": "the function to apply on the array to do convert it\ninto a javascript object",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ntoObject<(string | number)[][]>(\n item => item[0], item => item[1])([['a', 1], ['b', 'c']]\n) // {a: 1, b: 'c'}\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([['a', 1], ['b', 'c']])\n  .chain(toObject<(string | number)[][]>(item => item[0], item => item[1]))\n  .value() // {a: 1, b: 'c'}\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 430,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 431,
+							"name": "U",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 432,
+							"name": "keyGetter",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "A function to extract the key of the association."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 433,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 434,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 435,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "to-object/to-object.ts",
+											"line": 24,
+											"character": 12
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 436,
+							"name": "valueGetter",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "A function to extract the value of the association."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 437,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 438,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 439,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "U"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "to-object/to-object.ts",
+											"line": 25,
+											"character": 14
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 440,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 441,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 442,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 443,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"indexSignature": [
+												{
+													"id": 444,
+													"name": "__index",
+													"kind": 8192,
+													"kindString": "Index signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 445,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "typeParameter",
+														"name": "U"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "to-object/to-object.ts",
+													"line": 26,
+													"character": 31
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "to-object/to-object.ts",
+									"line": 26,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "to-object/to-object.ts",
+					"line": 23,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 446,
+			"name": "triangular",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 447,
+					"name": "triangular",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Transform an array in a triangular array\n[A, B, C, D] =>\n[\n [A],\n [A, B],\n [A, B, C],\n [A, B, C, D]\n]",
+						"returns": "the function to apply on the array to do transform it\nto a triangular array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ntriangular<number>()([1, 2, 3]) // [[1], [1, 2], [1, 2, 3]]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3])\n  .chain(triangular<number>())\n  .value() // [[1], [1, 2], [1, 2, 3]]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 448,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 449,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 450,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 451,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "triangular/triangular.ts",
+									"line": 26,
+									"character": 32
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "triangular/triangular.ts",
+					"line": 26,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 452,
+			"name": "typeOf",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 453,
+					"name": "typeOf",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Get an enhanced type of the input.\nUse toString to compute a more specific \"type\"\nthan the native typof operator.",
+						"returns": "the enhanced type of the input. Could be:\n- undefined\n- null\n- number\n- boolean\n- string\n- object\n- array\n- function\n- symbol\n- regexp\n- date\n- map\n- weakmap\n- set\n- weakset\n- promise\n- bigint64array\n- int16array\n- int32array\n- int8array\n- int8array\n- uint8array\n- uint8clampedarray\n- int16array\n- uint16array\n- int32array\n- uint32array\n- float32array\n- float64array\n- bigint64array\n- biguint64array\n- arraybuffer\n- sharedarraybuffer\n- math\n- json\n- atomics\n- error",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\ntypeOf(undefined); // undefined\ntypeOf(null); // null\ntypeOf(NaN); // number\ntypeOf(5); // number\ntypeOf({}); // object\ntypeOf([]); // array\ntypeOf(''); // string\ntypeOf(function () {}); // function\ntypeOf(/a/) // regexp\ntypeOf(new Date()) // date\ntypeOf(new WeakMap()) // weakmap\ntypeOf(new Map()) // map\n```\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 454,
+							"name": "element",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "type-of/type-of.ts",
+					"line": 63,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 455,
+			"name": "uniq",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 456,
+					"name": "uniq",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Returns a new list containing only one copy of each element\nin the original list, based upon the value returned by applying the supplied\nfunction to each list element.\nPrefers the first item if the supplied function produces\nthe same value on two items.\n=== is used for comparison.",
+						"returns": "the function to apply on the array to uniq its elements",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nuniq<number>()([1, 2, 3, 2, 3, 5, 1]) // [1, 2, 3, 5]\nuniq<{ a: number; b: number; c: string; }>(({ a, b, c }) => ({ a, b }))([\n  { a: 1, b: 1, c: 'a' },\n  { a: 1, b: 2, c: 'a' },\n  { a: 1, b: 1, c: 'b' }\n])) // [{ a: 1, b: 1, c: 'a' }, { a: 1, b: 2, c: 'a' }]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([\n  { a: 1, b: 1, c: 'a' },\n  { a: 1, b: 2, c: 'a' },\n  { a: 1, b: 1, c: 'b' }\n])\n.chain(uniq<{ a: number; b: number; c: string; }>(\n ({ a, b, c }) => ({ a, b }))\n)\n.value() // [{ a: 1, b: 1, c: 'a' }, { a: 1, b: 2, c: 'a' }]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 457,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 458,
+							"name": "comparison",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "The comparison method, default set to identity."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 459,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 460,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 461,
+													"name": "x",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "uniq/uniq.ts",
+											"line": 40,
+											"character": 13
+										}
+									]
+								}
+							},
+							"defaultValue": "x => x"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 462,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 463,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 464,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "typeParameter",
+													"name": "T"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "typeParameter",
+											"name": "T"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "uniq/uniq.ts",
+									"line": 41,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "uniq/uniq.ts",
+					"line": 39,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 465,
+			"name": "unless",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 466,
+					"name": "unless",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Apply `transform` unless the `predicat` is verify.",
+						"returns": "the function to apply on whatever to transform or not to transform",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nunless<number, string>(n => 0 === n % 2, n => `${n} is odd`)(1) // '1 is odd'\nunless<number, string>(n => 0 === n % 2, n => `${n} is odd`)(2) // 2\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain(1)\n  .chain(unless<number, string>(n => 0 === n % 2, n => `${n} is odd`))\n  .value() // '1 is odd'\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 467,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						},
+						{
+							"id": 468,
+							"name": "U",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 469,
+							"name": "predicat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a function that receive input and return a boolean,\nif return true, the `transform` is NOT apply, otherwise, apply `transform`"
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 470,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 471,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 472,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "unless/unless.ts",
+											"line": 23,
+											"character": 11
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 473,
+							"name": "transform",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"text": "a transform function."
+							},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 474,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 475,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 476,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true
+													},
+													"type": {
+														"type": "typeParameter",
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "typeParameter",
+												"name": "U"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "unless/unless.ts",
+											"line": 24,
+											"character": 12
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 477,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 478,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 479,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "typeParameter",
+												"name": "U"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "unless/unless.ts",
+									"line": 25,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "unless/unless.ts",
+					"line": 22,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 480,
+			"name": "unshift",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 481,
+					"name": "unshift",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Return a array with the new elements at the beginning.",
+						"returns": "the function to apply on the array",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nunshift<number>(4, 5)([1, 2, 3]) // [4, 5, 1, 2, 3]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain([1, 2, 3])\n  .chain(unshift<number>(4, 5))\n  .value() // [4, 5, 1, 2, 3]\n```\n"
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 482,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {
+								"isExported": true
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 483,
+							"name": "items",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isExported": true,
+								"isRest": true
+							},
+							"comment": {
+								"text": "New elements to add on the Array."
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "typeParameter",
+									"name": "T"
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 484,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 485,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 486,
+											"name": "array",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													}
+												],
+												"name": "ReadonlyArray"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "unshift/unshift.ts",
+									"line": 21,
+									"character": 2
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "unshift/unshift.ts",
+					"line": 19,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 313,
+			"name": "values",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"signatures": [
+				{
+					"id": 314,
+					"name": "values",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "This method extract own enumerable values of an object into an array\nSee the [native Object.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values) for more informations.",
+						"returns": "the function to apply on the object to extract its values",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n```\nvalues()({ a: 1, b: 2, c: 3 }) // [1, 2, 3]\n```"
+							},
+							{
+								"tag": "example",
+								"text": "Using the chain\n```\nchain({ a: 1, b: 2, c: 3 })\n  .chain(values())\n  .value() // [1, 2, 3]\n```\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 315,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 316,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"parameters": [
+										{
+											"id": 317,
+											"name": "ob",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "ReadonlyArray"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "values/values.ts",
+									"line": 23,
+									"character": 25
+								}
+							]
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "values/values.ts",
+					"line": 23,
+					"character": 22
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Type aliases",
+			"kind": 4194304,
+			"children": [
+				208
+			]
+		},
+		{
+			"title": "Functions",
+			"kind": 64,
+			"children": [
+				1,
+				68,
+				18,
+				74,
+				81,
+				32,
+				87,
+				37,
+				99,
+				111,
+				117,
+				176,
+				182,
+				188,
+				125,
+				129,
+				209,
+				212,
+				221,
+				132,
+				135,
+				138,
+				141,
+				144,
+				147,
+				22,
+				224,
+				230,
+				244,
+				259,
+				27,
+				273,
+				278,
+				288,
+				293,
+				303,
+				318,
+				329,
+				335,
+				346,
+				353,
+				41,
+				365,
+				371,
+				377,
+				389,
+				154,
+				400,
+				406,
+				411,
+				415,
+				421,
+				428,
+				446,
+				452,
+				455,
+				465,
+				480,
+				313
+			]
+		}
+	]
+}

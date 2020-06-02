@@ -1,0 +1,423 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>taninsam</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">taninsam</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> taninsam</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#taninsam" id="taninsam" style="color: inherit; text-decoration: none;">
+					<h1>Taninsam</h1>
+				</a>
+				<p>Documentation available in : <a href="https://evanliomain.github.io/taninsam">https://evanliomain.github.io/taninsam</a></p>
+				<p>A functionnal library based on a powerfull chain mecanism.</p>
+				<p><a href="https://travis-ci.org/evanliomain/taninsam"><img src="https://img.shields.io/travis/evanliomain/taninsam" alt="Travis"></a>
+					<a href="https://coveralls.io/github/evanliomain/taninsam"><img src="https://img.shields.io/coveralls/evanliomain/taninsam" alt="Coveralls"></a>
+				<a href="https://stryker-mutator.github.io"><img src="https://badge.stryker-mutator.io/github.com/evanliomain/taninsam/master" alt="Mutation testing badge"></a></p>
+				<p><a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/evanliomain/taninsam.svg" alt="Greenkeeper badge"></a>
+					<img src="https://img.shields.io/david/evanliomain/taninsam" alt="Dependencies">
+				<img src="https://img.shields.io/david/dev/evanliomain/taninsam" alt="Dev Dependencies"></p>
+				<p><a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" alt="styled with prettier"></a>
+					<a href="http://www.typescriptlang.org"><img src="https://img.shields.io/badge/Made%20with-TypeScript-blue" alt="Made with"></a>
+					<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly"></a>
+				<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a></p>
+				<p><img src="https://img.shields.io/npm/v/taninsam" alt="npm">
+					<img src="https://img.shields.io/bundlephobia/min/taninsam" alt="npm bundle size">
+					<img src="https://img.shields.io/bundlephobia/minzip/taninsam" alt="npm bundle size">
+					<img src="https://img.shields.io/npm/dt/taninsam" alt="npm">
+				<img src="https://img.shields.io/npm/dm/taninsam" alt="npm"></p>
+				<p><a href="https://github.com/github.com/evanliomain/taninsam/master/LICENSE"><img src="https://img.shields.io/npm/l/taninsam.svg" alt="npm"></a></p>
+				<a href="#why-should-i-use-taninsam-" id="why-should-i-use-taninsam-" style="color: inherit; text-decoration: none;">
+					<h1>Why should I use Taninsam ?</h1>
+				</a>
+				<p>Yes you could just use simple ESNext functions to do your transformation. If you enjoy with it, just keep it that way.</p>
+				<p>But sometime, the code don&#39;t feel linear, so you are tempted to use a library. So why this one, instead of another ?</p>
+				<p>Taninsam is:</p>
+				<ul>
+					<li>Write in Typescript to enforced the feature correctness</li>
+					<li>Write in full TDD because is so easy to do it that way</li>
+					<li>Offer a simple way for chain function</li>
+					<li>Offer a constante way to code data transformation: no more function alias or 2 way to compose functions</li>
+					<li>Easy to extend: just <code>chain</code> a function</li>
+				</ul>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h1>Getting started</h1>
+				</a>
+				<p>Install taninsam:</p>
+				<p><code>npm install --save taninsam</code></p>
+				<p>or</p>
+				<p><code>yarn add taninsam</code></p>
+				<p>Import the librairie and start the chain:</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { chain, filter, map, sum } <span class="hljs-keyword">from</span> <span class="hljs-string">'taninsam'</span>;
+
+<span class="hljs-comment">// Sum square of even number in this collection</span>
+chain([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>])
+  .chain(filter(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-number">0</span> === x % <span class="hljs-number">2</span>)) <span class="hljs-comment">// [2, 4, 6, 8, 10]</span>
+  .chain(map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x ** <span class="hljs-number">2</span>)) <span class="hljs-comment">// [4, 16, 36, 64, 100]</span>
+  .chain(sum()) <span class="hljs-comment">// 220</span>
+  .value();</code></pre>
+				<p>To understand the chain function, it&#39;s as easy as this:</p>
+				<pre><code class="language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chain</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    chain: <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> chain(f(x)),
+    value: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> x
+  };
+}</code></pre>
+				<p>So you can <code>chain</code> as much as function you want, and called <code>value()</code> at the end to get the actual value.</p>
+				<p>To extend the chain, it&#39;s as easy as to write a function:</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { chain } <span class="hljs-keyword">from</span> <span class="hljs-string">'taninsam'</span>;
+
+chain(<span class="hljs-number">2</span>)
+  .chain(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x ** <span class="hljs-number">2</span>)
+  .chain(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-string">`square of 2 is {x}`</span>)
+  .value(); <span class="hljs-comment">// 'square of 2 is 4'</span></code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h1>Contributing</h1>
+				</a>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p><code>yarn</code></p>
+				<a href="#coding" id="coding" style="color: inherit; text-decoration: none;">
+					<h2>Coding</h2>
+				</a>
+				<p>Main commands to develop</p>
+				<ul>
+					<li>Use vscode for coding (or any other good editor that suite you)</li>
+					<li><code>yarn gen</code>: Create a new function</li>
+					<li><code>yarn test:watch</code>: Run test suite in <a href="http://facebook.github.io/jest/docs/cli.html#watch">interactive watch mode</a></li>
+					<li><code>yarn commit</code>: Commit using conventional commit style</li>
+				</ul>
+				<p>Additionals commands</p>
+				<ul>
+					<li><code>yarn lint</code>: Lints code</li>
+					<li><code>yarn test</code>: Run test suite once</li>
+					<li><code>yarn stryker</code>: Run mutation testing suite once</li>
+					<li><code>yarn build</code>: Generate bundles and typings, create docs</li>
+					<li><code>yarn start</code>: Runs <code>npm run build</code> in watch mode</li>
+				</ul>
+				<p>Code source is automatically formatted and linted at each commit.</p>
+				<p>This library was bootstraped by <a href="https://github.com/alexjoverm/typescript-library-starter">typescript-library-starter</a>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#empty" class="tsd-kind-icon">Empty</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#arrayfromvalue" class="tsd-kind-icon">array<wbr>From<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#castto" class="tsd-kind-icon">cast<wbr>To</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#chain" class="tsd-kind-icon">chain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#chainfn" class="tsd-kind-icon">chain<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#countcharacter" class="tsd-kind-icon">count<wbr>Character</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#entries" class="tsd-kind-icon">entries</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#every" class="tsd-kind-icon">every</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#filter" class="tsd-kind-icon">filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#find" class="tsd-kind-icon">find</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#flat" class="tsd-kind-icon">flat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#fromentries" class="tsd-kind-icon">from<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#hash" class="tsd-kind-icon">hash</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#head" class="tsd-kind-icon">head</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#ifelse" class="tsd-kind-icon">if<wbr>Else</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#isarray" class="tsd-kind-icon">is<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isboolean" class="tsd-kind-icon">is<wbr>Boolean</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isequalobjecton" class="tsd-kind-icon">is<wbr>Equal<wbr>Object<wbr>On</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnull" class="tsd-kind-icon">is<wbr>Null</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isobject" class="tsd-kind-icon">is<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#join" class="tsd-kind-icon">join</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#keys" class="tsd-kind-icon">keys</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#last" class="tsd-kind-icon">last</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#length" class="tsd-kind-icon">length</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#loopfor" class="tsd-kind-icon">loop<wbr>For</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#loopwhile" class="tsd-kind-icon">loop<wbr>While</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#map" class="tsd-kind-icon">map</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#max" class="tsd-kind-icon">max</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#maxby" class="tsd-kind-icon">max<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#min" class="tsd-kind-icon">min</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#minby" class="tsd-kind-icon">min<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#not" class="tsd-kind-icon">not</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#partition" class="tsd-kind-icon">partition</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#pop" class="tsd-kind-icon">pop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#preventnil" class="tsd-kind-icon">prevent<wbr>Nil</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#push" class="tsd-kind-icon">push</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#pushorreplace" class="tsd-kind-icon">push<wbr>OrReplace</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#reduce" class="tsd-kind-icon">reduce</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#reverse" class="tsd-kind-icon">reverse</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#shift" class="tsd-kind-icon">shift</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#some" class="tsd-kind-icon">some</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#sort" class="tsd-kind-icon">sort</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#sortby" class="tsd-kind-icon">sort<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#split" class="tsd-kind-icon">split</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#sum" class="tsd-kind-icon">sum</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#sumby" class="tsd-kind-icon">sum<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#tail" class="tsd-kind-icon">tail</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#take" class="tsd-kind-icon">take</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#toobject" class="tsd-kind-icon">to<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#triangular" class="tsd-kind-icon">triangular</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#typeof" class="tsd-kind-icon">type<wbr>Of</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#uniq" class="tsd-kind-icon">uniq</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#unless" class="tsd-kind-icon">unless</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#unshift" class="tsd-kind-icon">unshift</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#values" class="tsd-kind-icon">values</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
