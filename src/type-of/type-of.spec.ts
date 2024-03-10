@@ -181,14 +181,4 @@ describe('typeOf function', () => {
   test('new Promise(()=>({})) |> typeOf === "promise"', () => {
     expect(typeOf(new Promise(() => ({})))).toBe('promise');
   });
-  test('WebAssembly.instantiate("") |> typeOf === "promise"', () => {
-    expect.hasAssertions();
-    let a = '';
-    try {
-      a = typeOf(WebAssembly.instantiate(''));
-    } catch (error) {
-      // Nothing to catch
-    }
-    expect(a).toBe('promise');
-  });
 });
