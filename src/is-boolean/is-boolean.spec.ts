@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { isBoolean } from './is-boolean';
 
 describe('isBoolean function', () => {

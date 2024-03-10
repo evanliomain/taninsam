@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { triangular } from './triangular';
 
 describe('triangular function', () => {

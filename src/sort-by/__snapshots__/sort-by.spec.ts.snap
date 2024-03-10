@@ -1,81 +1,81 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sortBy function input |> sortBy(a, b) 1`] = `
-Array [
-  Object {
+exports[`sortBy function > input |> sortBy(a, b) 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
   },
-  Object {
+  {
     "a": 1,
     "b": 2,
   },
-  Object {
+  {
     "a": 1,
     "b": 3,
   },
-  Object {
+  {
     "a": 2,
     "b": 1,
   },
-  Object {
+  {
     "a": 2,
     "b": 2,
   },
-  Object {
+  {
     "a": 2,
     "b": 3,
   },
-  Object {
+  {
     "a": 3,
     "b": 1,
   },
-  Object {
+  {
     "a": 3,
     "b": 2,
   },
-  Object {
+  {
     "a": 3,
     "b": 3,
   },
 ]
 `;
 
-exports[`sortBy function is a pure function 1`] = `
-Array [
-  Object {
+exports[`sortBy function > is a pure function 1`] = `
+[
+  {
     "a": 2,
     "b": 2,
   },
-  Object {
+  {
     "a": 2,
     "b": 1,
   },
-  Object {
+  {
     "a": 3,
     "b": 3,
   },
-  Object {
+  {
     "a": 3,
     "b": 1,
   },
-  Object {
+  {
     "a": 3,
     "b": 2,
   },
-  Object {
+  {
     "a": 1,
     "b": 1,
   },
-  Object {
+  {
     "a": 1,
     "b": 2,
   },
-  Object {
+  {
     "a": 2,
     "b": 3,
   },
-  Object {
+  {
     "a": 1,
     "b": 3,
   },

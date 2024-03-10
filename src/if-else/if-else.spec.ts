@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { ifElse } from './if-else';
 
 describe('ifElse function', () => {

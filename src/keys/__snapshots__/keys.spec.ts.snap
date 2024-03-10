@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`keys function { a: 1, b: 2, c: 3 } |> keys === ["a", "b", "c"] 1`] = `
-Array [
+exports[`keys function > { a: 1, b: 2, c: 3 } |> keys === ["a", "b", "c"] 1`] = `
+[
   "a",
   "b",
   "c",
 ]
 `;
 
-exports[`keys function is a pure function 1`] = `
-Object {
+exports[`keys function > is a pure function 1`] = `
+{
   "a": 1,
   "b": 2,
   "c": 3,

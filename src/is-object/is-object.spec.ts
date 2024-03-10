@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { isObject } from './is-object';
 
 describe('isObject function', () => {

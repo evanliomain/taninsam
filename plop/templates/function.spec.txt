@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { {{camelCase name}} } from './{{kebabCase name}}';
 
 describe('{{camelCase name}} function', () => {

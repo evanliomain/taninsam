@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ifElse function 1 |> ifElse(isEven, say it's even, say it's odd) === 1 is odd 1`] = `"1 is odd"`;
+exports[`ifElse function > 1 |> ifElse(isEven, say it's even, say it's odd) === 1 is odd 1`] = `"1 is odd"`;
 
-exports[`ifElse function 2 |> ifElse(isEven, say it's even, say it's odd) === 2 is even 1`] = `"2 is even"`;
+exports[`ifElse function > 2 |> ifElse(isEven, say it's even, say it's odd) === 2 is even 1`] = `"2 is even"`;
 
-exports[`ifElse function is a pure function 1`] = `1`;
+exports[`ifElse function > is a pure function 1`] = `1`;

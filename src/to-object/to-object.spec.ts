@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { toObject } from './to-object';
 
 describe('toObject function', () => {

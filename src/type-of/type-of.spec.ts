@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { typeOf } from './type-of';
 
 describe('typeOf function', () => {

@@ -1,20 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`maxBy function is a pure function 1`] = `
-Array [
-  Object {
+exports[`maxBy function > is a pure function 1`] = `
+[
+  {
     "x": 1,
     "y": 5,
   },
-  Object {
+  {
     "x": 2,
     "y": 4,
   },
-  Object {
+  {
     "x": 3,
     "y": 3,
   },
-  Object {
+  {
     "x": 4,
     "y": 2,
   },

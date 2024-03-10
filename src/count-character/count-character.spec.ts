@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { countCharacter } from './count-character';
 
 describe('countCharacter function', () => {

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { max } from './max';
 
 describe('max function', () => {

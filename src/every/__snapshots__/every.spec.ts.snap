@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`every function [1, 2, 3, 4, 5] |> every === true 1`] = `true`;
+exports[`every function > [1, 2, 3, 4, 5] |> every === true 1`] = `true`;
 
-exports[`every function is a pure function 1`] = `
-Array [
+exports[`every function > is a pure function 1`] = `
+[
   1,
   2,
   3,

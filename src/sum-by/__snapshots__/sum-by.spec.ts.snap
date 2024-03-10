@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sumBy function [{ a:1 }, { a:2 }, { a:3 }, { a:4 }] |> sumBy === 10 1`] = `10`;
+exports[`sumBy function > [{ a:1 }, { a:2 }, { a:3 }, { a:4 }] |> sumBy === 10 1`] = `10`;
 
-exports[`sumBy function is a pure function 1`] = `
-Array [
+exports[`sumBy function > is a pure function 1`] = `
+[
   1,
   2,
   3,

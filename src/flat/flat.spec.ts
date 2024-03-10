@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { flat } from './flat';
 
 describe('flat function', () => {

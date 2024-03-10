@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { isEqualObjectOn } from './is-equal-object-on';
 
 describe('isEqualObjectOn function', () => {
