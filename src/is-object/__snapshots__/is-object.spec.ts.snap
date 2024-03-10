@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`isObject function is a pure function 1`] = `
-Object {
+exports[`isObject function > is a pure function 1`] = `
+{
   "a": 1,
 }
 `;

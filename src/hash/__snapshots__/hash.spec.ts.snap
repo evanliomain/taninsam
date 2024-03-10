@@ -1,5 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`hash function hash({ f: () => 1 }) throw exception 1`] = `"Try to hash an unsupported value type: function"`;
+exports[`hash function > hash({ f: () => 1 }) throw exception 1`] = `[Error: Try to hash an unsupported value type: function]`;
 
-exports[`hash function is a pure function 1`] = `"something"`;
+exports[`hash function > is a pure function 1`] = `"something"`;

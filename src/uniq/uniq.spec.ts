@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { uniq } from './uniq';
 
 type Sample = {

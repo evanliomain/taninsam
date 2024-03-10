@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`head function [] |> head === undefined 1`] = `undefined`;
+exports[`head function > [] |> head === undefined 1`] = `undefined`;
 
-exports[`head function [1, 2, 3, 4, 5] |> head === 1 1`] = `1`;
+exports[`head function > [1, 2, 3, 4, 5] |> head === 1 1`] = `1`;
 
-exports[`head function is a pure function with array 1`] = `
-Array [
+exports[`head function > is a pure function with array 1`] = `
+[
   1,
   2,
   3,

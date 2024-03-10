@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`push function [] |> push(4, 5) === [4, 5] 1`] = `
-Array [
+exports[`push function > [] |> push(4, 5) === [4, 5] 1`] = `
+[
   4,
   5,
 ]
 `;
 
-exports[`push function [1, 2, 3] |> push(4, 5) === [1, 2, 3, 4, 5] 1`] = `
-Array [
+exports[`push function > [1, 2, 3] |> push(4, 5) === [1, 2, 3, 4, 5] 1`] = `
+[
   1,
   2,
   3,
@@ -17,8 +17,8 @@ Array [
 ]
 `;
 
-exports[`push function is a pure function 1`] = `
-Array [
+exports[`push function > is a pure function 1`] = `
+[
   1,
   2,
   3,

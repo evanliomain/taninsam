@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { maxBy } from './max-by';
 
 type Test = { x: number; y: number };

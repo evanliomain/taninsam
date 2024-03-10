@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { shift } from './shift';
 
 describe('shift function', () => {

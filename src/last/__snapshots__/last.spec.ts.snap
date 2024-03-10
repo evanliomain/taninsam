@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`last function [] |> last === undefined 1`] = `undefined`;
+exports[`last function > [] |> last === undefined 1`] = `undefined`;
 
-exports[`last function [1, 2, 3, 4, 5] |> last === 5 1`] = `5`;
+exports[`last function > [1, 2, 3, 4, 5] |> last === 5 1`] = `5`;
 
-exports[`last function is a pure function with array 1`] = `
-Array [
+exports[`last function > is a pure function with array 1`] = `
+[
   1,
   2,
   3,

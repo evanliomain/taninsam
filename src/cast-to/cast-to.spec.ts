@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { castTo } from './cast-to';
 
 describe('castTo function', () => {

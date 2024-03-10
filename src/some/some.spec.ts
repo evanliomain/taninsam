@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { some } from './some';
 
 describe('some function', () => {

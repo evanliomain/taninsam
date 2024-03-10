@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { join } from './join';
 
 describe('join function', () => {

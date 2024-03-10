@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`pop function [] |> pop === [] 1`] = `Array []`;
+exports[`pop function > [] |> pop === [] 1`] = `[]`;
 
-exports[`pop function [1, 2, 3, 4, 5] |> pop === [1, 2, 3, 4] 1`] = `
-Array [
+exports[`pop function > [1, 2, 3, 4, 5] |> pop === [1, 2, 3, 4] 1`] = `
+[
   1,
   2,
   3,
@@ -11,10 +11,10 @@ Array [
 ]
 `;
 
-exports[`pop function [1] |> pop === [] 1`] = `Array []`;
+exports[`pop function > [1] |> pop === [] 1`] = `[]`;
 
-exports[`pop function is a pure function 1`] = `
-Array [
+exports[`pop function > is a pure function 1`] = `
+[
   1,
   2,
   3,

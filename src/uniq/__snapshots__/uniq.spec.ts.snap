@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`uniq function [1, 2, 3, 2, 3, 5, 1] |> uniq === [1, 2, 3, 5] 1`] = `
-Array [
+exports[`uniq function > [1, 2, 3, 2, 3, 5, 1] |> uniq === [1, 2, 3, 5] 1`] = `
+[
   1,
   2,
   3,
@@ -9,43 +9,43 @@ Array [
 ]
 `;
 
-exports[`uniq function deepObject |> uniq 1`] = `
-Array [
-  Object {
-    "a": Object {
+exports[`uniq function > deepObject |> uniq 1`] = `
+[
+  {
+    "a": {
       "b": 1,
     },
-    "b": Object {
+    "b": {
       "a": 1,
     },
   },
-  Object {
-    "a": Object {
+  {
+    "a": {
       "b": 1,
     },
-    "b": Object {
+    "b": {
       "a": 2,
     },
   },
-  Object {
-    "a": Object {
+  {
+    "a": {
       "b": 2,
     },
-    "b": Object {
+    "b": {
       "a": 1,
     },
   },
 ]
 `;
 
-exports[`uniq function input |> uniq ({ a, b, c }) => ({ a, b }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 2, c: "a" }] 1`] = `
-Array [
-  Object {
+exports[`uniq function > input |> uniq ({ a, b, c }) => ({ a, b }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 2, c: "a" }] 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
     "c": "a",
   },
-  Object {
+  {
     "a": 1,
     "b": 2,
     "c": "a",
@@ -53,14 +53,14 @@ Array [
 ]
 `;
 
-exports[`uniq function input |> uniq ({ a, b, c }) => ({ a, c }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 1, c: "b" }] 1`] = `
-Array [
-  Object {
+exports[`uniq function > input |> uniq ({ a, b, c }) => ({ a, c }) === [{ a: 1, b: 1, c: "a" }, { a: 1, b: 1, c: "b" }] 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
     "c": "a",
   },
-  Object {
+  {
     "a": 1,
     "b": 1,
     "c": "b",
@@ -68,9 +68,9 @@ Array [
 ]
 `;
 
-exports[`uniq function input |> uniq ({ a, b, c }) => a === [{ a: 1, b: 1, c: "a" }] 1`] = `
-Array [
-  Object {
+exports[`uniq function > input |> uniq ({ a, b, c }) => a === [{ a: 1, b: 1, c: "a" }] 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
     "c": "a",
@@ -78,19 +78,19 @@ Array [
 ]
 `;
 
-exports[`uniq function is a pure function 1`] = `
-Array [
-  Object {
+exports[`uniq function > is a pure function 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
     "c": "a",
   },
-  Object {
+  {
     "a": 1,
     "b": 2,
     "c": "a",
   },
-  Object {
+  {
     "a": 1,
     "b": 1,
     "c": "b",

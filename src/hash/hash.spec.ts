@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { hash } from './hash';
 
 describe('hash function', () => {

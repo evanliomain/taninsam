@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { min } from './min';
 
 describe('min function', () => {

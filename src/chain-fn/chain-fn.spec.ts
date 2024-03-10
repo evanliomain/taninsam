@@ -1,16 +1,17 @@
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { chainFn } from './chain-fn';
 
 describe('chainFn function', () => {
   beforeEach(() => {
-    console.group = jest.fn();
-    console.groupEnd = jest.fn();
-    console.table = jest.fn();
-    console.log = jest.fn();
+    console.group = vi.fn();
+    console.groupEnd = vi.fn();
+    console.table = vi.fn();
+    console.log = vi.fn();
   });
 
   test('by function', () => {
-    const mapFn = jest.fn(array => array.map((x: number) => x + 1));
-    const filterFn = jest.fn(array => array.filter((x: number) => 0 === x % 2));
+    const mapFn = vi.fn(array => array.map((x: number) => x + 1));
+    const filterFn = vi.fn(array => array.filter((x: number) => 0 === x % 2));
 
     const chainResult = chainFn(mapFn)
       .chain(filterFn)
@@ -26,16 +27,16 @@ describe('chainFn function', () => {
   });
 
   test('by function with links', () => {
-    const mapFn = jest.fn((array, _) => {
+    const mapFn = vi.fn((array, _) => {
       return array.map((x: number) => x + 1);
     });
-    const filterFn = jest.fn((array, _) => {
+    const filterFn = vi.fn((array, _) => {
       return array.filter((x: number) => 0 === x % 2);
     });
-    const doubleFn = jest.fn((array, _) => {
+    const doubleFn = vi.fn((array, _) => {
       return array.map((x: number) => 2 * x);
     });
-    const printRatio = jest.fn((array, links) => {
+    const printRatio = vi.fn((array, links) => {
       return `${array.length}/${links.total.length}`;
     });
 
@@ -51,18 +52,18 @@ describe('chainFn function', () => {
 
   describe('log chainFn', () => {
     test('with array', () => {
-      const mapFn = jest.fn((array, _) => {
+      const mapFn = vi.fn((array, _) => {
         return array.map((x: number) => x + 1);
       });
-      const filterFn = jest.fn((array, _) => {
+      const filterFn = vi.fn((array, _) => {
         return array.filter((x: number) => 0 === x % 2);
       });
-      const doubleFn = jest.fn((array, _) => {
+      const doubleFn = vi.fn((array, _) => {
         console.log('doubleFn', array);
 
         return array.map((x: number) => 2 * x);
       });
-      const printRatio = jest.fn((array, links) => {
+      const printRatio = vi.fn((array, links) => {
         return `${array.length}/${links.total.length}`;
       });
 

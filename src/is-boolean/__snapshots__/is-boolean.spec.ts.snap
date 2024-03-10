@@ -1,3 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`isBoolean function is a pure function 1`] = `true`;
+exports[`isBoolean function > is a pure function 1`] = `true`;

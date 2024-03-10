@@ -1,28 +1,28 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`triangular function [] |> triangular === [] 1`] = `Array []`;
+exports[`triangular function > [] |> triangular === [] 1`] = `[]`;
 
-exports[`triangular function [1, 2, 3, 4, 5] |> triangular === [[1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5]] 1`] = `
-Array [
-  Array [
+exports[`triangular function > [1, 2, 3, 4, 5] |> triangular === [[1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5]] 1`] = `
+[
+  [
     1,
   ],
-  Array [
+  [
     1,
     2,
   ],
-  Array [
+  [
     1,
     2,
     3,
   ],
-  Array [
+  [
     1,
     2,
     3,
     4,
   ],
-  Array [
+  [
     1,
     2,
     3,
@@ -32,8 +32,8 @@ Array [
 ]
 `;
 
-exports[`triangular function is a pure function 1`] = `
-Array [
+exports[`triangular function > is a pure function 1`] = `
+[
   1,
   2,
   3,

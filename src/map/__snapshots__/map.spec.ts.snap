@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`map function [] |> map(incr) === [] 1`] = `Array []`;
+exports[`map function > [] |> map(incr) === [] 1`] = `[]`;
 
-exports[`map function [1, 2, 3, 4, 5] |> map(incr) === [2, 3, 4, 5, 6] 1`] = `
-Array [
+exports[`map function > [1, 2, 3, 4, 5] |> map(incr) === [2, 3, 4, 5, 6] 1`] = `
+[
   2,
   3,
   4,
@@ -12,8 +12,8 @@ Array [
 ]
 `;
 
-exports[`map function is a pure function 1`] = `
-Array [
+exports[`map function > is a pure function 1`] = `
+[
   1,
   2,
   3,

@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`shift function [] |> shift === [] 1`] = `Array []`;
+exports[`shift function > [] |> shift === [] 1`] = `[]`;
 
-exports[`shift function [1, 2, 3, 4, 5] |> shift === [2, 3, 4, 5] 1`] = `
-Array [
+exports[`shift function > [1, 2, 3, 4, 5] |> shift === [2, 3, 4, 5] 1`] = `
+[
   2,
   3,
   4,
@@ -11,8 +11,8 @@ Array [
 ]
 `;
 
-exports[`shift function is a pure function 1`] = `
-Array [
+exports[`shift function > is a pure function 1`] = `
+[
   1,
   2,
   3,

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { isString } from './is-string';
 
 describe('isString function', () => {

@@ -1,3 +1,4 @@
+import { describe, expect, test, vi } from 'vitest';
 import { map } from '../map';
 import { not } from './not';
 
@@ -15,7 +16,7 @@ describe('not function', () => {
   });
 
   test('x |> not(predicat) calls the predicat', () => {
-    const predicat = jest.fn().mockReturnValue(true);
+    const predicat = vi.fn().mockReturnValue(true);
     not(predicat)('foo');
     expect(predicat).toHaveBeenCalledWith('foo');
   });
