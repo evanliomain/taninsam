@@ -1,3 +1,4 @@
+import { describe, expect, test, vi } from 'vitest';
 import { map } from './map';
 
 describe('map function', () => {
@@ -18,7 +19,7 @@ describe('map function', () => {
   });
 
   test('call the iteree callback with correct inputs', () => {
-    const cb = jest.fn((x: number) => 1 + x);
+    const cb = vi.fn((x: number) => 1 + x);
     const link = { fake: 'fake' };
     map<number, number>(cb)(input, link);
     input.forEach((i, index) => {

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { reduce } from './reduce';
 
 describe('reduce function', () => {

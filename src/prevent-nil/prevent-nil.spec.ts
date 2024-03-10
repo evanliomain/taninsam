@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { preventNil } from './prevent-nil';
 
 describe('preventNil function', () => {
@@ -5,7 +6,7 @@ describe('preventNil function', () => {
   let f;
 
   beforeEach(() => {
-    f = jest.fn().mockReturnValue(1);
+    f = vi.fn().mockReturnValue(1);
   });
 
   test('is a pure function', () => {

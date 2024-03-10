@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`isEqualObjectOn function is a pure function 1`] = `
-Object {
+exports[`isEqualObjectOn function > is a pure function 1`] = `
+{
   "a": 1,
   "b": 2,
   "c": 3,
 }
 `;
 
-exports[`isEqualObjectOn function is a pure function 2`] = `
-Object {
+exports[`isEqualObjectOn function > is a pure function 2`] = `
+{
   "a": 1,
   "b": 2,
   "c": 4,

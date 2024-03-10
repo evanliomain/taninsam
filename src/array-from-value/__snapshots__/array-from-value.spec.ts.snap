@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) === ["a", "a", "a", "a", "a"] 1`] = `
-Array [
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) === ["a", "a", "a", "a", "a"] 1`] = `
+[
   "a",
   "a",
   "a",
@@ -10,16 +10,16 @@ Array [
 ]
 `;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have a lenght of 5 1`] = `5`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have a lenght of 5 1`] = `5`;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 1`] = `"a"`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have always the same value "a" 1`] = `"a"`;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 2`] = `"a"`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have always the same value "a" 2`] = `"a"`;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 3`] = `"a"`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have always the same value "a" 3`] = `"a"`;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 4`] = `"a"`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have always the same value "a" 4`] = `"a"`;
 
-exports[`arrayFromValue function "a" |> arrayFromValue(5) have always the same value "a" 5`] = `"a"`;
+exports[`arrayFromValue function > "a" |> arrayFromValue(5) have always the same value "a" 5`] = `"a"`;
 
-exports[`arrayFromValue function is a pure function 1`] = `"a"`;
+exports[`arrayFromValue function > is a pure function 1`] = `"a"`;

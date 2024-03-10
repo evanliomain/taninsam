@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`filter function is a pure function 1`] = `
-Array [
+exports[`filter function > is a pure function 1`] = `
+[
   1,
   2,
   3,
@@ -10,8 +10,8 @@ Array [
 ]
 `;
 
-exports[`filter function keep even [1, 2, 3, 4, 5] |> filter === [2, 4] 1`] = `
-Array [
+exports[`filter function > keep even [1, 2, 3, 4, 5] |> filter === [2, 4] 1`] = `
+[
   2,
   4,
 ]

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { loopWhile } from './loop-while';
 
 describe('loopWhile function', () => {

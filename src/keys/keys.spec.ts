@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { keys } from './keys';
 
 describe('keys function', () => {

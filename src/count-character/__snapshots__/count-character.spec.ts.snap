@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`countCharacter function "" |> countCharacter("w") === 0 1`] = `0`;
+exports[`countCharacter function > "" |> countCharacter("w") === 0 1`] = `0`;
 
-exports[`countCharacter function "abba" |> countCharacter("a") === 2 1`] = `2`;
+exports[`countCharacter function > "abba" |> countCharacter("a") === 2 1`] = `2`;
 
-exports[`countCharacter function "abba" |> countCharacter("w") === 0 1`] = `0`;
+exports[`countCharacter function > "abba" |> countCharacter("w") === 0 1`] = `0`;
 
-exports[`countCharacter function countCharacter("wtf") throw exception 1`] = `"Can't count a character with a lenght different of 1: 3"`;
+exports[`countCharacter function > countCharacter("wtf") throw exception 1`] = `[Error: Can't count a character with a lenght different of 1: 3]`;
 
-exports[`countCharacter function is a pure function 1`] = `"abba"`;
+exports[`countCharacter function > is a pure function 1`] = `"abba"`;

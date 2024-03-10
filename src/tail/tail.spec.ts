@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { tail } from './tail';
 
 describe('tail function', () => {

@@ -1,24 +1,24 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`entries function { a: 1, b: 2, c: 3 } |> entries === [1, 2, 3] 1`] = `
-Array [
-  Array [
+exports[`entries function > { a: 1, b: 2, c: 3 } |> entries === [1, 2, 3] 1`] = `
+[
+  [
     "a",
     1,
   ],
-  Array [
+  [
     "b",
     2,
   ],
-  Array [
+  [
     "c",
     3,
   ],
 ]
 `;
 
-exports[`entries function is a pure function 1`] = `
-Object {
+exports[`entries function > is a pure function 1`] = `
+{
   "a": 1,
   "b": 2,
   "c": 3,

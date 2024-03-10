@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { every } from './every';
 
 describe('every function', () => {

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { partition } from './partition';
 
 describe('partition function', () => {

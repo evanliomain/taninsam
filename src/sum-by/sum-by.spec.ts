@@ -1,3 +1,4 @@
+import { describe, expect, test, vi } from 'vitest';
 import { sumBy } from './sum-by';
 
 describe('sumBy function', () => {
@@ -15,7 +16,7 @@ describe('sumBy function', () => {
   });
 
   test('call the iteree callback with correct inputs', () => {
-    const cb = jest.fn((x: number) => x);
+    const cb = vi.fn((x: number) => x);
     const link = { fake: 'fake' };
     sumBy<number>(cb)(input, link);
     input.forEach((i, index) => {

@@ -1,23 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`partition function [{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }] |> partition(x => x.a) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]] 1`] = `
-Array [
-  Array [
-    Object {
+exports[`partition function > [{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }] |> partition(x => x.a) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]] 1`] = `
+[
+  [
+    {
       "a": 1,
       "b": 1,
     },
-    Object {
+    {
       "a": 1,
       "b": 2,
     },
   ],
-  Array [
-    Object {
+  [
+    {
       "a": 2,
       "b": 1,
     },
-    Object {
+    {
       "a": 2,
       "b": 2,
     },
@@ -25,24 +25,24 @@ Array [
 ]
 `;
 
-exports[`partition function [{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }] |> partition(x => x.b) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]] 1`] = `
-Array [
-  Array [
-    Object {
+exports[`partition function > [{ a: 1, b: 1 }, { a: 1, b: 2 }, { a: 2, b: 1 }, { a: 2, b: 2 }] |> partition(x => x.b) === [[{ a: 1, b: 1}, { a: 1, b: 2 }],[{ a: 2, b: 1 }, { a: 2, b: 2 }]] 1`] = `
+[
+  [
+    {
       "a": 1,
       "b": 1,
     },
-    Object {
+    {
       "a": 2,
       "b": 1,
     },
   ],
-  Array [
-    Object {
+  [
+    {
       "a": 1,
       "b": 2,
     },
-    Object {
+    {
       "a": 2,
       "b": 2,
     },
@@ -50,41 +50,41 @@ Array [
 ]
 `;
 
-exports[`partition function [1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12] |> partition(Math.floor) === [[1.1, 1.5],[2.1, 2.3, 2.8],[3],[4.12]] 1`] = `
-Array [
-  Array [
+exports[`partition function > [1.1, 1.5, 2.1, 2.3, 2.8, 3, 4.12] |> partition(Math.floor) === [[1.1, 1.5],[2.1, 2.3, 2.8],[3],[4.12]] 1`] = `
+[
+  [
     1.1,
     1.5,
   ],
-  Array [
+  [
     2.1,
     2.3,
     2.8,
   ],
-  Array [
+  [
     3,
   ],
-  Array [
+  [
     4.12,
   ],
 ]
 `;
 
-exports[`partition function is a pure function 1`] = `
-Array [
-  Object {
+exports[`partition function > is a pure function 1`] = `
+[
+  {
     "a": 1,
     "b": 1,
   },
-  Object {
+  {
     "a": 1,
     "b": 2,
   },
-  Object {
+  {
     "a": 2,
     "b": 1,
   },
-  Object {
+  {
     "a": 2,
     "b": 2,
   },

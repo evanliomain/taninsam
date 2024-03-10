@@ -1,16 +1,17 @@
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { chain } from './chain';
 
 describe('chain function', () => {
   beforeEach(() => {
-    console.group = jest.fn();
-    console.groupEnd = jest.fn();
-    console.table = jest.fn();
-    console.log = jest.fn();
+    console.group = vi.fn();
+    console.groupEnd = vi.fn();
+    console.table = vi.fn();
+    console.log = vi.fn();
   });
 
   test('by value', () => {
-    const mapFn = jest.fn(array => array.map((x: number) => x + 1));
-    const filterFn = jest.fn(array => array.filter((x: number) => 0 === x % 2));
+    const mapFn = vi.fn(array => array.map((x: number) => x + 1));
+    const filterFn = vi.fn(array => array.filter((x: number) => 0 === x % 2));
 
     const chainResult = chain([1, 2, 3, 4])
       .chain(mapFn)
@@ -25,11 +26,11 @@ describe('chain function', () => {
   });
 
   test('by value with links', () => {
-    const mapFn = jest.fn((array, _) => array.map((x: number) => x + 1));
-    const filterFn = jest.fn((array, _) =>
+    const mapFn = vi.fn((array, _) => array.map((x: number) => x + 1));
+    const filterFn = vi.fn((array, _) =>
       array.filter((x: number) => 0 === x % 2)
     );
-    const printRatio = jest.fn(
+    const printRatio = vi.fn(
       (array, links) => `${array.length}/${links.total.length}`
     );
 

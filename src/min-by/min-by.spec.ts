@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { minBy } from './min-by';
 
 type Test = { x: number; y: number };

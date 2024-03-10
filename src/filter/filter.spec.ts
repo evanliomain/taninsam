@@ -1,3 +1,4 @@
+import { describe, expect, test, vi } from 'vitest';
 import { filter } from './filter';
 
 describe('filter function', () => {
@@ -13,7 +14,7 @@ describe('filter function', () => {
   });
 
   test('call the iteree callback with correct inputs', () => {
-    const cb = jest.fn((x: number) => true);
+    const cb = vi.fn((x: number) => true);
     const link = { fake: 'fake' };
     filter<number>(cb)(input, link);
     input.forEach((i, index) => {

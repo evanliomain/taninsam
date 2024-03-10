@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { sort } from './sort';
 import { ComparaisonResultChoice } from '../@types/comparaison-result-choice.enum';
 

@@ -1,27 +1,27 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`find function [{ a, b }] |> find(e => e.a === 3) === { a: 3, b: "c" } 1`] = `
-Object {
+exports[`find function > [{ a, b }] |> find(e => e.a === 3) === { a: 3, b: "c" } 1`] = `
+{
   "a": 3,
   "b": "c",
 }
 `;
 
-exports[`find function is a pure function 1`] = `
-Array [
-  Object {
+exports[`find function > is a pure function 1`] = `
+[
+  {
     "a": 1,
     "b": "a",
   },
-  Object {
+  {
     "a": 2,
     "b": "b",
   },
-  Object {
+  {
     "a": 3,
     "b": "c",
   },
-  Object {
+  {
     "a": 4,
     "b": "d",
   },

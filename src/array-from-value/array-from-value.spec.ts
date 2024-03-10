@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { arrayFromValue } from './array-from-value';
 
 describe('arrayFromValue function', () => {

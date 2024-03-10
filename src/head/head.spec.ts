@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { head } from './head';
 
 describe('head function', () => {

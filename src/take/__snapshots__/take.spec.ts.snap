@@ -1,29 +1,29 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`take function "ab" |> take(3) === "ab" 1`] = `"ab"`;
+exports[`take function > "ab" |> take(3) === "ab" 1`] = `"ab"`;
 
-exports[`take function "abba" |> take(0) === "" 1`] = `""`;
+exports[`take function > "abba" |> take(0) === "" 1`] = `""`;
 
-exports[`take function "abba" |> take(2) === "ab" 1`] = `"ab"`;
+exports[`take function > "abba" |> take(2) === "ab" 1`] = `"ab"`;
 
-exports[`take function [1, 2, 3, 4, 5] |> take(2) === [1, 2] 1`] = `
-Array [
+exports[`take function > [1, 2, 3, 4, 5] |> take(2) === [1, 2] 1`] = `
+[
   1,
   2,
 ]
 `;
 
-exports[`take function [1, 2] |> take(0) === [] 1`] = `Array []`;
+exports[`take function > [1, 2] |> take(0) === [] 1`] = `[]`;
 
-exports[`take function [1, 2] |> take(3) === [1, 2] 1`] = `
-Array [
+exports[`take function > [1, 2] |> take(3) === [1, 2] 1`] = `
+[
   1,
   2,
 ]
 `;
 
-exports[`take function is a pure function with array 1`] = `
-Array [
+exports[`take function > is a pure function with array 1`] = `
+[
   1,
   2,
   3,
@@ -32,4 +32,4 @@ Array [
 ]
 `;
 
-exports[`take function is a pure function with string 1`] = `"abba"`;
+exports[`take function > is a pure function with string 1`] = `"abba"`;

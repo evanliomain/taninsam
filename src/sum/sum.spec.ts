@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { sum } from './sum';
 
 describe('sum function', () => {
