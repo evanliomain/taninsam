@@ -4,13 +4,8 @@ Documentation available in : https://evanliomain.github.io/taninsam
 
 A functionnal library based on a powerfull chain mecanism.
 
-[![Travis](https://img.shields.io/travis/evanliomain/taninsam)](https://travis-ci.org/evanliomain/taninsam)
+[![Release](https://github.com/evanliomain/taninsam/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/evanliomain/taninsam/actions/workflows/release.yml)
 [![Coveralls](https://img.shields.io/coveralls/evanliomain/taninsam)](https://coveralls.io/github/evanliomain/taninsam)
-[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/evanliomain/taninsam/master)](https://stryker-mutator.github.io)
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/evanliomain/taninsam.svg)](https://greenkeeper.io/)
-![Dependencies](https://img.shields.io/david/evanliomain/taninsam)
-![Dev Dependencies](https://img.shields.io/david/dev/evanliomain/taninsam)
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Made with](https://img.shields.io/badge/Made%20with-TypeScript-blue)](http://www.typescriptlang.org)

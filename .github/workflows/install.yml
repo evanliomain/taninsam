@@ -1,0 +1,26 @@
+name: Install
+run-name: ${{ github.actor }} is installing
+on:
+  workflow_call
+
+jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: 'yarn'
+      - name: Cache dependencies
+        id: node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependancies
+        if: steps.node_modules.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile

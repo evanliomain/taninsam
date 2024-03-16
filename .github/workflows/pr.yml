@@ -1,0 +1,15 @@
+name: PR
+run-name: ${{ github.actor }} is building and testing
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+  mutation-testing:
+    uses: ./.github/workflows/mutation-testing.yml
