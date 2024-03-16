@@ -1,0 +1,36 @@
+name: Build and test
+run-name: ${{ github.actor }} is running mutation testing
+on:
+  workflow_call
+
+jobs:
+  install:
+    uses: ./.github/workflows/install.yml
+
+  mutation-testing:
+    name: Mutation testing
+    runs-on: ubuntu-latest
+    needs: install
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: Restore dependencies from cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Cache mutation testing
+        uses: actions/cache@v4
+        id: mutation-testing
+        with:
+          path: dist
+          key: ${{ runner.os }}-mutation-testing-${{ hashFiles('src/**') }}
+      - name: Mutation testing
+        if: steps.mutation-testing.outputs.cache-hit != 'true'
+        run: yarn stryker:ci

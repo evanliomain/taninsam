@@ -6,7 +6,7 @@ const config = {
   packageManager: 'yarn',
   reporters: ['html', 'dashboard'],
   htmlReporter: {
-    fileName: '.stryker-reports/report.html'
+    fileName: 'dist/stryker-reports/report.html'
   },
   testRunner: 'vitest',
   testRunner_comment:
