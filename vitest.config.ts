@@ -12,8 +12,8 @@ export default defineConfig({
         functions: 100,
         lines: 100,
         statements: 100,
-        autoUpdate: true
-      }
-    }
-  }
+        autoUpdate: true,
+      },
+    },
+  },
 });
