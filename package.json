@@ -73,7 +73,7 @@
     "cz-conventional-changelog": "^3.0.0",
     "husky": "^4.0.2",
     "lint-staged": "^9.0.0",
-    "plop": "^2.0.0",
+    "plop": "^4.0.1",
     "prettier": "^1.4.4",
     "rimraf": "^3.0.0",
     "rollup": "^1.15.2",
