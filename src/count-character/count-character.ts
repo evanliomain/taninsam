@@ -20,7 +20,7 @@
 export function countCharacter(character: string): (s: string) => number {
   if (1 !== character.length) {
     throw new Error(
-      `Can't count a character with a lenght different of 1: ${character.length}`
+      `Can't count a character with a lenght different of 1: ${character.length}`,
     );
   }
 

@@ -25,7 +25,7 @@
  * ```
  */
 export function isEqualObjectOn(
-  mapping: string[]
+  mapping: string[],
 ): (o1: object) => (o1: object) => boolean {
   return (o1: object) => (o2: object) =>
     mapping.every(fieldName => o1[fieldName] === o2[fieldName]);

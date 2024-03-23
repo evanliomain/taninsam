@@ -48,7 +48,7 @@ import { values } from '../values';
  * ```
  */
 export function partition<T, K>(
-  toKey: (element: T) => K
+  toKey: (element: T) => K,
 ): (array: ReadonlyArray<T>) => ReadonlyArray<ReadonlyArray<T>> {
   return (array: ReadonlyArray<T>) =>
     chain(array)
@@ -63,17 +63,17 @@ export function partition<T, K>(
                   hashKey => !isUndefined(acc[hashKey]),
                   hashKey => ({
                     ...acc,
-                    [hashKey]: [...acc[hashKey], element]
+                    [hashKey]: [...acc[hashKey], element],
                   }),
                   hashKey => ({
                     ...acc,
-                    [hashKey]: [element]
-                  })
-                )
+                    [hashKey]: [element],
+                  }),
+                ),
               )
               .value() as Record<string, ReadonlyArray<T>>,
-          {}
-        )
+          {},
+        ),
       )
       .chain(values())
       .value();

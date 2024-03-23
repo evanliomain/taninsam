@@ -37,7 +37,7 @@ import { reduce } from '../reduce';
  * ```
  */
 export function uniq<T>(
-  comparison: (x: T) => any = x => x
+  comparison: (x: T) => any = x => x,
 ): (element: T[]) => T[] {
   return (array: T[]) =>
     chain(array)
@@ -45,7 +45,7 @@ export function uniq<T>(
         reduce(
           (
             acc: { result: T[]; distinct: { [key: string]: boolean } },
-            element: T
+            element: T,
           ) => {
             const value = comparison(element);
             const hashKey = hash()(value);
@@ -55,11 +55,11 @@ export function uniq<T>(
 
             return {
               result: [...acc.result, element],
-              distinct: { ...acc.distinct, [hashKey]: true }
+              distinct: { ...acc.distinct, [hashKey]: true },
             };
           },
-          { result: [], distinct: {} }
-        )
+          { result: [], distinct: {} },
+        ),
       )
       .chain(({ result }) => result)
       .value();

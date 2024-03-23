@@ -24,7 +24,7 @@
  * ```
  */
 export function triangular<T>(): (
-  array: ReadonlyArray<T>
+  array: ReadonlyArray<T>,
 ) => ReadonlyArray<ReadonlyArray<T>> {
   return (array: ReadonlyArray<T>): ReadonlyArray<ReadonlyArray<T>> =>
     array.reduce((acc: ReadonlyArray<ReadonlyArray<T>>, current: T) => {

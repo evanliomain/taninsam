@@ -17,7 +17,7 @@ export function chainFn<T>(f: (e) => T): ChainFn<T> {
   function _chainByFunction<V>(
     _f: (e, l?: Links) => Result<V>,
     links: Links,
-    linkName?: string
+    linkName?: string,
   ): ChainFn<V> {
     return {
       chain: _chain,
@@ -29,7 +29,7 @@ export function chainFn<T>(f: (e) => T): ChainFn<T> {
           log(flag, x, closureLink);
 
           return x;
-        })
+        }),
     };
 
     function _chain(g) {
@@ -39,12 +39,12 @@ export function chainFn<T>(f: (e) => T): ChainFn<T> {
         if (undefined === linkName) {
           return {
             result: g(result, inneriteClosureLinks),
-            links: inneriteClosureLinks
+            links: inneriteClosureLinks,
           };
         }
         const newClosureLink = {
           ...inneriteClosureLinks,
-          [linkName]: result
+          [linkName]: result,
         };
 
         return { result: g(result, newClosureLink), links: newClosureLink };

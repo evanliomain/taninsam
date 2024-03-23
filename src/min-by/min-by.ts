@@ -28,7 +28,7 @@
  * ```
  */
 export function minBy<T>(
-  iteratee: (element: T) => number
+  iteratee: (element: T) => number,
 ): (elements: ReadonlyArray<T>) => T | undefined {
   return (elements: ReadonlyArray<T>) => {
     if (0 === elements.length) {
@@ -42,7 +42,7 @@ export function minBy<T>(
     return tail.reduce(
       (acc: T, element: T) =>
         iteratee(acc) <= iteratee(element) ? acc : element,
-      head
+      head,
     );
   };
 }

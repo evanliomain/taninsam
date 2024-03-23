@@ -60,18 +60,30 @@ describe('hash function', () => {
   test('hash [{ a: 1, b: 2 }, { a: 3, b: 4 }] === hash [{ b: 2, a: 1 }, { a: 3, b: 4 }]', () => {
     expect(
       compare(
-        [{ a: 1, b: 2 }, { a: 3, b: 4 }],
-        [{ b: 2, a: 1 }, { a: 3, b: 4 }]
-      )
+        [
+          { a: 1, b: 2 },
+          { a: 3, b: 4 },
+        ],
+        [
+          { b: 2, a: 1 },
+          { a: 3, b: 4 },
+        ],
+      ),
     ).toBeTruthy();
   });
 
   test('hash [{ a: 1, b: 2 }, { a: 3, b: 4 }] !== hash [{ a: 3, b: 4 }, { a: 1, b: 2 }]', () => {
     expect(
       compare(
-        [{ a: 1, b: 2 }, { a: 3, b: 4 }],
-        [{ a: 3, b: 4 }, { a: 1, b: 2 }]
-      )
+        [
+          { a: 1, b: 2 },
+          { a: 3, b: 4 },
+        ],
+        [
+          { a: 3, b: 4 },
+          { a: 1, b: 2 },
+        ],
+      ),
     ).toBeFalsy();
   });
 

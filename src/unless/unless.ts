@@ -21,7 +21,7 @@
  */
 export function unless<T, U>(
   predicat: (value: T) => boolean,
-  transform: (value: T) => U
+  transform: (value: T) => U,
 ): (value: T) => T | U {
   return (value: T) => (predicat(value) ? value : transform(value));
 }

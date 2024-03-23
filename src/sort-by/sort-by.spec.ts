@@ -12,15 +12,23 @@ describe('sortBy function', () => {
     { a: 1, b: 1 },
     { a: 1, b: 2 },
     { a: 2, b: 3 },
-    { a: 1, b: 3 }
+    { a: 1, b: 3 },
   ];
 
   test('is a pure function', () => {
-    sortBy<{ a: number; b: number }>(({ a }) => a, ({ b }) => b)(input);
+    sortBy<{ a: number; b: number }>(
+      ({ a }) => a,
+      ({ b }) => b,
+    )(input);
     expect(input).toMatchSnapshot();
   });
 
   test('input |> sortBy(a, b)', () => {
-    expect(sortBy<Sample>(({ a }) => a, ({ b }) => b)(input)).toMatchSnapshot();
+    expect(
+      sortBy<Sample>(
+        ({ a }) => a,
+        ({ b }) => b,
+      )(input),
+    ).toMatchSnapshot();
   });
 });

@@ -16,17 +16,15 @@
  *   .value() // {a: 1, b: 'c'}
  * ```
  */
-export function fromEntries(): (
-  en: ReadonlyArray<[string, any]>
-) => {
+export function fromEntries(): (en: ReadonlyArray<[string, any]>) => {
   [key: string]: any;
 } {
   return (en: ReadonlyArray<[string, any]>) =>
     en.reduce(
       (ob: object, [key, value]) => ({
         ...ob,
-        [key]: value
+        [key]: value,
       }),
-      {}
+      {},
     );
 }

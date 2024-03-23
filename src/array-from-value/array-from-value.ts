@@ -18,7 +18,7 @@
  * ```
  */
 export function arrayFromValue<T>(
-  length: number
+  length: number,
 ): (value: T) => ReadonlyArray<T> {
   return (value: T) => Array.from({ length }, () => value);
 }

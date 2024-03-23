@@ -19,7 +19,7 @@ export function chain<T>(value: T): Chain<T> {
       chain: f => _chainByValue(f(v, links), links),
       link: linkName => _chainByValue(v, { ...links, [linkName]: v }),
       value: () => v,
-      log: _log<V>(v, links)
+      log: _log<V>(v, links),
     };
   }
 

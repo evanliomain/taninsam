@@ -29,7 +29,7 @@
  * ```
  */
 export function split(
-  separator: string = ''
+  separator: string = '',
 ): (str: string) => ReadonlyArray<string> {
   return (str: string) => str.split(separator).filter(s => '' !== s);
 }

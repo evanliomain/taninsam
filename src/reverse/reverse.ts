@@ -18,7 +18,7 @@ import { isArray } from '../is-array';
  * ```
  */
 export function reverse<T>(): (
-  list: string | ReadonlyArray<T>
+  list: string | ReadonlyArray<T>,
 ) => string | ReadonlyArray<T> {
   return (list: string | ReadonlyArray<T>) => {
     if (isArray(list)) {

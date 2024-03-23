@@ -16,14 +16,14 @@
  * ```
  */
 export function flat<T>(): (
-  array: ReadonlyArray<ReadonlyArray<T>>
+  array: ReadonlyArray<ReadonlyArray<T>>,
 ) => ReadonlyArray<T> {
   return (array: ReadonlyArray<ReadonlyArray<T>>) =>
     array.reduce(
       (result: ReadonlyArray<T>, element: ReadonlyArray<T>) => [
         ...result,
-        ...element
+        ...element,
       ],
-      []
+      [],
     );
 }

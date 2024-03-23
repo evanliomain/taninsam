@@ -4,5 +4,5 @@ export type Iteratee<T, U> = (
   value: T,
   index: number,
   array: ReadonlyArray<T>,
-  links?: Links
+  links?: Links,
 ) => U;

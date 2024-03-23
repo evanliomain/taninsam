@@ -28,7 +28,7 @@
  * ```
  */
 export function find<T>(
-  predicate: (value: T, index: number, array: ReadonlyArray<T>) => boolean
+  predicate: (value: T, index: number, array: ReadonlyArray<T>) => boolean,
 ): (array: ReadonlyArray<T>) => T | undefined {
   return (array: ReadonlyArray<T>) => array.find(predicate);
 }

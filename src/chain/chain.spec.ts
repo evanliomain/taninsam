@@ -28,10 +28,10 @@ describe('chain function', () => {
   test('by value with links', () => {
     const mapFn = vi.fn((array, _) => array.map((x: number) => x + 1));
     const filterFn = vi.fn((array, _) =>
-      array.filter((x: number) => 0 === x % 2)
+      array.filter((x: number) => 0 === x % 2),
     );
     const printRatio = vi.fn(
-      (array, links) => `${array.length}/${links.total.length}`
+      (array, links) => `${array.length}/${links.total.length}`,
     );
 
     const chainResult = chain<number[]>([1, 2, 3, 4])
@@ -46,18 +46,14 @@ describe('chain function', () => {
 
   describe('log chain', () => {
     test('with array', () => {
-      chain([1, 2, 3, 4])
-        .log('test')
-        .value();
+      chain([1, 2, 3, 4]).log('test').value();
       expect(console.group).toBeCalled();
       expect(console.table).toBeCalled();
       expect(console.groupEnd).toBeCalled();
     });
 
     test('with object', () => {
-      chain('test')
-        .log('test')
-        .value();
+      chain('test').log('test').value();
       expect(console.group).toBeCalled();
       expect(console.log).toBeCalled();
       expect(console.groupEnd).toBeCalled();

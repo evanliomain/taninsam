@@ -7,7 +7,7 @@ describe('pushOrReplace function', () => {
   test('is a pure function', () => {
     pushOrReplace({
       match: x => x % 2 === 0,
-      replacement: 2
+      replacement: 2,
     })(input);
     expect(input).toMatchSnapshot();
   });
@@ -20,10 +20,10 @@ describe('pushOrReplace function', () => {
       expect(
         pushOrReplace<number>({
           match: x => x % 2 === 0,
-          replacement: 2
-        })([4, 6, 8])
+          replacement: 2,
+        })([4, 6, 8]),
       ).toMatchSnapshot();
-    }
+    },
   );
 
   test(
@@ -35,23 +35,23 @@ describe('pushOrReplace function', () => {
         pushOrReplace<number>(
           {
             match: x => x % 2 === 0,
-            replacement: 2
+            replacement: 2,
           },
           {
             match: x => x % 3 === 0,
-            replacement: 3
-          }
-        )(input)
+            replacement: 3,
+          },
+        )(input),
       ).toMatchSnapshot();
-    }
+    },
   );
 
   test('[] |> pushOrReplace({ match: x => x % 2 === 0, replacement: 2 }) === [2]', () => {
     expect(
       pushOrReplace<number>({
         match: x => x % 2 === 0,
-        replacement: 2
-      })([])
+        replacement: 2,
+      })([]),
     ).toMatchSnapshot();
   });
 });
