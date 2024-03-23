@@ -215,7 +215,7 @@
     "strict-type-predicates": true,
     "switch-default": true,
     "switch-final-break": [true, "always"],
-    "trailing-comma": [true, { "multiline": "never", "single": "never" }],
+    "trailing-comma": [true, { "single": "never" }],
     "triple-equals": [true, "allow-null-check"],
     "type-literal-delimiter": true,
     "typedef": true,

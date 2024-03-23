@@ -11,7 +11,7 @@ describe('uniq function', () => {
   const input: Sample[] = [
     { a: 1, b: 1, c: 'a' },
     { a: 1, b: 2, c: 'a' },
-    { a: 1, b: 1, c: 'b' }
+    { a: 1, b: 1, c: 'b' },
   ];
 
   test('is a pure function', () => {
@@ -41,8 +41,8 @@ describe('uniq function', () => {
         { a: { b: 1 }, b: { a: 1 } },
         { a: { b: 1 }, b: { a: 2 } },
         { a: { b: 2 }, b: { a: 1 } },
-        { a: { b: 1 }, b: { a: 1 } }
-      ])
+        { a: { b: 1 }, b: { a: 1 } },
+      ]),
     ).toMatchSnapshot();
   });
 });

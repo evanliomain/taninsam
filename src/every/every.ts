@@ -18,7 +18,7 @@
  * ```
  */
 export function every<T>(
-  iteratee: (value: T, index: number, array: ReadonlyArray<T>) => boolean
+  iteratee: (value: T, index: number, array: ReadonlyArray<T>) => boolean,
 ): (array: ReadonlyArray<T>) => boolean {
   return (array: ReadonlyArray<T>) => array.every(iteratee);
 }

@@ -23,7 +23,7 @@
  */
 export function loopWhile<T>(
   predicate: (element: T) => boolean,
-  iteratee: (element: T) => T
+  iteratee: (element: T) => T,
 ): (input: T) => T {
   return (input: T) => {
     let output = input;

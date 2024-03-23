@@ -21,10 +21,10 @@ import { Function, Iteratee, Links } from '../@types';
  * ```
  */
 export function map<T, U>(
-  iteratee: Iteratee<T, U>
+  iteratee: Iteratee<T, U>,
 ): Function<ReadonlyArray<T>, ReadonlyArray<U>> {
   return (array: ReadonlyArray<T>, links?: Links) =>
     array.map((value: T, index: number, originalArray: ReadonlyArray<T>) =>
-      iteratee(value, index, originalArray, links)
+      iteratee(value, index, originalArray, links),
     );
 }

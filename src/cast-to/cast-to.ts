@@ -50,10 +50,10 @@ export function castTo(mapping: CastMapping): (ob: object) => object {
         reduce(
           (castedObject, [key, cast]) => ({
             ...castedObject,
-            [key]: cast(ob[key])
+            [key]: cast(ob[key]),
           }),
-          ob
-        )
+          ob,
+        ),
       )
       .value();
 

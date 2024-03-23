@@ -30,7 +30,7 @@ import { ComparaisonResultChoice } from '../@types';
  * ```
  */
 export function sort<T>(
-  comparator?: (d1: T, d2: T) => ComparaisonResultChoice
+  comparator?: (d1: T, d2: T) => ComparaisonResultChoice,
 ): (element: ReadonlyArray<T>) => ReadonlyArray<T> {
   return (array: ReadonlyArray<T>) => array.slice().sort(comparator);
 }

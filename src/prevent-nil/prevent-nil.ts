@@ -48,7 +48,7 @@ import { isUndefined } from '../is-undefined';
  * ```
  */
 export function preventNil<S, T>(
-  f: (x: S) => T
+  f: (x: S) => T,
 ): (element: S) => T | undefined {
   return (x: S) => (isUndefined(x) || isNull(x) ? undefined : f(x));
 }

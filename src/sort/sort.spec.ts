@@ -26,7 +26,7 @@ describe('sort function', () => {
     type Sample = { a: number; b: number };
     const comparatorSample = (
       d1: Sample,
-      d2: Sample
+      d2: Sample,
     ): ComparaisonResultChoice => {
       if (d1.a === d2.a && d1.b === d2.b) {
         return ComparaisonResultChoice.Equal;
@@ -56,7 +56,7 @@ describe('sort function', () => {
       { a: 1, b: 1 },
       { a: 1, b: 2 },
       { a: 2, b: 3 },
-      { a: 1, b: 3 }
+      { a: 1, b: 3 },
     ];
     expect(sort(comparatorSample)(arraySample)).toMatchSnapshot();
   });

@@ -19,7 +19,7 @@
  * ```
  */
 export function join<T>(
-  separator?: string
+  separator?: string,
 ): (array: ReadonlyArray<T>) => string {
   return (array: ReadonlyArray<T>) => array.join(separator);
 }

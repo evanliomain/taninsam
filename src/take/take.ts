@@ -20,7 +20,7 @@ import { isArray } from '../is-array';
  * ```
  */
 export function take<T>(
-  n: number
+  n: number,
 ): (list: string | ReadonlyArray<T>) => string | ReadonlyArray<T> {
   return (list: string | ReadonlyArray<T>) => {
     if (isArray(list)) {

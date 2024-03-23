@@ -21,7 +21,7 @@
  * ```
  */
 export function not<T>(
-  predicat: (element: T) => boolean
+  predicat: (element: T) => boolean,
 ): (element: T) => boolean {
   return (element: T) => !predicat(element);
 }

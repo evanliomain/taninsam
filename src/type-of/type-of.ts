@@ -61,9 +61,5 @@
  * ```
  */
 export function typeOf(element: any): string {
-  return {}.toString
-    .call(element)
-    .split(' ')[1]
-    .slice(0, -1)
-    .toLowerCase();
+  return {}.toString.call(element).split(' ')[1].slice(0, -1).toLowerCase();
 }

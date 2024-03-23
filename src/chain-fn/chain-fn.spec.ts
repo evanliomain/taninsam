@@ -13,9 +13,7 @@ describe('chainFn function', () => {
     const mapFn = vi.fn(array => array.map((x: number) => x + 1));
     const filterFn = vi.fn(array => array.filter((x: number) => 0 === x % 2));
 
-    const chainResult = chainFn(mapFn)
-      .chain(filterFn)
-      .value();
+    const chainResult = chainFn(mapFn).chain(filterFn).value();
 
     const result = chainResult([1, 2, 3, 4]);
 

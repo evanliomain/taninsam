@@ -38,7 +38,7 @@ describe('typeOf function', () => {
     expect(typeOf(new Foo())).toBe('object');
   });
   test('function () {} |> typeOf === "object"', () => {
-    const Foo = function() {
+    const Foo = function () {
       /** Nothing to do */
     };
     expect(typeOf(new Foo())).toBe('object');
@@ -57,16 +57,16 @@ describe('typeOf function', () => {
   });
   test('function () {} |> typeOf === "function"', () => {
     expect(
-      typeOf(function() {
+      typeOf(function () {
         /** Nothing to do */
-      })
+      }),
     ).toBe('function');
   });
   test('() => {} |> typeOf === "function"', () => {
     expect(
       typeOf(() => {
         /** Nothing to do */
-      })
+      }),
     ).toBe('function');
   });
   test('/a/ |> typeOf === "regexp"', () => {

@@ -36,7 +36,7 @@
 export function ifElse<T, U, V>(
   predicat: (value: T) => boolean,
   ifTransform: (value: T) => U,
-  elseTransform: (value: T) => V
+  elseTransform: (value: T) => V,
 ): (value: T) => U | V {
   return (value: T) =>
     predicat(value) ? ifTransform(value) : elseTransform(value);

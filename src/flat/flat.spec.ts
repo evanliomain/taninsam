@@ -2,7 +2,10 @@ import { describe, expect, test } from 'vitest';
 import { flat } from './flat';
 
 describe('flat function', () => {
-  const input = [[1, 2], [3, 4, 5]];
+  const input = [
+    [1, 2],
+    [3, 4, 5],
+  ];
 
   test('is a pure function', () => {
     flat()(input);

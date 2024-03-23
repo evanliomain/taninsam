@@ -2,7 +2,10 @@ import { describe, expect, test } from 'vitest';
 import { fromEntries } from './from-entries';
 
 describe('fromEntries function', () => {
-  const input: ReadonlyArray<[string, any]> = [['a', 1], ['b', 'c']];
+  const input: ReadonlyArray<[string, any]> = [
+    ['a', 1],
+    ['b', 'c'],
+  ];
 
   test('is a pure function', () => {
     fromEntries()(input);

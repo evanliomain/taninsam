@@ -7,7 +7,7 @@ describe('loopFor function', () => {
 
   test('is a pure function', () => {
     loopFor<ReadonlyArray<number>>(5, array =>
-      map<number, number>(x => 1 + x)(array)
+      map<number, number>(x => 1 + x)(array),
     )(input);
     expect(input).toMatchSnapshot();
   });
@@ -18,7 +18,7 @@ describe('loopFor function', () => {
 
   test('sum even square', () => {
     expect(
-      loopFor<number>({ start: 2, stop: 10, step: 2 }, (x, i) => x + i ** 2)(0)
+      loopFor<number>({ start: 2, stop: 10, step: 2 }, (x, i) => x + i ** 2)(0),
     ).toBe(120);
   });
 });

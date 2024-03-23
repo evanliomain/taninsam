@@ -11,7 +11,7 @@ describe('sumBy function', () => {
 
   test('[{ a:1 }, { a:2 }, { a:3 }, { a:4 }] |> sumBy === 10', () => {
     expect(
-      sumBy<{ a: number }>(x => x.a)([{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }])
+      sumBy<{ a: number }>(x => x.a)([{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }]),
     ).toMatchSnapshot();
   });
 

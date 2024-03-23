@@ -50,7 +50,7 @@ export function sortBy<T>(
     array
       .slice()
       .sort((data1, data2) =>
-        f.reduce(_compare<T>(data1, data2), ComparaisonResultChoice.Equal)
+        f.reduce(_compare<T>(data1, data2), ComparaisonResultChoice.Equal),
       );
 }
 
@@ -59,14 +59,14 @@ export function sortBy<T>(
  */
 function _compare<T>(
   data1: T,
-  data2: T
+  data2: T,
 ): (
   resultChoice: ComparaisonResultChoice,
-  g: (d: T) => number | string
+  g: (d: T) => number | string,
 ) => ComparaisonResultChoice {
   return (
     resultChoice: ComparaisonResultChoice,
-    g: (d: T) => number | string
+    g: (d: T) => number | string,
   ) => {
     if (ComparaisonResultChoice.Equal !== resultChoice) {
       return resultChoice;

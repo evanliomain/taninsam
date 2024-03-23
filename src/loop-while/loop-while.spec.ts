@@ -7,12 +7,17 @@ describe('loopWhile function', () => {
   test('is a pure function', () => {
     loopWhile<ReadonlyArray<number>>(
       arr => arr.length < 10,
-      arr => [...arr, 0]
+      arr => [...arr, 0],
     )(input);
     expect(input).toMatchSnapshot();
   });
 
   test('2 |> loopWhile <10,  x => x² === 16', () => {
-    expect(loopWhile<number>(x => x < 10, x => x ** 2)(2)).toBe(16);
+    expect(
+      loopWhile<number>(
+        x => x < 10,
+        x => x ** 2,
+      )(2),
+    ).toBe(16);
   });
 });

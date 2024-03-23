@@ -21,10 +21,10 @@ import { Identity, Iteratee, Links } from '../@types';
  * ```
  */
 export function filter<T>(
-  iteratee: Iteratee<T, boolean>
+  iteratee: Iteratee<T, boolean>,
 ): Identity<ReadonlyArray<T>> {
   return (array: ReadonlyArray<T>, links?: Links) =>
     array.filter((value: T, index: number, originalArray: ReadonlyArray<T>) =>
-      iteratee(value, index, originalArray, links)
+      iteratee(value, index, originalArray, links),
     );
 }

@@ -6,7 +6,7 @@ describe('find function', () => {
     { a: 1, b: 'a' },
     { a: 2, b: 'b' },
     { a: 3, b: 'c' },
-    { a: 4, b: 'd' }
+    { a: 4, b: 'd' },
   ];
 
   test('is a pure function', () => {
