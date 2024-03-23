@@ -52,6 +52,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,6 +73,12 @@ jobs:
         with:
           path: dist/docs
           key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/docs
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
