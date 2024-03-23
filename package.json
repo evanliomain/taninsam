@@ -41,17 +41,13 @@
     "test:ci": "vitest --config ./vitest.config.ts --no-cache --coverage",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "precommit": "lint-staged",
     "gen": "plop function",
     "stryker": "stryker run",
     "stryker:debug": "stryker run --fileLogLevel trace --logLevel debug ./stryker.config.mjs",
-    "stryker:ci": "stryker run ./stryker.config.ci.mjs"
-  },
-  "lint-staged": {
-    "{src,tools}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
+    "stryker:ci": "stryker run ./stryker.config.ci.mjs",
+    "prepare": "husky",
+    "test:pre-commit": "vitest run --silent",
+    "format:pre-commit": "prettier --write \"**/*.ts\""
   },
   "config": {
     "commitizen": {
@@ -71,8 +67,7 @@
     "cpx2": "^2.0.0",
     "cross-env": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.0.2",
-    "lint-staged": "^9.0.0",
+    "husky": "^9.0.11",
     "plop": "^4.0.1",
     "prettier": "^1.4.4",
     "rimraf": "^3.0.0",
