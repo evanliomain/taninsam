@@ -1,0 +1,3 @@
+yarn format:pre-commit
+git add
+yarn test:pre-commit
