@@ -50,6 +50,7 @@ describe('typeOf function', () => {
     expect(typeOf([1, 2])).toBe('array');
   });
   test('new Array() |> typeOf === "array"', () => {
+    // eslint-disable-next-line @typescript-eslint/no-array-constructor
     expect(typeOf(new Array())).toBe('array');
   });
   test('"" |> typeOf === "string"', () => {

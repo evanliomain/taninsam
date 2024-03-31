@@ -1,6 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "tslint.autoFixOnSave": true,
   "editor.tabSize": 2,
   "editor.rulers": [80]
 }

@@ -1,4 +1,4 @@
-// tslint:no-console
+// eslint:no-console
 import { Links } from '../@types';
 
 /**

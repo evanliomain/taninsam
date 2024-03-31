@@ -5,7 +5,7 @@
     // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
     "esbenp.prettier-vscode",
     "vitest.explorer",
-    "eg2.tslint",
+    "dbaeumer.vscode-eslint",
     "KnisterPeter.vscode-commitizen",
     "github.vscode-github-actions",
   ]

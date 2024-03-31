@@ -20,6 +20,7 @@ import { map } from '../map';
  *   .value() // [1, 2, 3]
  * ```
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function values(): (ob: object) => ReadonlyArray<any> {
   return (ob: object) =>
     chain(ob)

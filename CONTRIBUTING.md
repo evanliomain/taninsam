@@ -36,7 +36,7 @@
 
     - use ReadonlyArray<T> and ban use of T[]
 
-1.  Respect the tslint rules. Don't hesitate to verify by launching:
+1.  Respect the eslint rules. Don't hesitate to verify by launching:
 
         $ yarn lint
 

@@ -1,5 +1,6 @@
 import { describe, expect, test, vi } from 'vitest';
 import { filter } from './filter';
+import { Links } from '../@types';
 
 describe('filter function', () => {
   const input = [1, 2, 3, 4, 5];
@@ -14,8 +15,8 @@ describe('filter function', () => {
   });
 
   test('call the iteree callback with correct inputs', () => {
-    const cb = vi.fn((x: number) => true);
-    const link = { fake: 'fake' };
+    const cb = vi.fn(() => true);
+    const link: Links = { fake: 'fake' };
     filter<number>(cb)(input, link);
     input.forEach((i, index) => {
       expect(cb.mock.calls[index][0]).toBe(i);

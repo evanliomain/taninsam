@@ -1,3 +1,4 @@
 yarn format:pre-commit
+yarn lint:pre-commit
 git add
 yarn test:pre-commit

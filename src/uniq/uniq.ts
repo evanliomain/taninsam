@@ -37,7 +37,7 @@ import { reduce } from '../reduce';
  * ```
  */
 export function uniq<T>(
-  comparison: (x: T) => any = x => x,
+  comparison: (x: T) => unknown = x => x,
 ): (element: T[]) => T[] {
   return (array: T[]) =>
     chain(array)

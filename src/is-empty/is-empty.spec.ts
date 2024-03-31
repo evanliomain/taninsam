@@ -13,7 +13,6 @@ describe('isEmpty function', () => {
     expect(isEmpty(undefined)).toBe(true);
   });
   test('null |> isEmpty === true', () => {
-    // tslint:disable-next-line:no-null-keyword
     expect(isEmpty(null)).toBe(true);
   });
   test('[] |> isEmpty === true', () => {
