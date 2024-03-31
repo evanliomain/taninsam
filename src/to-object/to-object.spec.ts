@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import { toObject } from './to-object';
 
 describe('toObject function', () => {
-  const input = [
+  const input: [string, number | string][] = [
     ['a', 1],
     ['b', 'c'],
   ];
@@ -17,7 +17,7 @@ describe('toObject function', () => {
 
   test("[['a', 1], ['b', 'c']] |> toObject(item => item[0], item => item[1]) === {a: 1, b: 'c'}", () => {
     expect(
-      toObject(
+      toObject<[string, number | string], string | number>(
         item => item[0],
         item => item[1],
       )(input),

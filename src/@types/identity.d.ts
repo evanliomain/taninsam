@@ -1,2 +1,1 @@
-import { Function } from './function';
-export type Identity<T> = Function<T, T>;
+export type Identity<T> = (x: T) => T;

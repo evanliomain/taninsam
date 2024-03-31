@@ -49,7 +49,7 @@ interface IterationParameters {
  */
 export function loopFor<T>(
   iteration: number | Iteration,
-  iteratee: (x: T, index?: number) => T,
+  iteratee: (x: T, index: number) => T,
 ): (input: T) => T {
   const { start, stop, step } = forParameters(iteration);
 

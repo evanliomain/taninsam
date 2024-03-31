@@ -38,7 +38,7 @@ describe('chainFn function', () => {
       return `${array.length}/${links.total.length}`;
     });
 
-    const chainResult = chainFn(mapFn)
+    const chainResult = chainFn(mapFn as unknown as (e: any) => any)
       .link('total')
       .chain(filterFn)
       .chain(doubleFn)
@@ -65,7 +65,7 @@ describe('chainFn function', () => {
         return `${array.length}/${links.total.length}`;
       });
 
-      const chainResult = chainFn(mapFn)
+      const chainResult = chainFn(mapFn as unknown as (e: any) => any)
         .log('maped')
         .link('total')
         .chain(filterFn)

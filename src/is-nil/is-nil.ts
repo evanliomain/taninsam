@@ -18,14 +18,6 @@ import { isUndefined } from '../is-undefined';
  * isNil(0) // false
  * ```
  */
-// tslint:disable-next-line:no-null-undefined-union
 export function isNil(value): value is undefined | null {
-  if (isUndefined(value)) {
-    return true;
-  }
-  if (isNull(value)) {
-    return true;
-  }
-
-  return false;
+  return isUndefined(value) || isNull(value);
 }

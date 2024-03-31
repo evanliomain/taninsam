@@ -20,7 +20,10 @@ import { map } from '../map';
  *   .value() // [['a', 1], ['b', 2], ['c', 3]]
  * ```
  */
-export function entries(): (ob: object) => ReadonlyArray<ReadonlyArray<any>> {
+export function entries(): (
+  ob: object,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+) => ReadonlyArray<ReadonlyArray<any>> {
   return (ob: object) =>
     chain(ob)
       .chain(keys())

@@ -60,6 +60,6 @@
  * typeOf(new Map()) // map
  * ```
  */
-export function typeOf(element: any): string {
+export function typeOf(element: unknown): string {
   return {}.toString.call(element).split(' ')[1].slice(0, -1).toLowerCase();
 }

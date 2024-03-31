@@ -1,7 +1,7 @@
 /**
  * @module array=>array
  */
-import { Function, Iteratee, Links } from '../@types';
+import { Iteratee, Links } from '../@types';
 /**
  * This method creates a new array
  * with the results of calling a provided function
@@ -22,7 +22,7 @@ import { Function, Iteratee, Links } from '../@types';
  */
 export function map<T, U>(
   iteratee: Iteratee<T, U>,
-): Function<ReadonlyArray<T>, ReadonlyArray<U>> {
+): (array: ReadonlyArray<T>, links?: Links) => ReadonlyArray<U> {
   return (array: ReadonlyArray<T>, links?: Links) =>
     array.map((value: T, index: number, originalArray: ReadonlyArray<T>) =>
       iteratee(value, index, originalArray, links),

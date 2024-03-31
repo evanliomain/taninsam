@@ -8,8 +8,7 @@ import { isUndefined } from '../is-undefined';
  * @module any=>boolean
  */
 
-// tslint:disable-next-line:no-null-undefined-union
-type Empty = undefined | null | '' | [] | {};
+type Empty = undefined | null | '' | [] | Record<string, never>;
 /**
  * Determines whether the passed value is :
  * - undefined or
@@ -28,21 +27,11 @@ type Empty = undefined | null | '' | [] | {};
  * ```
  */
 export function isEmpty(value): value is Empty {
-  if (isUndefined(value)) {
-    return true;
-  }
-  if (isNull(value)) {
-    return true;
-  }
-  if (isArray(value) && 0 === value.length) {
-    return true;
-  }
-  if (isString(value) && 0 === value.length) {
-    return true;
-  }
-  if (isObject(value) && 0 === Object.keys(value).length) {
-    return true;
-  }
-
-  return false;
+  return (
+    isUndefined(value) ||
+    isNull(value) ||
+    (isArray(value) && 0 === value.length) ||
+    (isString(value) && 0 === value.length) ||
+    (isObject(value) && 0 === Object.keys(value).length)
+  );
 }
