@@ -72,7 +72,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: dist/docs
-          key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}
+          key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}-${{ hashFiles('website/**') }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
