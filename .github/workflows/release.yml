@@ -8,8 +8,10 @@ on:
 permissions:
   contents: read # for checkout
 
-
 jobs:
+  install-website:
+    uses: ./.github/workflows/install-website.yml
+
   build:
     uses: ./.github/workflows/build.yml
   mutation-testing:
@@ -29,7 +31,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
       - name: Restore dependencies from cache
         uses: actions/cache@v4
         with:
@@ -48,7 +50,7 @@ jobs:
   deploy-documentation:
     name: Deploy documentation
     runs-on: ubuntu-latest
-    needs: build
+    needs: install-website
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -62,17 +64,19 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
       - name: Restore dependencies from cache
         uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
-      - name: Restore documentation from cache
+      - name: Restore website dependencies from cache
         uses: actions/cache@v4
         with:
-          path: dist/docs
-          key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}-${{ hashFiles('website/**') }}
+          path: website/node_modules
+          key: ${{ runner.os }}-website-node_modules-${{ hashFiles('website/yarn.lock') }}
+      - name: Build documentation
+        run: cd website && yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

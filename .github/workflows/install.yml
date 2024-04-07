@@ -1,7 +1,6 @@
 name: Install
 run-name: ${{ github.actor }} is installing
-on:
-  workflow_call
+on: workflow_call
 
 jobs:
   install:
@@ -13,7 +12,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
           cache: 'yarn'
       - name: Cache dependencies
         id: node_modules
