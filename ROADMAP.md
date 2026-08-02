@@ -3,7 +3,7 @@
 Every entry below is **additive** — a new folder under `src/`, a new line in `src/taninsam.ts`.
 Nothing here touches a published signature, so the whole roadmap sits in the *Safe* column of the
 `api-stability` skill. What is **not** reversible is the name and the edge-case behaviour of a
-function once it ships: see [Freeze before shipping](#freeze-before-shipping).
+function once it ships: see [Frozen by tier 1](#frozen-by-tier-1).
 
 Tiers are ordered by implementation effort, not by priority.
 
@@ -156,7 +156,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 | ------------------------ | ----------------------------------------------------------------------- | ---- |
 | `drop`                   | Drop the `n` first elements — the mirror of the shipped `take`.           | R    |
 | `takeLast` / `dropLast`  | The same two, counted from the end.                                       | R    |
-| `takeWhile` / `dropWhile`| Take or drop the leading elements while a predicate holds.                | R    |
+| `takeWhile` / `dropWhile`| Take or drop the leading elements while a predicate holds. `dropWhile` is the shipped `filterUntil` under its expected name. | R    |
 | `init`                   | Everything but the last element — the mirror of the shipped `tail`.       | R    |
 | `splitAt`                | Split into `[before, after]` at an index.                                 | R    |
 | `splitWhen`              | Split at the first element matching a predicate.                          | R    |
@@ -211,7 +211,8 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 ## Tier 5 — the matrix family
 
 One coherent batch. The only design work is a shared `Matrix<T>` and `Coordinate` in
-`src/@types/`; `mapMatrix` (tier 1) belongs here too.
+`src/@types/`. The shipped `mapMatrix` belongs to this family and already fixes the axis
+convention: a matrix is an array of rows, so `matrix[y][x]`.
 
 | Function                     | What it does                                                            | From |
 | ---------------------------- | ------------------------------------------------------------------------- | ---- |
@@ -239,16 +240,25 @@ on the first release.
 | `treeMap`              | Apply an iteratee to every node, preserving the structure.                | Whether the iteratee sees the path down to the node.   |
 | `treeWalkBottomToTop`  | Walk from the leaves up, folding each node's children results into it.    | The accumulator signature.                             |
 
-## Freeze before shipping
+## Frozen by tier 1
 
-Four choices that cannot be revisited once published:
+Tier 1 shipped, so these four choices are now part of the published contract. Hold them for
+everything that follows.
 
-1. **`chunk` on a partial last slice.** *AoC*'s `pack` pads with `undefined`
-   (`chunk(3)([1,2,3,4])` → `[[1,2,3],[4,undefined,undefined]]`); the idiomatic answer is
-   `[[1,2,3],[4]]`.
-2. **`filterUntil`'s name.** It is a *drop-while*, and the name says otherwise. A later rename is
-   forbidden — at best a `@deprecated` tag and a duplicate.
-3. **Out-of-bounds and wrong-type inputs.** `undefined` or `throw`. Pick one and hold it across
-   `at`, `atMatrix`, `pickByIndex` and the whole tier 3.
-4. **`patternMatching` with no match.** *AoC* returns the input untouched. Whatever the choice, it
-   goes in the TSDoc.
+1. **`chunk` on a partial last slice.** Not padded. `chunk(3)([1,2,3,4])` → `[[1,2,3],[4]]`, the
+   idiomatic answer, against *AoC*'s `pack` which pads with `undefined`.
+2. **`filterUntil`'s name.** Kept, even though it is a *drop-while*. The TSDoc says so. When tier 3
+   brings `dropWhile`, it ships as a second name for the same behaviour, and `filterUntil` stays.
+3. **Out-of-bounds and meaningless arguments.** Return, never throw — `chunk` of a size below one
+   gives `[]`, `lag` of less than two elements gives `[]`. Hold that across `at`, `atMatrix`,
+   `pickByIndex` and the whole of tier 3.
+4. **No match in the `patternMatching` family.** The input is returned untouched, as in *AoC*, so
+   the return type is `T | U`. A one-element tuple is the default rule, patterns are tried in
+   order and the first match wins.
+
+Two more, settled by the same tier:
+
+5. **`x` and `y` in a matrix.** A matrix is an array of rows: `matrix[y][x]`, `y` the index of the
+   row, `x` the index inside it. `mapMatrix` freezes it for the whole of tier 5.
+6. **Iteratees receive the chain links.** Every new iteratee taking a collection follows `map` and
+   `filter`: `(value, …, index, collection, links?)`.
