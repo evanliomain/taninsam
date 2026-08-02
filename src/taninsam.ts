@@ -34,6 +34,7 @@ export * from './loop-for';
 export * from './loop-until';
 export * from './loop-while';
 export * from './map';
+export * from './map-matrix';
 export * from './max';
 export * from './max-by';
 export * from './min';

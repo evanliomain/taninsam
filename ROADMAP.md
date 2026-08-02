@@ -48,6 +48,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] loopUntil
 - [x] loopWhile
 - [x] map
+- [x] mapMatrix
 - [x] max
 - [x] maxBy
 - [x] min
@@ -84,7 +85,6 @@ the spec.
 
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `mapMatrix`           | Apply `(cell, x, y, matrix)` to every cell of a 2-D array and return a new matrix.                             | AoC           |
 | `patternMatching`     | Match the input by strict equality against `[value, rule]` tuples; a one-element tuple is the default rule.    | AoC, R `cond` |
 | `patternMatchingBy`   | Same, matching on `by(input)` rather than on the input itself.                                                 | AoC           |
 | `patternMatchingWith` | Same, each pattern being a predicate instead of a value.                                                       | AoC           |
