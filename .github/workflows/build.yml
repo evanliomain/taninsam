@@ -109,8 +109,7 @@ jobs:
         id: dist_docs
         with:
           path: dist/docs
-          key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}-${{ hashFiles('website/*,website/src/**,website/static/**') }}
-          fail-on-cache-miss: true
+          key: ${{ runner.os }}-documentation-${{ hashFiles('src/**') }}-${{ hashFiles('website/*', 'website/src/**', 'website/static/**') }}
       - name: Build documentation
         if: steps.dist_docs.outputs.cache-hit != 'true'
         run: cd website && yarn build
