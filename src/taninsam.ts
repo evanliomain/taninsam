@@ -41,6 +41,7 @@ export * from './min';
 export * from './min-by';
 export * from './not';
 export * from './partition';
+export * from './pattern-matching-with';
 export * from './pop';
 export * from './prevent-nil';
 export * from './push';

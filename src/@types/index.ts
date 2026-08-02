@@ -6,4 +6,5 @@ export * from './function';
 export * from './identity';
 export * from './iteratee';
 export * from './links';
+export * from './pattern';
 export * from './result';
