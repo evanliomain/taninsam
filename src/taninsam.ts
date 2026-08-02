@@ -6,6 +6,7 @@ export * from './count-character';
 export * from './entries';
 export * from './every';
 export * from './filter';
+export * from './filter-until';
 export * from './find';
 export * from './flat';
 export * from './from-entries';

@@ -20,6 +20,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] entries
 - [x] every
 - [x] filter
+- [x] filterUntil
 - [x] find
 - [x] flat
 - [x] fromEntries
@@ -81,7 +82,6 @@ the spec.
 
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `filterUntil`         | Drop the leading elements while the predicate holds, keep everything from the first failure on.                | AoC, R `dropWhile` |
 | `loopUntil`           | Apply the iteratee to the accumulator until the predicate turns true — `loopWhile(not(p), f)`.                 | AoC, R `until` |
 | `loopDoWhile`         | Same as `loopWhile`, except the iteratee always runs at least once.                                            | AoC           |
 | `mapMatrix`           | Apply `(cell, x, y, matrix)` to every cell of a 2-D array and return a new matrix.                             | AoC           |
