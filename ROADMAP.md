@@ -16,6 +16,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] castTo
 - [x] chain
 - [x] chainFn
+- [x] chunk
 - [x] countCharacter
 - [x] entries
 - [x] every
@@ -80,15 +81,6 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] unless
 - [x] unshift
 - [x] values
-
-## Tier 1 — ready to port
-
-A working implementation already exists in *AoC*; the work is the TSDoc contract, the types and
-the spec.
-
-| Function              | What it does                                                                                                 | From          |
-| --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `chunk`               | Split an array into consecutive slices of `n` elements.                                                        | AoC `pack`, R `splitEvery` |
 
 ## Tier 2 — one-liners
 

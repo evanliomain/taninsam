@@ -2,6 +2,7 @@ export * from './array-from-value';
 export * from './cast-to';
 export * from './chain';
 export * from './chain-fn';
+export * from './chunk';
 export * from './count-character';
 export * from './entries';
 export * from './every';
