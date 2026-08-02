@@ -44,6 +44,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] last
 - [x] length
 - [x] loopFor
+- [x] loopUntil
 - [x] loopWhile
 - [x] map
 - [x] max
@@ -82,7 +83,6 @@ the spec.
 
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `loopUntil`           | Apply the iteratee to the accumulator until the predicate turns true — `loopWhile(not(p), f)`.                 | AoC, R `until` |
 | `loopDoWhile`         | Same as `loopWhile`, except the iteratee always runs at least once.                                            | AoC           |
 | `mapMatrix`           | Apply `(cell, x, y, matrix)` to every cell of a 2-D array and return a new matrix.                             | AoC           |
 | `patternMatching`     | Match the input by strict equality against `[value, rule]` tuples; a one-element tuple is the default rule.    | AoC, R `cond` |

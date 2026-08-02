@@ -30,6 +30,7 @@ export * from './lag-circular';
 export * from './last';
 export * from './length';
 export * from './loop-for';
+export * from './loop-until';
 export * from './loop-while';
 export * from './map';
 export * from './max';
