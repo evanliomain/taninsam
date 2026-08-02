@@ -29,6 +29,7 @@ export * from './lag';
 export * from './lag-circular';
 export * from './last';
 export * from './length';
+export * from './loop-do-while';
 export * from './loop-for';
 export * from './loop-until';
 export * from './loop-while';

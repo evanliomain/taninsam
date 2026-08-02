@@ -43,6 +43,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] lagCircular
 - [x] last
 - [x] length
+- [x] loopDoWhile
 - [x] loopFor
 - [x] loopUntil
 - [x] loopWhile
@@ -83,7 +84,6 @@ the spec.
 
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `loopDoWhile`         | Same as `loopWhile`, except the iteratee always runs at least once.                                            | AoC           |
 | `mapMatrix`           | Apply `(cell, x, y, matrix)` to every cell of a 2-D array and return a new matrix.                             | AoC           |
 | `patternMatching`     | Match the input by strict equality against `[value, rule]` tuples; a one-element tuple is the default rule.    | AoC, R `cond` |
 | `patternMatchingBy`   | Same, matching on `by(input)` rather than on the input itself.                                                 | AoC           |
