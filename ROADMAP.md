@@ -55,6 +55,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] minBy
 - [x] not
 - [x] partition
+- [x] patternMatchingBy
 - [x] patternMatchingWith
 - [x] pop
 - [x] preventNil
@@ -87,7 +88,6 @@ the spec.
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
 | `patternMatching`     | Match the input by strict equality against `[value, rule]` tuples; a one-element tuple is the default rule.    | AoC, R `cond` |
-| `patternMatchingBy`   | Same, matching on `by(input)` rather than on the input itself.                                                 | AoC           |
 | `chunk`               | Split an array into consecutive slices of `n` elements.                                                        | AoC `pack`, R `splitEvery` |
 
 ## Tier 2 — one-liners
