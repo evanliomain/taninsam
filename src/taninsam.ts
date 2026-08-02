@@ -24,6 +24,7 @@ export * from './is-string';
 export * from './is-undefined';
 export * from './join';
 export * from './keys';
+export * from './lag';
 export * from './last';
 export * from './length';
 export * from './loop-for';
