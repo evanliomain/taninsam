@@ -25,6 +25,7 @@ export * from './is-undefined';
 export * from './join';
 export * from './keys';
 export * from './lag';
+export * from './lag-circular';
 export * from './last';
 export * from './length';
 export * from './loop-for';

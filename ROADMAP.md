@@ -39,6 +39,7 @@ Inspiration drawn from [aoc-2022/tools](https://github.com/evanliomain/aoc-2022/
 - [x] join
 - [x] keys
 - [x] lag
+- [x] lagCircular
 - [x] last
 - [x] length
 - [x] loopFor
@@ -80,7 +81,6 @@ the spec.
 
 | Function              | What it does                                                                                                 | From          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
-| `lagCircular`         | Same as `lag`, plus the wrap-around pair `f(D, A)`.                                                            | AoC           |
 | `filterUntil`         | Drop the leading elements while the predicate holds, keep everything from the first failure on.                | AoC, R `dropWhile` |
 | `loopUntil`           | Apply the iteratee to the accumulator until the predicate turns true — `loopWhile(not(p), f)`.                 | AoC, R `until` |
 | `loopDoWhile`         | Same as `loopWhile`, except the iteratee always runs at least once.                                            | AoC           |
