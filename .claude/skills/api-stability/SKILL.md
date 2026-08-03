@@ -90,10 +90,15 @@ the generated documentation and in editors, which is the whole mechanism.
 ```bash
 git diff master -- src/taninsam.ts     # any removed line is breaking
 git diff master -- 'src/**/__snapshots__/*.snap'
-yarn vitest run --coverage
+yarn vitest run --coverage             # 100% on branches, functions, lines and statements
 yarn build:compiled                    # the emitted dist/types are the contract users compile against
 ```
 
+- **Coverage never drops below 100%**, branches included. Every way of extending a function adds
+  branches — an overload, an optional parameter, a newly accepted input type — and each new branch
+  needs its own test, exactly as the behaviour it guards needs its own `@example`. A diff that ends
+  below 100% is not releasable, and the threshold in `vitest.config.ts` is never the thing that
+  moves.
 - **A modified or deleted snapshot in an existing spec is the strongest signal of a breaking
   change.** Behaviour was pinned, and the pin moved. Either the change is wrong, or it is a
   documented bug fix — decide explicitly, never regenerate snapshots to make the suite pass.

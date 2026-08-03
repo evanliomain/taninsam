@@ -27,6 +27,12 @@ chain([1, 2, 3, 4, 5, 6])
 Documentation Driven then Test Driven, in this order, no shortcut:
 signature + TSDoc → unit tests → implementation. The `new-function` skill walks through it.
 
+Every session ends with the `strict-review` skill: a hostile re-read of what the session produced
+— conventions, invariants, commit messages — whose findings are folded back into the commits they
+belong to with `git commit --fixup` and `git rebase --autosquash`. The `Stop` hook in
+`.claude/settings.json` asks for it whenever a session changed the working tree or the history;
+`.claude/hooks/review-state.sh` keeps that bookkeeping in `.git/strict-review/`.
+
 ## Commands
 
 - `yarn gen` — scaffold a function (plop). Non-interactive: `npx plop function "take last"`
